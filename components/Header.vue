@@ -1,17 +1,17 @@
 <template>
-     <header class="header">
-        <div class="header__content">
-            <div class="header__menu">
-                <ul class="menu__body">
-                    <img class="menu__logo" src="../assets/images/logo.svg" />
-                    <template class="menu__list" :key="`navItem-${i}`" v-for="(n, i) in nav">
-                        <li class="menu__item">
-                            <NuxtLink class="menu__link" :to="n.link">
+     <header class="b-header">
+        <div class="b-header__content">
+            <div class="b-header__menu">
+                <ul class="b-menu__body">
+                    <img class="b-menu__logo" src="../assets/images/logo.svg" />
+                    <template class="b-menu__list" :key="`navItem-${i}`" v-for="(n, i) in navigation_items">
+                        <li class="b-menu__item">
+                            <NuxtLink class="b-menu__link" :to="n.link">
                                 {{ n.name }}
                             </NuxtLink>
                         </li>
                     </template>
-                    <button class="menu__button"><span>Зареєструватися</span></button>
+                    <button class="b-menu__button"><span>Зареєструватися</span></button>
                 </ul>
             </div>
         </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-const nav = [
+const navigation_items = [
     {
         name: "Створення команд",
         link: "/#"
@@ -41,7 +41,7 @@ const nav = [
 
 <style lang="scss" scoped>
 @import "assets/styles/base.scss";
-.header {
+.b-header {
     height: 68px;
     max-width: 1200px;
     margin: 27px auto;
@@ -49,7 +49,7 @@ const nav = [
     border-radius: 32px;
     padding-top: 13px;
 }
-.menu {
+.b-menu {
     &__body {
         padding: 10px 0;
         align-items: center;
