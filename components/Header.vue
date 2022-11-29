@@ -4,7 +4,7 @@
             <div class="b-header__menu">
                 <ul class="b-menu__body">
                     <img class="b-menu__logo" src="../assets/images/logo.svg" />
-                    <template class="b-menu__list" :key="`navItem-${i}`" v-for="(n, i) in navigation_items">
+                    <template class="b-menu__list" :key="`navItem-${i}`" v-for="(n, i) in navigationItems">
                         <li class="b-menu__item">
                             <NuxtLink class="b-menu__link" :to="n.link">
                                 {{ n.name }}
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-const navigation_items = [
+const navigationItems = [
     {
         name: "Створення команд",
         link: "/#"
