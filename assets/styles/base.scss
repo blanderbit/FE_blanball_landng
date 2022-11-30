@@ -8,6 +8,8 @@ $md1: $maxWidthContainer + 12;
 $md2: 991.98px;
 $md3: 767.98px;
 $md4: 479.98px;
+$fone-color: radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+$font-color: #262541;
 
 *,
 *::before,
@@ -35,7 +37,6 @@ dd {
   margin: 0;
 }
 body {
-  min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;

@@ -1,3 +1,3 @@
 <template>
-   <Header/>
+   <FirstBlock/>
 </template>
