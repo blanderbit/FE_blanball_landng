@@ -69,3 +69,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+._container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+}

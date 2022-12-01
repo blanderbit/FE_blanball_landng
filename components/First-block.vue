@@ -1,8 +1,8 @@
 <template>
     <div class="b-wrapper">
         <Header />
-        <main class="b-first__page">
-            <div class="b-firt__page__content">
+        <main class="b-first__block _container">
+            <div class="b-firt__block__content">
                 <div class="b__main-content">
                     <section class="b__main-title">
                         <div class="b-first__line">
@@ -35,23 +35,18 @@
 
 .b {
     &-wrapper {
-        background: $fone-color;
         border-radius: 0px 0px 36px 36px;
-        width: 1440px;
         height: 940px;
         width: 100%;
-        position: absolute;
-        width: 100%;
         padding-left: 30px;
+        background-image: url("../assets/images/Group\ 43.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
-    &-first__page {
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: #fff;
+    &-first__block {
         border-radius: 0px 0px 32px 32px;
         max-height: 200px;
-        height: 100%;
     }
 
     &__main-title {
@@ -90,7 +85,6 @@
             background-image: url("../assets/images/green-elipse.svg");
             background-repeat: no-repeat ;
             background-position: center;
-            margin-left: 25px;
             height: 100px;
             min-width: 192px;
             span {
@@ -109,6 +103,7 @@
     }
     &__main-images {
         display: flex;
+        justify-content: space-between;
     }
     &-user-raiting-image {
         margin-top: 130px ;
@@ -119,6 +114,7 @@
         padding: 0px 45px 53px 30px;
         background-color: #fff;
         border-radius: 28px;
+        margin-top: -100px;
     }
 
 }
