@@ -1,109 +1,128 @@
 <template>
-     <header class="b-header">
-        <div class="b-header__content">
-            <div class="b-header__menu">
-                <ul class="b-menu__body">
-                    <img class="b-menu__logo" src="../assets/images/logo.svg" />
-                    <template class="b-menu__list" :key="`navItem-${i}`" v-for="(n, i) in navigationItems">
-                        <li class="b-menu__item">
-                            <NuxtLink class="b-menu__link" :to="n.link">
-                                {{ n.name }}
-                            </NuxtLink>
-                        </li>
-                    </template>
-                    <button class="b-menu__button"><span>Зареєструватися</span></button>
-                </ul>
-            </div>
+    <header class="b-header">
+        <div class="b-header__content _container">
+            <section class="b-header__menu">
+                <HeaderMenu />
+            </section>
+            <section class="b-header__main-title">
+                <div class="b-first__line">
+                    <div class="b-title__first_word">Тренуйся</div>
+                    <img class="b-title__image" src="../assets/images/ball.svg" alt="">
+                    <div class="b-title__second_word"><span>грай</span></div>
+                    <img class="b-title__image" src="../assets/images/ball.svg" alt="">
+                </div>
+                <div class="b-second__line">
+                    <RegisterButton class="b-title__register-button" />
+                    <div class="b-title__third_word">Відпочивай</div>
+                </div>
+            </section>
+            <section class="b__main-images">
+                <div class="b-user-raiting-image">
+                    <img src="../assets/images/user-raiting.svg" alt="">
+                </div>
+                <div class="b-iphone-image">
+                    <img src="../assets/images/Iphone1.svg" alt="">
+                </div>
+            </section>
         </div>
     </header>
 </template>
 
-<script setup>
-const navigationItems = [
-    {
-        name: "Створення команд",
-        link: "/#"
-    },
-    {
-        name: "Організація подій",
-        link: "/#"
-    },
-    {
-        name: "Оцінка заходів",
-        link: "/#"
-    },
-    {
-        name: "Особистий кабінет",
-        link: "/#"
-    },
-]
+<script>
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "assets/styles/base.scss";
-.b-header {
-    height: 68px;
-    max-width: 1200px;
-    margin: 27px auto;
-    box-shadow: 4px 4px 20px rgba(122, 173, 170, 0.2);
-    border-radius: 32px;
-    padding-top: 13px;
-}
-.b-menu {
-    &__body {
-        padding: 10px 0;
-        align-items: center;
-        display: flex;
-        justify-content: flex-end;
-    }
-    &__item {
-        margin-left: 30px;
-    }
-    &__link {
-        font-family: 'Inter';
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #262541;
-        transition: color 0.3s ease 0s;
-        @media(min-width: $md2) {
-            &:hover {
-                color: red;
-            }
-        }
-    }
-    &__logo {
-        margin-right: 120px;
-    }
-    &__button {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 8px 16px;
-        margin-right: 20px;
-        gap: 6px;
-        width: 163px;
-        height: 40px;
-        background: #148783;
-        border-radius: 8px;
-        margin-left: 150px;
-        transition: background-color 0.4s ease 0s;
-        @media(min-width: $md2) {
-            &:hover {
-                background-color: #1da19d;
-            }
-        }
-        span {
-            width: 131px;
-            height: 24px;
-            font-family: 'Inter';
+
+.b {
+    &-header {
+        background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+        height: 940px;
+        width: 100%;
+        border-radius: 0px 0px 36px 36px;
+        padding-top: 35px;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        &__main-title {
+            width: 329px;
+            height: 88px;
+            font-family: 'Exo 2';
             font-style: normal;
-            font-weight: 600;
-            font-size: 15px;
-            line-height: 24px;
-            text-align: center;
-            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 122.222222222%;
+            text-transform: capitalize;
+            color: $font-color;
+
+            @media(max-width: 1100px) {
+                font-size: 68px;
+            }
         }
+    }
+
+    &-first__block {
+        border-radius: 0px 0px 32px 32px;
+        max-height: 200px;
+        background-color: #fff;
+    }
+
+    &-first__line {
+        display: flex;
+        align-items: center;
+    }
+
+    &-second__line {
+        display: flex;
+        align-items: center;
+    }
+
+    &-title__register-button {
+        padding: 12px 16px;
+        width: 200px;
+        height: 48px;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+
+    &__main-images {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-user-raiting-image {
+        margin-top: 150px;
+        margin-left: -20px;
+    }
+
+    &-title {
+        &__second_word {
+            background-image: url("../assets/images/green_elipse.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100px;
+            min-width: 192px;
+
+            span {
+                margin-left: 20px;
+            }
+        }
+
+        &__third_word {
+            margin-left: 10px;
+        }
+
+        &__image {
+            align-self: flex-end;
+            margin-left: 5px;
+        }
+    }
+
+    &-iphone-image {
+        margin-left: 20px;
+        height: 100%;
+        padding: 0px 45px 53px 30px;
+        margin-top: -60px;
     }
 }
 </style>
