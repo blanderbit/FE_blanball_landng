@@ -39,7 +39,7 @@
         height: 940px;
         width: 100%;
         padding-left: 30px;
-        background-image: url("../assets/images/Group\ 43.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+        background-image: url('../assets/images/Group\ 43.svg'), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -47,6 +47,7 @@
     &-first__block {
         border-radius: 0px 0px 32px 32px;
         max-height: 200px;
+        background-color: #fff;
     }
 
     &__main-title {
@@ -56,10 +57,13 @@
         font-style: normal;
         font-weight: 700;
         font-size: 72px;
-        line-height: 88px;
+        line-height: 122.222222222%;
         text-transform: capitalize;
         color: $font-color;
         margin-left: 30px;
+        @media(max-width: 1100px) {
+            font-size: 68px;
+        }
     }
 
     &-first__line {

@@ -19,7 +19,6 @@
 
 .b {
     &-second__block {
-        margin-top: 70px;
         &-main-title {
             font-family: 'Exo 2';
             font-style: normal;
@@ -28,6 +27,7 @@
             line-height: 72px;
             color: $font-color;
             margin-bottom: 5px;
+            margin-top: 70px;
         }
 
         &-subtitle {
