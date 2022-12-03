@@ -41,6 +41,7 @@ const navigationItems = [
 
 .b {
     &-menu {
+        margin-bottom: 20px;
         &__body {
             padding: 10px 0;
             align-items: center;

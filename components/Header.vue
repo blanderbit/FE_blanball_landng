@@ -1,31 +1,33 @@
 <template>
-    <header class="b-header">
-        <div class="b-header__content _container">
-            <section class="b-header__menu">
-                <HeaderMenu />
-            </section>
-            <section class="b-header__main-title">
-                <div class="b-first__line">
-                    <div class="b-title__first_word">Тренуйся</div>
-                    <img class="b-title__image" src="../assets/images/ball.svg" alt="">
-                    <div class="b-title__second_word"><span>грай</span></div>
-                    <img class="b-title__image" src="../assets/images/ball.svg" alt="">
-                </div>
-                <div class="b-second__line">
-                    <RegisterButton class="b-title__register-button" />
-                    <div class="b-title__third_word">Відпочивай</div>
-                </div>
-            </section>
-            <section class="b__main-images">
-                <div class="b-user-raiting-image">
-                    <img src="../assets/images/user-raiting.svg" alt="">
-                </div>
-                <div class="b-iphone-image">
-                    <img src="../assets/images/Iphone1.svg" alt="">
-                </div>
-            </section>
-        </div>
-    </header>
+    <div class="b-header__wrapper">
+        <header class="b-header">
+            <div class="b-header__content _container">
+                <section class="b-header__menu">
+                    <HeaderMenu />
+                </section>
+                <section class="b-header__main-title">
+                    <div class="b-first__line">
+                        <div class="b-title__first_word">Тренуйся</div>
+                        <img class="b-title__image" src="../assets/images/ball.svg" alt="">
+                        <div class="b-title__second_word"><span>грай</span></div>
+                        <img class="b-title__image" src="../assets/images/ball.svg" alt="">
+                    </div>
+                    <div class="b-second__line">
+                        <RegisterButton class="b-title__register-button" />
+                        <div class="b-title__third_word">Відпочивай</div>
+                    </div>
+                </section>
+                <section class="b__main-images">
+                    <div class="b-user-raiting-image">
+                        <img src="../assets/images/user-raiting.svg" alt="">
+                    </div>
+                    <div class="b-iphone-image">
+                        <img src="../assets/images/Iphone1.svg" alt="">
+                    </div>
+                </section>
+            </div>
+        </header>
+    </div>
 </template>
 
 <script>
@@ -34,15 +36,21 @@
 <style lang="scss">
 @import "assets/styles/base.scss";
 
+
 .b {
     &-header {
-        background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+        background: url("../assets/images/Group_43.svg");
         height: 940px;
         width: 100%;
         border-radius: 0px 0px 36px 36px;
         padding-top: 35px;
-        background-position: top;
         background-repeat: no-repeat;
+
+        &__wrapper {
+            background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+            background-position: top;
+            background-repeat: no-repeat;
+        }
 
         &__main-title {
             width: 329px;
@@ -91,7 +99,7 @@
     }
 
     &-user-raiting-image {
-        margin-top: 150px;
+        margin-top: 130px;
         margin-left: -20px;
     }
 
