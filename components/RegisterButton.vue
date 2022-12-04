@@ -1,5 +1,5 @@
 <template>
-    <a>Зареєструватися</a>
+    <a href="http://178.151.201.167:49201/authentication/register">Зареєструватися</a>
 </template>
 
 <style lang="scss" scoped>

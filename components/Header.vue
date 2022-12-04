@@ -62,10 +62,6 @@
             line-height: 122.222222222%;
             text-transform: capitalize;
             color: $font-color;
-
-            @media(max-width: 1100px) {
-                font-size: 68px;
-            }
         }
     }
 
@@ -130,7 +126,7 @@
         margin-left: 20px;
         height: 100%;
         padding: 0px 45px 53px 30px;
-        margin-top: -60px;
+        margin-top: -70px;
     }
 }
 </style>
