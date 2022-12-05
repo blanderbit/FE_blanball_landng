@@ -8,9 +8,9 @@
                 <section class="b-header__main-title">
                     <div class="b-first__line">
                         <div class="b-title__first_word">Тренуйся</div>
-                        <img class="b-title__image" src="../assets/images/ball.svg" alt="">
+                        <img class="b-title__image" src="../assets/images/ball.svg" alt="ball">
                         <div class="b-title__second_word"><span>грай</span></div>
-                        <img class="b-title__image" src="../assets/images/ball.svg" alt="">
+                        <img class="b-title__image" src="../assets/images/ball.svg" alt="ball">
                     </div>
                     <div class="b-second__line">
                         <RegisterButton class="b-title__register-button" />
@@ -19,10 +19,10 @@
                 </section>
                 <section class="b__main-images">
                     <div class="b-user-raiting-image">
-                        <img src="../assets/images/user-raiting.svg" alt="">
+                        <img src="../assets/images/user-raiting.svg" alt="user-raiting">
                     </div>
                     <div class="b-iphone-image">
-                        <img src="../assets/images/Iphone1.svg" alt="">
+                        <img src="../assets/images/Iphone1.svg" alt="Iphone1">
                     </div>
                 </section>
             </div>

@@ -9,7 +9,7 @@
             </div>
         </section>
         <section class="b-first__block-image">
-            <img src="../assets/images/Group_47.svg" alt="">
+            <img src="../assets/images/Group_47.svg" alt="Group_47">
         </section>
     </main>
 </template>

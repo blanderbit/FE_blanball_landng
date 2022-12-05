@@ -1,7 +1,7 @@
 <template>
     <div class="b-menu">
         <ul class="b-menu__body">
-            <img class="b-menu__logo" src="../assets/images/logo.svg" />
+            <img class="b-menu__logo" src="../assets/images/logo.svg" alt="logo"/>
             <Navigation/>
             <RegisterButton />
         </ul>

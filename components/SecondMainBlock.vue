@@ -6,7 +6,7 @@
                     <p>Організовуйте події із</p>гнучкими налаштуваннями
                 </div>
                 <div class="b-first__section-main__image">
-                    <img src="../assets/images/Group_63.svg" alt="events">
+                    <img src="../assets/images/Group_63.svg" alt="Group_63">
                 </div>
             </div>
         </section>
@@ -16,7 +16,7 @@
                     <p>Давайте оцінку організації</p>заходів, які відвідали
                 </div>
                 <div class="b-second__section__image">
-                    <img src="../assets/images/players-list.svg" alt="events">
+                    <img src="../assets/images/players-list.svg" alt="players-list">
                 </div>
             </div>
         </section>

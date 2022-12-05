@@ -1,11 +1,11 @@
 <template>
     <footer class="b-footer">
         <ul class="b-footer__body">
-            <img class="b-footer__logo" src="../assets/images/footer_logo.svg"/>
+            <img class="b-footer__logo" src="../assets/images/footer_logo.svg" alt="footer_logo"/>
             <Navigation :stylings="customStyle" />
             <div class="b-footer__arrow">
                 <span>Blanball — 2022</span>
-                <a href="#"><img src="../assets/images/arrow.svg"/></a>
+                <a href="#"><img src="../assets/images/arrow.svg" alt="arrow"/></a>
             </div>
         </ul>
     </footer>

@@ -10,10 +10,10 @@
                 </div>
                 <div class="b-main-section-images">
                     <div class="b-main-section__iphone-image">
-                        <img class="ff" src="../assets/images/Group_53.svg" alt="iphone-image" />
+                        <img src="../assets/images/Group_53.svg" alt="iphone-image" />
                     </div>
                     <div class="b-main-section__iphone-image_2">
-                        <img src="../assets/images/Iphone.svg" alt="iphone-image" />
+                        <img src="../assets/images/Iphone.svg" alt="iphone-image_2" />
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="b-before-footer-section__right-side">
-                    <img src="../assets/images/Frame_1472.svg" alt="" />
+                    <img src="../assets/images/Frame_1472.svg" alt="Frame_1472"/>
                 </div>
             </div>
         </section>

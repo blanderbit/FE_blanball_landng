@@ -1,7 +1,7 @@
 <template>
     <div class="b-navigation">
         <ul class="b-navigation__body">
-            <template class="b-navigation__list" :key="`navItem-${i}`" v-for="(n, i) in navigationItems">
+            <template v-for="(n, i) in navigationItems" :key="`navItem-${i}`" class="b-navigation__list">
                 <li class="b-navigation__item">
                     <NuxtLink class="b-navigation__link" :to="n.link" :style="getStyle">
                         {{ n.name }}
