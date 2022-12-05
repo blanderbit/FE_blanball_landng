@@ -1,8 +1,15 @@
 <template>
     <footer class="b-footer">
-        <div class="b-footer__content _container">
-            <Navigation/>
-        </div>
+        <ul class="b-footer__body">
+            <img class="b-footer__logo" src="../assets/images/footer_logo.svg" />
+            <div class="ff">
+                <Navigation/>
+            </div>
+            <div class="b-footer__arrow">
+                <span>Blanball — 2022</span>
+                <a href="#"><img src="../assets/images/arrow.svg" /></a>
+            </div>
+        </ul>
     </footer>
 </template>
 
@@ -10,41 +17,37 @@
 <script>
 </script>
 
+<style lang="scss" scoped>
+    .b-navigation__link {
+        color: #fff;
+    }
+</style>
+
 <style lang="scss">
 @import "assets/styles/base.scss";
-
 .b {
-    &-menu {
-        margin-bottom: 20px;
+    &-footer {
+        margin-top: 100px;
         &__body {
             padding: 10px 0;
             align-items: center;
             display: flex;
             justify-content: space-between;
+            height: 100px;
+            background-color: red;
         }
-
-        &__link {
-            font-family: 'Inter';
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 20px;
-            color: $font-color;
-            transition: color 0.3s ease 0s;
-
-            @media(min-width: $md2) {
-                &:hover {
-                    color: red;
-                }
-            }
-        }
-
         &__logo {
-            padding-right: 100px;
-            margin-left: 10px;
-            @media(max-width: $md2) {
-                padding-right: 30px;
+            margin-left: 120px;
+        }
+        &__arrow {
+            display: flex;
+            align-items: center;
+            padding-right: 30px;
+            span {
+                margin-right: 40px;
             }
         }
     }
 }
+
 </style>

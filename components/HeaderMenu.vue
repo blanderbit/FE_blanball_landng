@@ -9,27 +9,20 @@
 </template>
 
 
-<script>
-</script>
-
 <style lang="scss">
 @import "assets/styles/base.scss";
-
 .b {
     &-menu {
+        margin-bottom: 20px;
         &__body {
             padding: 10px 0;
             align-items: center;
             display: flex;
             justify-content: space-between;
         }
-
         &__logo {
             padding-right: 100px;
             margin-left: 10px;
-            @media(max-width: $md2) {
-                padding-right: 30px;
-            }
         }
     }
 }
