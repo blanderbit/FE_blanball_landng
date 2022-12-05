@@ -37,4 +37,4 @@ jobs:
         docker push ${{ env.LATEST_IMAGE }}
     - name: Trigger deploy in portainer
       run: |
-        curl -X POST ${{ secrets.PORTAINER_WEBHOOK_URL_TEST }}
+        curl -X POST ${{ secrets.PORTAINER_WEBHOOK_URL }}
