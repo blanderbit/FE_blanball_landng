@@ -3,7 +3,7 @@
         <ul class="b-navigation__body">
             <template v-for="(n, i) in navigationItems" :key="`navItem-${i}`" class="b-navigation__list">
                 <li class="b-navigation__item">
-                    <NuxtLink class="b-navigation__link" :to="n.link" :style="getStyle">
+                    <NuxtLink class="b-navigation__link" :to="{ path: '/', hash: n.element }" :style="getStyle">
                         {{ n.name }}
                     </NuxtLink>
                 </li>
@@ -17,19 +17,19 @@
 const navigationItems = [
     {
         name: "Створення команд",
-        link: "/#"
+        element: ".b-first__block-main-title"
     },
     {
         name: "Організація подій",
-        link: "/#"
+        element: ".b-first__section-main__title"
     },
     {
         name: "Оцінка заходів",
-        link: "/#"
+        element: ".b-second__section-main__title"
     },
     {
         name: "Особистий кабінет",
-        link: "/#"
+        element: ".b-third__block"
     },
 ]
 </script>
