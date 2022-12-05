@@ -3,11 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-$maxWidthContainer: 1280px;
+$maxWidthContainer: 1200px;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98px;
 $md3: 767.98px;
 $md4: 479.98px;
+$font-color: #262541;
 
 *,
 *::before,
@@ -67,4 +68,10 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+._container {
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  padding-left: 20px;
 }
