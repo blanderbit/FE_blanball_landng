@@ -1,7 +1,10 @@
 <template>
     <div class="b-menu">
         <ul class="b-menu__body">
-            <img class="b-menu__logo" src="../assets/images/logo.svg" alt="logo"/>
+            <div class="b-menu__logo">
+                <img class="b-menu__logo-desk" src="../assets/images/logo.svg" alt="desk-logo"/>
+                <img class="b-menu__logo-small" src="../assets/images/ball.svg" alt="small-logo"/>
+            </div>
             <Navigation/>
             <RegisterButton />
         </ul>
@@ -21,8 +24,18 @@
             justify-content: space-between;
         }
         &__logo {
-            padding-right: 100px;
             margin-left: 10px;
+            &-desk {
+                @media(max-width: $md2) {
+                    display: none;
+                }
+            }
+            &-small {
+                display: none;
+                @media(max-width: $md2) {
+                    display: block;
+                }
+            }
         }
     }
 }
