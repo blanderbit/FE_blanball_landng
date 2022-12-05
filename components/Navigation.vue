@@ -3,7 +3,7 @@
         <ul class="b-navigation__body">
             <template class="b-navigation__list" :key="`navItem-${i}`" v-for="(n, i) in navigationItems">
                 <li class="b-navigation__item">
-                    <NuxtLink :style="getStyle" class="b-navigation__link" :to="n.link">
+                    <NuxtLink class="b-navigation__link" :to="n.link" :style="getStyle">
                         {{ n.name }}
                     </NuxtLink>
                 </li>
@@ -32,6 +32,20 @@ const navigationItems = [
         link: "/#"
     },
 ]
+</script>
+
+<script>
+export default {
+    name: 'navbar',
+    props: {
+        stylings: Object,
+    },
+   computed: {
+    getStyle() {
+      return this.stylings;
+    }
+   }
+}
 </script>
 
 <style lang="scss">

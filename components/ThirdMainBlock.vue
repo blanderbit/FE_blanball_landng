@@ -26,8 +26,11 @@
                     </div>
                     <div class="b-before-footer-section__email-input">
                         <label class="b-before-footer-section__input-label" for="name">Електронна адреса</label>
-                        <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
+                        <div class="input__create-account__section">
+                            <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
                             name="name">
+                            <RegisterButton/>
+                        </div>
                     </div>
                 </div>
                 <div class="b-before-footer-section__right-side">
@@ -110,7 +113,6 @@
         &__content {
             padding: 40px 40px 52px;
             border-radius: 24px;
-            margin-top: -200px;
             max-height: 316px;
             display: flex;
             justify-content: space-between;
@@ -118,7 +120,8 @@
         }
 
         &__right-side {
-            align-self: flex-end;
+            align-self: center;
+            margin-bottom: 40px;
         }
 
         &__title {
@@ -158,6 +161,7 @@
             font-size: 14px;
             line-height: 140%;
             color: #C5C5D3;
+            margin-right: 15px;
 
             &-label {
                 font-family: 'Inter';
