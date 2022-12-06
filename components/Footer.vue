@@ -1,11 +1,11 @@
 <template>
-    <footer class="b-footer">
+    <footer data-aos="fade-up" data-aos-delay="300" class="b-footer">
         <ul class="b-footer__body">
-            <img class="b-footer__logo" src="../assets/images/footer_logo.svg" alt="footer_logo"/>
+            <img class="b-footer__logo" src="../assets/images/footer_logo.svg" alt="footer_logo" />
             <Navigation :stylings="customStyle" />
             <div class="b-footer__arrow">
                 <span>Blanball — 2022</span>
-                <NuxtLink class="b-navigation__link" :to="{ path: '/'}" :style="getStyle">
+                <NuxtLink class="b-navigation__link" :to="{ path: '/' }" :style="getStyle">
                     <img src="../assets/images/arrow.svg" alt="arrow" />
                 </NuxtLink>
             </div>
@@ -55,7 +55,7 @@ export default {
         }
 
         &__logo {
-            margin-left: 100px;
+            margin-left: 90px;
         }
 
         &__arrow {
@@ -65,7 +65,7 @@ export default {
 
             span {
                 font-size: 16px;
-                margin-right: 40px;
+                margin-right: 30px;
                 color: #fff;
             }
         }

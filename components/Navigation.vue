@@ -17,19 +17,19 @@
 const navigationItems = [
     {
         name: "Створення команд",
-        element: ".b-first__block-main-title"
+        element: "#b-first__block-main-title"
     },
     {
         name: "Організація подій",
-        element: ".b-first__section-main__title"
+        element: "#b-first__section-main__title"
     },
     {
         name: "Оцінка заходів",
-        element: ".b-second__section-main__title"
+        element: "#b-second__section-main__title"
     },
     {
         name: "Особистий кабінет",
-        element: ".b-third__block"
+        element: "#b-third__block"
     },
 ]
 </script>

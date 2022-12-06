@@ -2,7 +2,7 @@
     <main class="b-second__block">
         <section class="b-second__block-first__section">
             <div class="b-second__block-first__section__content _container">
-                <div class="b-first__section-main__title b-title">
+                <div class="b-first__section-main__title b-title" id="b-first__section-main__title">
                     <p>Організовуйте події із</p>гнучкими налаштуваннями
                 </div>
                 <div class="b-first__section-main__image">
@@ -12,7 +12,7 @@
         </section>
         <section class="b-second__block-second__section">
             <div class="b-second__block-second__section__content _container">
-                <div class="b-second__section-main__title b-title">
+                <div class="b-second__section-main__title b-title" id="b-second__section-main__title">
                     <p>Давайте оцінку організації</p>заходів, які відвідали
                 </div>
                 <div class="b-second__section__image">

@@ -2,7 +2,7 @@
     <div class="b-header__wrapper">
         <header class="b-header">
             <div class="b-header__content _container">
-                <section class="b-header__menu">
+                <section  class="b-header__menu">
                     <HeaderMenu />
                 </section>
                 <section class="b-header__main-title">

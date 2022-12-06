@@ -1,7 +1,7 @@
 <template>
     <main class="b-second__block _container">
         <section class="b-first__block-titles">
-            <div class="b-first__block-main-title">
+            <div class="b-first__block-main-title" id="b-first__block-main-title">
                 Об'єднуйтеся у команди
             </div>
             <div class="b-first__block-subtitle">

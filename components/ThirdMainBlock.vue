@@ -1,5 +1,5 @@
 <template>
-    <main class="b-third__block">
+    <main class="b-third__block" id="b-third__block">
         <section class="b-third__block-main-section">
             <div class="b-main-section__content _container">
                 <div class="b-main-section-title">
