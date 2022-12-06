@@ -3,7 +3,7 @@
         <ul class="b-navigation__body">
             <template v-for="(n, i) in navigationItems" :key="`navItem-${i}`" class="b-navigation__list">
                 <li class="b-navigation__item">
-                    <NuxtLink class="b-navigation__link" :to="{ path: '/', hash: n.element }" :style="getStyle">
+                    <NuxtLink class="b-navigation__link" :to="{hash: n.element }" :style="getStyle">
                         {{ n.name }}
                     </NuxtLink>
                 </li>
@@ -60,7 +60,7 @@ export default {
             font-family: 'Inter';
             font-weight: 400;
             font-size: 14px;
-            line-height: 20px;
+            line-height: 142%;
             color: $font-color;
             transition: color 0.3s ease 0s;
             margin-left: 20px;

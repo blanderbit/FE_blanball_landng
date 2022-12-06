@@ -9,7 +9,8 @@
             </div>
         </section>
         <section class="b-first__block-image">
-            <img src="../assets/images/Group_47.svg" alt="Group_47">
+            <img class="b-first__block-image-desk" src="../assets/images/Group_47.svg" alt="Group_47">
+            <img class="b-first__block-image-tablet" src="../assets/images/Group_70.svg" alt="Group_70">
         </section>
     </main>
 </template>
@@ -30,6 +31,11 @@
             margin-top: 70px;
 
             @media(max-width: $md2) {
+                margin-top: 40px;
+            }
+
+
+            @media(max-width: $md2) {
                 font-weight: 800;
                 font-size: 48px;
             }
@@ -37,6 +43,20 @@
             @media(max-width: $md3) {
                 font-weight: 800;
                 font-size: 32px;
+            }
+        }
+        &-image {
+            &-desk {
+                @media(max-width: $md3) {
+                    display: none;
+                }
+            }
+            &-tablet {
+                display: none;
+                @media(max-width: $md3) {
+                    display: block;
+                    margin-top: 30px;
+                }
             }
         }
 

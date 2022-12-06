@@ -9,11 +9,8 @@
                     <p>Усі оцінки й коментарі, які вам залишать користувачі,</p>відображатимуться в особистому кабінеті
                 </div>
                 <div class="b-main-section-images">
-                    <div class="b-main-section__iphone-image">
-                        <img src="../assets/images/Group_53.svg" alt="iphone-image" />
-                    </div>
-                    <div class="b-main-section__iphone-image_2">
-                        <img src="../assets/images/Iphone.svg" alt="iphone-image_2" />
+                    <div class="b-main-section__iphone-images">
+                        <img src="../assets/images/iphones.svg" alt="iphone-image" />
                     </div>
                 </div>
             </div>
@@ -28,13 +25,14 @@
                         <label class="b-before-footer-section__input-label" for="name">Електронна адреса</label>
                         <div class="input__create-account__section">
                             <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
-                            name="name">
-                            <RegisterButton/>
+                                name="name">
+                            <RegisterButton />
                         </div>
                     </div>
                 </div>
                 <div class="b-before-footer-section__right-side">
-                    <img src="../assets/images/Frame_1472.svg" alt="Frame_1472"/>
+                    <img class="b-right-side__image-desk" src="../assets/images/Frame_1472.svg" alt="Frame_1472" />
+                    <img class="b-right-side__image-tablet" src="../assets/images/Frame_1473.svg" alt="Frame_1473" />
                 </div>
             </div>
         </section>
@@ -48,6 +46,26 @@
 @import "assets/styles/base.scss";
 
 .b {
+    &-third__block {
+        margin-bottom: 160px;
+    }
+
+    &-right-side__image {
+        &-desk {
+            @media(max-width: $md2) {
+                display: none;
+            }
+        }
+
+        &-tablet {
+            display: none;
+
+            @media(max-width: $md2) {
+                display: block;
+            }
+        }
+    }
+
     &-main-section {
         &__content {
             background: url("../assets/images/Group_65.svg");
@@ -55,23 +73,19 @@
             background-repeat: no-repeat;
             height: 1400px;
             display: block;
+
+            @media(max-width: $md3) {
+                background: url("../assets/images/Ellipse_38.svg");
+                background-position: center center;
+                background-repeat: no-repeat;
+                height: 1200px;
+            }
         }
 
         &-images {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            margin-top: 120px;
-        }
-
-        &__iphone-image {
-            margin-left: 100px;
-            align-self: top;
-        }
-
-        &__iphone-image_2 {
-            margin-right: 100px;
-            align-self: bottom;
         }
 
         &-title {
@@ -105,7 +119,7 @@
             line-height: 24px;
             text-align: center;
             color: #575775;
-
+            margin-bottom: 15px;
         }
     }
 
@@ -117,6 +131,13 @@
             display: flex;
             justify-content: space-between;
             background: url("../assets/images/Group_69.svg"), #262541;
+
+            @media(max-width: $md2) {
+                max-height: 245px;
+                padding: 15px 0px 40px;
+                background-repeat: no-repeat;
+                background: url("../assets/images/Froup_71.svg"), #262541;
+            }
         }
 
         &__right-side {
@@ -162,6 +183,10 @@
             line-height: 140%;
             color: #C5C5D3;
             margin-right: 15px;
+
+            @media(max-width: $md2) {
+                width: 280px;
+            }
 
             &-label {
                 font-family: 'Inter';

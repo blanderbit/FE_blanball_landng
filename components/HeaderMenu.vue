@@ -22,6 +22,9 @@
             align-items: center;
             display: flex;
             justify-content: space-between;
+            @media(max-width: 800px) {
+                display: none;
+            }
         }
         &__logo {
             margin-left: 10px;

@@ -31,8 +31,6 @@
 
 .b {
     &-second__block {
-        margin-top: 100px;
-
         &-first__section {
             height: 1036px;
             width: 100%;
@@ -48,6 +46,9 @@
             background-image: url('../assets/images/Group_61.svg'), linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom center;
+            @media(max-width: $md2) {
+                height: 1103px;
+            }
         }
     }
 
@@ -74,7 +75,10 @@
     }
 
     &-first__section-main__title {
-        padding-top: 70px;
+        padding-top: 60px;
+        @media(max-width: $md2) {
+            padding-top: 40px;
+        }
     }
 }
 </style>

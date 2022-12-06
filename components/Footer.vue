@@ -5,20 +5,23 @@
             <Navigation :stylings="customStyle" />
             <div class="b-footer__arrow">
                 <span>Blanball — 2022</span>
-                <a href="#"><img src="../assets/images/arrow.svg" alt="arrow"/></a>
+                <NuxtLink class="b-navigation__link" :to="{ path: '/'}" :style="getStyle">
+                    <img src="../assets/images/arrow.svg" alt="arrow" />
+                </NuxtLink>
             </div>
         </ul>
     </footer>
 </template>
 
-
+ 
 <script>
 export default {
     name: 'subtitle',
     data() {
         return {
             customStyle: {
-                'color': '#fff'
+                'color': '#fff',
+                'font-size': '13px',
             }
         }
     }
@@ -37,7 +40,10 @@ export default {
 
 .b {
     &-footer {
-        margin-top: 160px;
+
+        @media(max-width: $md2) {
+            display: none;
+        }
 
         &__body {
             padding: 10px 0;
@@ -49,7 +55,7 @@ export default {
         }
 
         &__logo {
-            margin-left: 120px;
+            margin-left: 100px;
         }
 
         &__arrow {
@@ -58,6 +64,7 @@ export default {
             padding-right: 30px;
 
             span {
+                font-size: 16px;
                 margin-right: 40px;
                 color: #fff;
             }
