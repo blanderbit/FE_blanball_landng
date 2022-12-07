@@ -1,6 +1,15 @@
 <template>
-    <a href="http://178.151.201.167:49201/authentication/register">Зареєструватися</a>
+    <a href="http://178.151.201.167:49201/authentication/register">{{ text }}</a>
 </template>
+
+<script>
+export default {
+  props: {
+    text: String
+  }
+}
+
+</script>
 
 <style lang="scss" scoped>
 @import "assets/styles/base.scss";

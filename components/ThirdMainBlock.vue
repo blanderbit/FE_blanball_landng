@@ -3,10 +3,10 @@
         <section class="b-third__block-main-section">
             <div class="b-main-section__content _container">
                 <div class="b-main-section-title">
-                    <p>Відслідковуйте оцінку власної гри</p>через особистий кабінет
+                    {{ $t('thirdBlock.mainSection.title')}}
                 </div>
                 <div class="b-main-section-subtitle">
-                    <p>Усі оцінки й коментарі, які вам залишать користувачі,</p>відображатимуться в особистому кабінеті
+                    {{ $t('thirdBlock.mainSection.subtitle')}}
                 </div>
                 <div class="b-main-section-images">
                     <div class="b-main-section__iphone-images">
@@ -15,22 +15,24 @@
                 </div>
             </div>
         </section>
-        <section class="b-third__block-before-footer-section">
+        <section
+            class="b-third__block-before-footer-section">
             <div class="b-before-footer-section__content _container">
                 <div class="b-before-footer-section__left-side">
                     <div class="b-before-footer-section__title">
-                        <p>Зберіть свою команду</p>вже сьогодні
+                        {{ $t('thirdBlock.beforeFooterSection.title')}}
                     </div>
                     <div class="b-before-footer-section__email-input">
-                        <label class="b-before-footer-section__input-label" for="name">Електронна адреса</label>
+                        <label class="b-before-footer-section__input-label" for="name">{{ $t('thirdBlock.beforeFooterSection.inputLabel')}}</label>
                         <div class="input__create-account__section">
-                            <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
-                                name="name">
-                            <RegisterButton />
+                            <input class="b-before-footer-section__input" placeholder="E-mail"
+                                type="text" id="name" name="name">
+                            <RegisterButton text="Створити акаунт"/>
                         </div>
                     </div>
                 </div>
-                <div class="b-before-footer-section__right-side">
+                <div data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500" data-aos-offset="110"
+                    class="b-before-footer-section__right-side">
                     <img class="b-right-side__image-desk" src="../assets/images/Frame_1472.svg" alt="Frame_1472" />
                     <img class="b-right-side__image-tablet" src="../assets/images/Frame_1473.svg" alt="Frame_1473" />
                 </div>
@@ -125,7 +127,7 @@
 
     &-before-footer-section {
         &__content {
-            padding: 40px 40px 52px;
+            padding: 40px 60px 52px;
             border-radius: 24px;
             max-height: 316px;
             display: flex;
@@ -143,6 +145,9 @@
         &__right-side {
             align-self: center;
             margin-bottom: 40px;
+        }
+        &__left-side {
+            margin-left: 10px;
         }
 
         &__title {
@@ -185,7 +190,7 @@
             margin-right: 15px;
 
             @media(max-width: $md2) {
-                width: 280px;
+                width: 250px;
             }
 
             &-label {
