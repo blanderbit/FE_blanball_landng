@@ -25,5 +25,16 @@ export default {
 			return window.scrollTo({ top: 0, behavior: 'smooth' })
 		}
 	},
+	modules: [
+		'@nuxtjs/robots',
+		'@funken-studio/sitemap-nuxt-3',
+	],
+	sitemap: {
+		cacheTime: 1,
+		defaults: {
+		  changefreq: 'daily',
+		  priority: 1,
+		  lastmod: new Date().toISOString(),
+		},
+	},
 };
-

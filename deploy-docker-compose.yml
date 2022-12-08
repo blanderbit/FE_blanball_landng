@@ -4,6 +4,6 @@ services:
  blanball-fe-landing:
   container_name: blanball-fe-landing
   image: registry.it-flumx.com/landing_blanball_fe:latest
-  command: npm run build
+  command: 'bash build.sh'
   ports:
    - "49211:49211"

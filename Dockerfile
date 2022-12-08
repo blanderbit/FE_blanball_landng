@@ -1,15 +1,8 @@
-FROM node:14-alpine
-
-# project workind directory
+FROM node:18.9.0
 ENV APP_PATH='/app'
-
-COPY ./package*.json $APP_PATH/
-
-# set project workind directory
+RUN apt-get update && apt-get upgrade -y \
+  && apt-get install --no-install-recommends -y
+RUN apt-get install -y nginx
 WORKDIR $APP_PATH
-
-RUN npm install && npm cache clean --force
-
-COPY . .
-
-ENV PATH ./node_modules/.bin/:$PATH
+COPY . $APP_PATH
+COPY deploy/nginx/default.conf /etc/nginx/conf.d/default.conf2
