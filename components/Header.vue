@@ -7,21 +7,28 @@
                 </section>
                 <section class="b-header__main-title">
                     <div class="b-first__line">
-                        <div class="b-title__first_word">Тренуйся</div>
-                        <img class="b-title__image" src="../assets/images/ball.svg" alt="ball">
-                        <div class="b-title__second_word"><span>грай</span></div>
-                        <img class="b-title__image" src="../assets/images/ball.svg" alt="ball">
+                        <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500" data-aos-offset="0"
+                            class="b-title__first_word">{{ $t('header.train')}}</div>
+                        <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="650" data-aos-offset="0"
+                            class="b-title__image" src="../assets/images/ball.svg" alt="ball">
+                        <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800" data-aos-offset="0"
+                            class="b-title__second_word"><span>{{ $t('header.play')}}</span></div>
+                        <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950" data-aos-offset="0"
+                            class="b-title__image" src="../assets/images/ball.svg" alt="ball">
                     </div>
                     <div class="b-second__line">
-                        <RegisterButton class="b-title__register-button" />
-                        <div class="b-title__third_word">Відпочивай</div>
+                        <RegisterButton text="Зареєструватися" class="b-title__register-button" />
+                        <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100" data-aos-offset="0"
+                            class="b-title__third_word">{{ $t('header.rest')}}</div>
                     </div>
                 </section>
                 <section class="b__main-images">
-                    <div class="b-user-raiting-image">
+                    <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="330" data-aos-offset="0"
+                        class="b-user-raiting-image">
                         <img src="../assets/images/user-raiting.svg" alt="user-raiting">
                     </div>
-                    <div class="b-iphone-image">
+                    <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1400" data-aos-offset="0"
+                        class="b-iphone-image">
                         <img src="../assets/images/Iphone1.svg" alt="Iphone1">
                     </div>
                 </section>
@@ -40,15 +47,15 @@
 .b {
     &-header {
         background: url("../assets/images/Group_43.svg");
-        height: 940px;
         width: 100%;
         border-radius: 0px 0px 36px 36px;
         padding-top: 35px;
         background-repeat: no-repeat;
+        padding-bottom: 80px;
 
         &__wrapper {
             background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
-            background-position: top;
+            background-position: center top;
             background-repeat: no-repeat;
         }
 
