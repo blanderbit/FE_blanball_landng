@@ -10,4 +10,4 @@ services:
    dockerfile: Dockerfile
   command: 'bash build.sh'
   ports:
-   - "49201:80"
+   - "49211:49211"

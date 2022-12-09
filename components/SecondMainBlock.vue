@@ -2,8 +2,7 @@
     <main class="b-second__block">
         <section class="b-second__block-first__section">
             <div class="b-second__block-first__section__content _container">
-                <div class="b-first__section-main__title b-title" id="b-first__section-main__title">
-                    {{ $t('secondBlock.firstSection.title')}}
+                <div class="b-first__section-main__title b-title" id="b-first__section-main__title"  v-html="$t('secondBlock.firstSection.title')">
                 </div>
                 <div class="b-first__section-main__image">
                     <div class="b-first__section-main__image-desk">
@@ -17,8 +16,8 @@
         </section>
         <section class="b-second__block-second__section">
             <div class="b-second__block-second__section__content _container">
-                <div class="b-second__section-main__title b-title" id="b-second__section-main__title">
-                    {{ $t('secondBlock.secondSection.title')}}
+                <div class="b-second__section-main__title b-title" id="b-second__section-main__title"
+                    v-html="$t('secondBlock.secondSection.title')">
                 </div>
                 <div class="b-second__section__image">
                     <div class="b-second__section__image-desk">
@@ -54,9 +53,11 @@
             background-repeat: no-repeat;
             background-position: bottom center;
             padding-bottom: 100px;
+
             @media(max-width: $md2) {
                 background-size: cover;
             }
+
             @media(max-width: $md3) {
                 background-image: url('../assets/images/second-block-background-tablet.svg'), linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
                 background-repeat: no-repeat;

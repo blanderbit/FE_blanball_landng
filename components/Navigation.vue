@@ -3,7 +3,7 @@
         <ul class="b-navigation__body">
             <template v-for="(n, i) in navigationItems" :key="`navItem-${i}`" class="b-navigation__list">
                 <li class="b-navigation__item">
-                    <NuxtLink class="b-navigation__link" :to="{hash: n.element }" :style="getStyle">
+                    <NuxtLink class="b-navigation__link" :to="{ hash: n.element }" :style="getStyle">
                         {{ n.name }}
                     </NuxtLink>
                 </li>
@@ -23,26 +23,25 @@ export default {
     computed: {
         getStyle() {
             return this.stylings;
-        }
+        },
     },
     setup() {
         const { t } = useI18n()
-        const navigationItems = [
+        const navigationItems = computed(() => [
             {
-                name: t('footer.blanball'),
+                name: t('navigation.create_commands'),
                 element: "#b-first__block-main-title"
             },
             {
-                name: "Організація подій",
+                name: t('navigation.organization_teams'),
                 element: "#b-first__section-main__title"
             },
             {
-                name: "Оцінка заходів",
+                name: t('navigation.private_profile'),
                 element: "#b-second__section-main__title"
             },
-        ]
-        console.log(navigationItems)
-        return {navigationItems}
+        ])
+        return { navigationItems }
     },
 }
 </script>

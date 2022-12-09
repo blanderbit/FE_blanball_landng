@@ -17,7 +17,6 @@
  
 <script>
 export default {
-    name: 'subtitle',
     data() {
         return {
             customStyle: {
