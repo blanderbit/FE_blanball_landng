@@ -2,11 +2,9 @@
     <main class="b-third__block" id="b-third__block">
         <section class="b-third__block-main-section">
             <div class="b-main-section__content _container">
-                <div class="b-main-section-title">
-                    {{ $t('thirdBlock.mainSection.title')}}
+                <div class="b-main-section-title" v-html="$t('thirdBlock.mainSection.title')">
                 </div>
-                <div class="b-main-section-subtitle">
-                    {{ $t('thirdBlock.mainSection.subtitle')}}
+                <div class="b-main-section-subtitle" v-html="$t('thirdBlock.mainSection.subtitle')">
                 </div>
                 <div class="b-main-section-images">
                     <div class="b-main-section__iphone-images">
@@ -19,8 +17,7 @@
             class="b-third__block-before-footer-section">
             <div class="b-before-footer-section__content _container">
                 <div class="b-before-footer-section__left-side">
-                    <div class="b-before-footer-section__title">
-                        {{ $t('thirdBlock.beforeFooterSection.title')}}
+                    <div class="b-before-footer-section__title" v-html="$t('thirdBlock.beforeFooterSection.title')">
                     </div>
                     <div class="b-before-footer-section__email-input">
                         <label class="b-before-footer-section__input-label" for="name">{{ $t('thirdBlock.beforeFooterSection.inputLabel')}}</label>
@@ -31,8 +28,8 @@
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500" data-aos-offset="110"
-                    class="b-before-footer-section__right-side">
+                <div 
+                    class="b-before-footer-section__right-side wow slideInLeft">
                     <img class="b-right-side__image-desk" src="../assets/images/Frame_1472.svg" alt="Frame_1472" />
                     <img class="b-right-side__image-tablet" src="../assets/images/Frame_1473.svg" alt="Frame_1473" />
                 </div>
@@ -42,6 +39,7 @@
 </template>
 
 <script>
+
 </script>
 
 <style lang="scss">
