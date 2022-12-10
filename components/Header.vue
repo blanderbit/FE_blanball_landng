@@ -57,10 +57,14 @@
             background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
             background-position: center top;
             background-repeat: no-repeat;
+            @media(max-width: 1250px) {
+                background-size: 100%;
+                padding: 0px 20px;
+            }
         }
 
         &__main-title {
-            width: 329px;
+            width: 200px;
             height: 88px;
             font-family: 'Exo 2';
             font-style: normal;

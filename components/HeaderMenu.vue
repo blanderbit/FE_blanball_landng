@@ -5,8 +5,11 @@
                 <img class="b-menu__logo-desk" src="../assets/images/logo.svg" alt="desk-logo" />
                 <img class="b-menu__logo-small" src="../assets/images/ball.svg" alt="small-logo" />
             </div>
-            <Navigation data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"/>
-            <RegisterButton  text="Зареєструватися"/>
+            <Navigation data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" />
+            <div class="b-menu__right-side">
+                <HeaderMenuRoute/>
+                <RegisterButton text="Зареєструватися" />
+            </div>
         </ul>
     </div>
 </template>
@@ -19,6 +22,10 @@
     &-menu {
         margin-bottom: 20px;
 
+        &__right-side {
+            display: flex;
+            align-items: center;
+        }
         &__body {
             padding: 10px 0;
             align-items: center;

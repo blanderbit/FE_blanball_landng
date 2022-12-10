@@ -7,29 +7,32 @@
                 <div class="b-main-section-subtitle" v-html="$t('thirdBlock.mainSection.subtitle')">
                 </div>
                 <div class="b-main-section-images">
-                    <div class="b-main-section__iphone-images">
-                        <img src="../assets/images/iphones.svg" alt="iphone-image" />
+                    <div class="b-main-section-images-iphone">
+                        <img data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                            class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg" alt="">
+                        <img data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" class="b-main-section-images-iphone__2"
+                            src="../assets/images/Iphone.svg" alt="">
                     </div>
                 </div>
             </div>
         </section>
-        <section
-            class="b-third__block-before-footer-section">
+        <section class="b-third__block-before-footer-section">
             <div class="b-before-footer-section__content _container">
                 <div class="b-before-footer-section__left-side">
                     <div class="b-before-footer-section__title" v-html="$t('thirdBlock.beforeFooterSection.title')">
                     </div>
                     <div class="b-before-footer-section__email-input">
-                        <label class="b-before-footer-section__input-label" for="name">{{ $t('thirdBlock.beforeFooterSection.inputLabel')}}</label>
+                        <label class="b-before-footer-section__input-label" for="name">{{
+                                $t('thirdBlock.beforeFooterSection.inputLabel')
+                        }}</label>
                         <div class="input__create-account__section">
-                            <input class="b-before-footer-section__input" placeholder="E-mail"
-                                type="text" id="name" name="name">
-                            <RegisterButton text="Створити акаунт"/>
+                            <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
+                                name="name">
+                            <RegisterButton text="Створити акаунт" />
                         </div>
                     </div>
                 </div>
-                <div 
-                    class="b-before-footer-section__right-side wow slideInLeft">
+                <div class="b-before-footer-section__right-side">
                     <img class="b-right-side__image-desk" src="../assets/images/Frame_1472.svg" alt="Frame_1472" />
                     <img class="b-right-side__image-tablet" src="../assets/images/Frame_1473.svg" alt="Frame_1473" />
                 </div>
@@ -69,23 +72,48 @@
     &-main-section {
         &__content {
             background: url("../assets/images/Group_65.svg");
-            background-position: center center;
+            background-position: center bottom;
             background-repeat: no-repeat;
-            height: 1400px;
             display: block;
 
             @media(max-width: $md3) {
                 background: url("../assets/images/Ellipse_38.svg");
-                background-position: center center;
                 background-repeat: no-repeat;
-                height: 1200px;
+                background-position: center bottom;
             }
         }
 
         &-images {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            margin-bottom: 150px;
+
+            @media(max-width: $md3) {
+                margin-bottom: 100px;
+            }
+
+            &-iphone {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__1 {
+                    margin-bottom: 50px;
+                    margin-right: 10px;
+
+                    @media(max-width: $md3) {
+                        margin-right: 0px;
+                    }
+                }
+
+                &__2 {
+                    margin-top: 150px;
+                    margin-left: 40px;
+
+                    @media(max-width: $md3) {
+                        margin-left: 0px;
+                        margin-top: 100px;
+                    }
+                }
+            }
         }
 
         &-title {
@@ -119,7 +147,6 @@
             line-height: 24px;
             text-align: center;
             color: #575775;
-            margin-bottom: 15px;
         }
     }
 
@@ -144,6 +171,7 @@
             align-self: center;
             margin-bottom: 40px;
         }
+
         &__left-side {
             margin-left: 10px;
         }
@@ -152,7 +180,7 @@
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
-            font-size: 48px;
+            font-size: 44px;
             line-height: 133%;
             color: #FFFFFF;
             margin-bottom: 25px;

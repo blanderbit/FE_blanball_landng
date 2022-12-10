@@ -75,10 +75,10 @@
 
         &-tablet {
             display: none;
-            margin-top: 50px;
 
             @media(max-width: $md3) {
                 display: block;
+                margin-left: -20px;
             }
         }
     }
@@ -123,9 +123,13 @@
 
     &-first__section-main__title {
         padding-top: 60px;
+        padding-bottom: 30px;
 
         @media(max-width: $md2) {
             padding-top: 40px;
+        }
+        @media(max-width: $md3) {
+            padding-bottom: 10px;
         }
     }
 }
