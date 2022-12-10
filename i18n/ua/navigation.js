@@ -1,7 +1,10 @@
 export default {
     'create_commands': 'Створення команд',
     'organization_teams': 'Організація подій',
-    'private_profile': 'Особистий кабінет',
+    'evaluation_measures': 'Оцінка заходів',
     'news': 'Новини',
-    'main': 'Головна'
+    'main': 'Головна',
+    'announcements': 'Анонси',
+    'articles': 'Статті',
+    'popular': 'Популярне',
 }

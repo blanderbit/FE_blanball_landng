@@ -27,26 +27,47 @@ export default {
     },
     setup() {
         const { t } = useI18n()
-        const navigationItems = computed(() => [
-            {
-                name: t('navigation.create_commands'),
-                element: "#b-first__block-main-title"
-            },
-            {
-                name: t('navigation.organization_teams'),
-                element: "#b-first__section-main__title"
-            },
-            {
-                name: t('navigation.private_profile'),
-                element: "#b-second__section-main__title"
-            },
-        ])
+        let routes = null
+        const route = useRoute()
+        const navigationItems = computed(() => {
+            if (route.name === 'index') {
+                routes = [
+                    {
+                        name: t('navigation.create_commands'),
+                        element: "#b-first__block-main-title"
+                    },
+                    {
+                        name: t('navigation.organization_teams'),
+                        element: "#b-first__section-main__title"
+                    },
+                    {
+                        name: t('navigation.evaluation_measures'),
+                        element: "#b-second__section-main__title"
+                    },
+                ]
+            }
+            else if (route.name === 'news') {
+                routes = [
+                    {
+                        name: t('navigation.announcements'),
+                        element: "#b-first__block-main-title"
+                    },
+                    {
+                        name: t('navigation.articles'),
+                        element: "#b-first__section-main__title"
+                    },
+                    {
+                        name: t('navigation.popular'),
+                        element: "#b-second__section-main__title"
+                    },
+                ]
+            }
+            return routes
+        })
         return { navigationItems }
     },
 }
 </script>
-
-
 <style lang="scss">
 @import "assets/styles/base.scss";
 
