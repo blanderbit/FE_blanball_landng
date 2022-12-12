@@ -48,6 +48,13 @@
         }
 
         &-image {
+            min-height: 600px;
+            @media(max-width: $md2) {
+                min-height: 400px;
+            }
+            @media(max-width: $md3) {
+                min-height: 200px;
+            }
             &-desk {
                 @media(max-width: $md3) {
                     display: none;

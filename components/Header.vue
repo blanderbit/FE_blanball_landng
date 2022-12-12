@@ -64,12 +64,12 @@
         }
 
         &__main-title {
-            width: 200px;
-            height: 88px;
+            max-width: 200px;
+            max-height: 88px;
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
-            font-size: 72px;
+            font-size: 4vw;
             line-height: 122.222222222%;
             text-transform: capitalize;
             color: $font-color;
@@ -115,9 +115,6 @@
             background-image: url("../assets/images/green_elipse.svg");
             background-repeat: no-repeat;
             background-position: center;
-            height: 100px;
-            min-width: 192px;
-
             span {
                 margin-left: 20px;
             }

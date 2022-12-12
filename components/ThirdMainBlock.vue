@@ -10,8 +10,8 @@
                     <div class="b-main-section-images-iphone">
                         <img data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
                             class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg" alt="">
-                        <img data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" class="b-main-section-images-iphone__2"
-                            src="../assets/images/Iphone.svg" alt="">
+                        <img data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                            class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@
 
     &-before-footer-section {
         &__content {
-            padding: 40px 60px 52px;
+            padding: 40px 60px 52px 20px;
             border-radius: 24px;
             max-height: 316px;
             display: flex;
@@ -162,6 +162,7 @@
             @media(max-width: $md2) {
                 max-height: 245px;
                 padding: 15px 0px 40px;
+                padding: 15px 0px 40px 20px;
                 background-repeat: no-repeat;
                 background: url("../assets/images/Froup_71.svg"), #262541;
             }
@@ -170,10 +171,6 @@
         &__right-side {
             align-self: center;
             margin-bottom: 40px;
-        }
-
-        &__left-side {
-            margin-left: 10px;
         }
 
         &__title {
@@ -188,6 +185,7 @@
             @media(max-width: $md2) {
                 font-size: 34px;
                 margin-bottom: 20px;
+                max-width: 390px;
             }
 
             @media(max-width: $md3) {
@@ -227,6 +225,7 @@
                 line-height: 20px;
                 color: #FFFFFF;
                 margin-bottom: 10px;
+                max-width: 200px;
 
                 @media(max-width: $md2) {
                     font-size: 14px;

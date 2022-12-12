@@ -2,7 +2,8 @@
     <main class="b-second__block">
         <section class="b-second__block-first__section">
             <div class="b-second__block-first__section__content _container">
-                <div class="b-first__section-main__title b-title" id="b-first__section-main__title"  v-html="$t('secondBlock.firstSection.title')">
+                <div class="b-first__section-main__title b-title" id="b-first__section-main__title"
+                    v-html="$t('secondBlock.firstSection.title')">
                 </div>
                 <div class="b-first__section-main__image">
                     <div class="b-first__section-main__image-desk">
@@ -44,6 +45,15 @@
             width: 100%;
             background: radial-gradient(133.42% 69.74% at 36.01% -1.59%, #148581 0%, #148783 0.01%, #262642 100%);
             border-radius: 36px 36px 0px 0px;
+            min-height: 700px;
+
+            @media(max-width: $md2) {
+                min-height: 500px;
+            }
+
+            @media(max-width: $md3) {
+                min-height: 300px;
+            }
         }
 
         &-second__section {
@@ -52,7 +62,18 @@
             background-image: url('../assets/images/Group_61.svg'), linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom center;
-            padding-bottom: 100px;
+            padding-bottom: 70px;
+            min-height: 700px;
+
+            @media(max-width: $md2) {
+                padding-bottom: 50px;
+                min-height: 500px;
+            }
+
+            @media(max-width: $md3) {
+                min-height: 300px;
+            }
+
 
             @media(max-width: $md2) {
                 background-size: cover;
@@ -128,6 +149,7 @@
         @media(max-width: $md2) {
             padding-top: 40px;
         }
+
         @media(max-width: $md3) {
             padding-bottom: 10px;
         }

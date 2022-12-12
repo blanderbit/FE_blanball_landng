@@ -1,8 +1,8 @@
 <template>
     <div class="b-navigation">
-        <ul class="b-navigation__body">
+        <ul :style="navigationBodyStyles" class="b-navigation__body">
             <template v-for="(n, i) in navigationItems" :key="`navItem-${i}`" class="b-navigation__list">
-                <li class="b-navigation__item">
+                <li :style="marginBottomForNavItem" class="b-navigation__item">
                     <NuxtLink class="b-navigation__link" :to="{ hash: n.element }" :style="getStyle">
                         {{ n.name }}
                     </NuxtLink>
@@ -19,11 +19,15 @@ import { useI18n } from 'vue-i18n'
 export default {
     props: {
         stylings: Object,
+        navigationBodyStyles: Object,
     },
     computed: {
         getStyle() {
             return this.stylings;
         },
+        navigationBodyStyles() {
+            return this.navigationBodyStyles;
+        }
     },
     setup() {
         const { t } = useI18n()
@@ -74,10 +78,9 @@ export default {
 .b {
     &-navigation {
         &__body {
-            align-items: center;
+            align-items: left;
             display: flex;
         }
-
         &__link {
             font-family: 'Inter';
             font-weight: 400;
