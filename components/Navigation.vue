@@ -2,7 +2,7 @@
     <div class="b-navigation">
         <ul :style="navigationBodyStyles" class="b-navigation__body">
             <template v-for="(n, i) in navigationItems" :key="`navItem-${i}`" class="b-navigation__list">
-                <li :style="marginBottomForNavItem" class="b-navigation__item">
+                <li class="b-navigation__item">
                     <NuxtLink class="b-navigation__link" :to="{ hash: n.element }" :style="getStyle">
                         {{ n.name }}
                     </NuxtLink>
@@ -27,7 +27,7 @@ export default {
         },
         navigationBodyStyles() {
             return this.navigationBodyStyles;
-        }
+        },
     },
     setup() {
         const { t } = useI18n()

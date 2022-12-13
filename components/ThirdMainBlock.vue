@@ -22,9 +22,7 @@
                     <div class="b-before-footer-section__title" v-html="$t('thirdBlock.beforeFooterSection.title')">
                     </div>
                     <div class="b-before-footer-section__email-input">
-                        <label class="b-before-footer-section__input-label" for="name">{{
-                                $t('thirdBlock.beforeFooterSection.inputLabel')
-                        }}</label>
+                        <label class="b-before-footer-section__input-label" for="name">{{ $t('thirdBlock.beforeFooterSection.inputLabel') }}</label>
                         <div class="b-before-footer-section__input-create-account__section">
                             <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
                                 name="name">

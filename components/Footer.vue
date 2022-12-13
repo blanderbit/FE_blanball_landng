@@ -3,8 +3,8 @@
         <ul class="b-footer-desk-body">
             <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0"
                 class="b-footer-desk__logo">
-                <img class="b-footer-desk__logo-desk" src="../assets/images/footer-logo.svg" alt="footer-logo"/>
-                <img class="b-footer-desk__logo-desk" src="../assets/images/footer-logo.svg" alt="footer-logo-small"/>
+                <img class="b-footer-desk__logo-desk" src="../assets/images/footer-logo.svg" alt="footer-logo" />
+                <img class="b-footer-desk__logo-small" src="../assets/images/logo-ball.svg" alt="footer-logo-small" />
             </div>
             <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0"
                 :stylings="customStyle" />
@@ -29,18 +29,23 @@
                 </NuxtLink>
             </div>
             <div class="b-footer-tablet-main__side">
-                <label class="b-footer-tablet-main__side-input-label" for="name">Підписатись на розсилку </label>
                 <div class="b-footer-tablet-main__side-content">
-                    <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="text" id="name"
-                        ame="name">
+                    <div class="b-footer-tablet-main__side-input-block">
+                        <label class="b-footer-tablet-main__side-input-label" for="name">Підписатись на розсилку
+                        </label>
+                        <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="text" id="name"
+                            ame="name">
+                    </div>
                     <a class="b-footer-tablet-main__side-subscribe-button">Підписатись</a>
-                    <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
+                    <Navigation style="margin-top: 30px;" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
                         data-aos-offset="0" :stylings="customStyle" :navigationBodyStyles="navigationBodyStyles" />
-                    <HeaderMenuRoute/>
+                    <HeaderMenuRoute />
                 </div>
             </div>
             <div class="b-footer-tablet-bottom__side">
-               
+                <div class="b-footer-tablet-bottom__side-title">
+                    {{ $t('footer.blanball') }}
+                </div>
             </div>
         </div>
     </footer>
@@ -54,6 +59,7 @@ export default {
             customStyle: {
                 'color': '#fff',
                 'font-size': '14px',
+                'line-height': '250%',
             },
             navigationBodyStyles: {
                 'flex-direction': 'column',
@@ -82,6 +88,7 @@ export default {
             @media(max-width: $md3) {
                 display: none;
             }
+
             &-body {
                 padding: 10px 0;
                 align-items: center;
@@ -94,6 +101,23 @@ export default {
             &__logo {
                 margin-left: 90px;
 
+                @media(max-width: $md2) {
+                    margin-left: 40px;
+                }
+
+                &-desk {
+                    @media(max-width: 850px) {
+                        display: none;
+                    }
+                }
+
+                &-small {
+                    display: none;
+
+                    @media(max-width: 850px) {
+                        display: block;
+                    }
+                }
             }
 
             &__arrow {
@@ -120,12 +144,18 @@ export default {
 
         &-tablet {
             display: none;
+
             @media(max-width: $md3) {
                 display: block;
             }
+
             &-body {
-                padding: 25px 20px 25px 20px;
+                padding: 15px 20px 25px 20px;
                 background-color: #262541;
+
+                @media(max-width: $md3) and (min-width: $md4) {
+                    border-radius: 0px 0px 20px 20px;
+                }
             }
 
             &-top__side {
@@ -133,10 +163,23 @@ export default {
                 justify-content: space-between;
             }
 
+            &-bottom__side {
+                &-title {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 120%;
+                    color: #FFFFFF;
+                    margin-top: 30px;
+                }
+            }
+
             &-main__side {
                 &-content {
                     display: flex;
                     align-items: center;
+                    height: 100px;
                 }
 
                 &-subscribe-button {
@@ -155,11 +198,11 @@ export default {
                     font-size: 13px;
                     line-height: 24px;
                     color: #FFFFFF;
+                    margin-bottom: -30px;
                 }
 
                 &-input {
                     padding: 4px 12px;
-                    width: 250px;
                     background: transparent;
                     height: 40px;
                     background: #262541;
@@ -171,6 +214,11 @@ export default {
                     font-size: 14px;
                     line-height: 140%;
                     color: #C5C5D3;
+                    margin-top: 5px;
+
+                    &-block {
+                        max-width: 250px;
+                    }
 
                     &-label {
                         font-family: 'Inter';

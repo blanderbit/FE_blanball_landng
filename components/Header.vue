@@ -23,7 +23,7 @@
                                 src="../assets/images/logo-ball.svg" alt="logo-ball">
                         </div>
                         <div class="b-header-title-second__line">
-                            <RegisterButton text="Зареєструватися" />
+                            <RegisterButton class="b-header-title-second__line-button" style="" text="Зареєструватися" />
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100"
                                 data-aos-offset="0" class="b-header-title-second__line-first__word">{{ $t('header.rest') }}</div>
                         </div>
@@ -104,6 +104,7 @@
 
             @media(max-width: 830px) {
                 font-size: 40px;
+                margin-top: -20px;
             }
 
             @media(max-width: $md3) {
@@ -143,6 +144,15 @@
             &-second__line {
                 display: flex;
                 align-items: center;
+                &-button {
+                    width: 190px; 
+                    font-weight: 700;
+                    height: 50px;
+                    @media(max-width: $md2) {
+                        width: 160px;
+                        height: 40px;
+                    }
+                }
             }
         }
     }
