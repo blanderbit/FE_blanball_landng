@@ -75,13 +75,13 @@
 
     &-main-section {
         &__content {
-            background: url("../assets/images/Group_65.svg");
+            background: url("../assets/images/third-main-block-main-section-background-desk.svg");
             background-position: center bottom;
             background-repeat: no-repeat;
             display: block;
 
             @media(max-width: $md3) {
-                background: url("../assets/images/Ellipse_38.svg");
+                background: url("../assets/images/third-main-block-main-section-background-tablet.svg");
                 background-repeat: no-repeat;
                 background-position: center bottom;
                 background-size: contain;
@@ -178,7 +178,7 @@
             max-height: 316px;
             display: flex;
             justify-content: space-between;
-            background: url("../assets/images/Group_69.svg"), #262541;
+            background: url("../assets/images/third-main-block-second-section-background-desk.svg"), #262541;
 
             @media(max-width: $md2) {
                 padding-right: 0px;
@@ -189,7 +189,7 @@
                 padding: 15px 0px 40px;
                 padding: 15px 0px 40px 20px;
                 background-repeat: no-repeat;
-                background: url("../assets/images/Froup_71.svg"), #262541;
+                background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), #262541;
             }
         }
 

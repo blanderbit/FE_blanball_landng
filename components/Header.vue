@@ -41,7 +41,7 @@
 @import "assets/styles/base.scss";
 .b {
     &-header {
-        background: url("../assets/images/Group_43.svg");
+        background: url("../assets/images/header-background-lines.svg");
         width: 100%;
         border-radius: 0px 0px 36px 36px;
         padding-top: 35px;

@@ -7,7 +7,9 @@
                 </div>
                 <div class="b-second-block-first__section-main__image">
                     <div class="b-second-block-first__section-main__image-desk">
-                        <img src="../assets/images/Group_63.svg" alt="Group_63">
+                        <img 
+                            src="../assets/images/second-block-first-section-main-image-desk.svg" 
+                            alt="second-block-first-section-main-image-desk">
                     </div>
                     <div class="b-second-block-first__section-main__image-tablet">
                         <img src="../assets/images/second-block-first-section-tablet.svg"
@@ -230,7 +232,8 @@
         &-second__section {
             width: 100%;
             border-radius: 0px 0px 36px 36px;
-            background-image: url('../assets/images/Group_61.svg'), linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
+            background-image: url('../assets/images/second-main-block-second-section-background.svg'), 
+            linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom;
             padding-bottom: 70px;
