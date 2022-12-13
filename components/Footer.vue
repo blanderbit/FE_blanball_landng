@@ -1,9 +1,10 @@
 <template>
     <footer class="b-footer-desk">
-        <ul class="b-footer-desk__body">
+        <ul class="b-footer-desk-body">
             <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0"
                 class="b-footer-desk__logo">
-                <img class="b-footer-desk__logo-desk" src="../assets/images/footer_logo.svg" alt="footer_logo-desk" />
+                <img class="b-footer-desk__logo-desk" src="../assets/images/footer-logo.svg" alt="footer-logo"/>
+                <img class="b-footer-desk__logo-desk" src="../assets/images/footer-logo.svg" alt="footer-logo-small"/>
             </div>
             <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0"
                 :stylings="customStyle" />
@@ -13,7 +14,7 @@
                 }}</span>
                 <NuxtLink :to="{ path: '/' }" :style="getStyle">
                     <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
-                        data-aos-offset="0" src="../assets/images/arrow.svg" alt="arrow" />
+                        data-aos-offset="0" src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
                 </NuxtLink>
             </div>
         </ul>
@@ -21,10 +22,10 @@
     <footer class="b-footer-tablet">
         <div class="b-footer-tablet-body">
             <div class="b-footer-tablet-top__side">
-                <img src="../assets/images/footer_logo.svg" alt="footer-logo-tablet">
+                <img src="../assets/images/footer-logo.svg" alt="footer-logo">
                 <NuxtLink :to="{ path: '/' }" :style="getStyle">
                     <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
-                        data-aos-offset="0" src="../assets/images/arrow.svg" alt="arrow" />
+                        data-aos-offset="0" src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
                 </NuxtLink>
             </div>
             <div class="b-footer-tablet-main__side">
@@ -78,10 +79,10 @@ export default {
     &-footer {
 
         &-desk {
-            @media(max-width: $md2) {
+            @media(max-width: $md3) {
                 display: none;
             }
-            &__body {
+            &-body {
                 padding: 10px 0;
                 align-items: center;
                 display: flex;
@@ -119,7 +120,7 @@ export default {
 
         &-tablet {
             display: none;
-            @media(max-width: $md2) {
+            @media(max-width: $md3) {
                 display: block;
             }
             &-body {

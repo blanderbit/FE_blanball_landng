@@ -25,7 +25,7 @@
                         <label class="b-before-footer-section__input-label" for="name">{{
                                 $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
-                        <div class="input__create-account__section">
+                        <div class="b-before-footer-section__input-create-account__section">
                             <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
                                 name="name">
                             <RegisterButton text="Створити акаунт" />
@@ -33,8 +33,12 @@
                     </div>
                 </div>
                 <div class="b-before-footer-section__right-side">
-                    <img class="b-right-side__image-desk" src="../assets/images/Frame_1472.svg" alt="Frame_1472" />
-                    <img class="b-right-side__image-tablet" src="../assets/images/Frame_1473.svg" alt="Frame_1473" />
+                    <img class="b-right-side__image-desk"
+                        src="../assets/images/third-main-block-before-footer-section-iphone-desk.svg"
+                        alt="third-main-block-before-footer-section-iphone-desk" />
+                    <img class="b-right-side__image-tablet"
+                        src="../assets/images/third-main-block-before-footer-section-iphone-tab.svg"
+                        alt="third-main-block-before-footer-section-iphone-tablet" />
                 </div>
             </div>
         </section>
@@ -55,7 +59,7 @@
 
     &-right-side__image {
         &-desk {
-            @media(max-width: $md2) {
+            @media(max-width: $md3) {
                 display: none;
             }
         }
@@ -63,7 +67,7 @@
         &-tablet {
             display: none;
 
-            @media(max-width: $md2) {
+            @media(max-width: $md3) {
                 display: block;
             }
         }
@@ -80,6 +84,7 @@
                 background: url("../assets/images/Ellipse_38.svg");
                 background-repeat: no-repeat;
                 background-position: center bottom;
+                background-size: contain;
             }
         }
 
@@ -100,6 +105,7 @@
                     margin-right: 10px;
 
                     @media(max-width: $md3) {
+                        max-width: 300px;
                         margin-right: 0px;
                     }
                 }
@@ -109,6 +115,7 @@
                     margin-left: 40px;
 
                     @media(max-width: $md3) {
+                        max-width: 300px;
                         margin-left: 0px;
                         margin-top: 100px;
                     }
@@ -137,6 +144,15 @@
                 font-size: 32px;
                 margin: 50px 0px 10px 0px;
             }
+
+            @media(max-width: 600px) {
+                font-size: 26px;
+            }
+
+            @media(max-width: $md4) {
+                font-size: 20px;
+                text-align: left;
+            }
         }
 
         &-subtitle {
@@ -144,9 +160,14 @@
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
-            line-height: 24px;
+            line-height: 150%;
             text-align: center;
             color: #575775;
+
+            @media(max-width: $md4) {
+                font-size: 14px;
+                text-align: left;
+            }
         }
     }
 
@@ -160,6 +181,10 @@
             background: url("../assets/images/Group_69.svg"), #262541;
 
             @media(max-width: $md2) {
+                padding-right: 0px;
+            }
+
+            @media(max-width: $md3) {
                 max-height: 245px;
                 padding: 15px 0px 40px;
                 padding: 15px 0px 40px 20px;
@@ -183,14 +208,16 @@
             margin-bottom: 25px;
 
             @media(max-width: $md2) {
-                font-size: 34px;
-                margin-bottom: 20px;
-                max-width: 390px;
+                font-size: 38px;
+            }
+
+            @media(max-width: 850px) {
+                font-size: 32px;
+                margin-bottom: 10px;
             }
 
             @media(max-width: $md3) {
-                font-size: 32px;
-                margin-bottom: 20px;
+                max-width: 390px;
             }
         }
 
@@ -212,6 +239,14 @@
             line-height: 140%;
             color: #C5C5D3;
             margin-right: 15px;
+            margin-bottom: 10px;
+
+            &-create-account__section {
+                @media(max-width: 850px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
 
             @media(max-width: $md2) {
                 width: 250px;

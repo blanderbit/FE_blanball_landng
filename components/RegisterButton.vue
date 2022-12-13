@@ -17,7 +17,6 @@ a {
     display: inline-flex;
     align-items: center;
     padding: 8px 16px;
-    margin-right: 20px;
     background: #148783;
     border-radius: 8px;
     transition: background-color 0.4s ease 0s;
@@ -28,15 +27,12 @@ a {
     line-height: 160%;
     text-align: center;
     color: #FFFFFF;
+    margin-right: 20px;
     @media(min-width: $md2) {
         &:hover {
             background-color: #1da19d;
             cursor: pointer;
         }
-    }
-
-    @media(max-width: $md2) {
-        font-size: 12px;
     }
 }
 </style>

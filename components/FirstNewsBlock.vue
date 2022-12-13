@@ -14,8 +14,8 @@
                     Детальніше
                 </div>
             </section>
-            <section class="b-first__news-block-left__side-image">
-                <img src="../assets/images/news-main-image.svg" alt="">
+            <section class="b-first__news-block-left__side">
+                <img src="../assets/images/news-main.svg" alt="">
             </section>
         </div>
         <div class="b-first__news-block-right__side">
@@ -29,7 +29,7 @@
                 <input class="b-first__news-block-right__side-input" placeholder="E-mail" type="text" id="name"
                     ame="name">
             </section>
-            <img src="../assets/images/news-first-block-left-image.svg" alt="">
+            <img src="../assets/images/news-first-block-left.svg" alt="">
         </div>
     </main>
 </template>

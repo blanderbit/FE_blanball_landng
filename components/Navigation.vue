@@ -81,6 +81,7 @@ export default {
             align-items: left;
             display: flex;
         }
+
         &__link {
             font-family: 'Inter';
             font-weight: 400;
@@ -89,6 +90,10 @@ export default {
             color: $font-color;
             transition: color 0.3s ease 0s;
             margin-left: 20px;
+
+            @media(max-width: 850px) {
+                font-size: 13px;
+            }
 
             @media(min-width: $md2) {
                 &:hover {

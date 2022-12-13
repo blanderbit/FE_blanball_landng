@@ -1,18 +1,25 @@
 <template>
-    <main class="b-second__block _container">
-        <section class="b-first__block-titles">
-            <div data-aos="fade-up-right" data-aos-delay="300" class="b-first__block-main-title" id="b-first__block-main-title">
-                {{ $t('firstBlock.title')}}
-            </div>
-            <div data-aos="fade-up-left" data-aos-delay="400" class="b-first__block-subtitle">
-                {{ $t('firstBlock.subtitle')}}
-            </div>
-        </section>
-        <section data-aos="zoom-out-right" data-aos-easing="ease-in-quart" data-aos-delay="700" data-aos-offset="0"
-            class="b-first__block-image">
-            <img class="b-first__block-image-desk" src="../assets/images/Group_47.svg" alt="Group_47">
-            <img class="b-first__block-image-tablet" src="../assets/images/Group_70.svg" alt="Group_70">
-        </section>
+    <main class="b-first-block _container">
+        <div class="b-first-block__content">
+            <section class="b-first-block-titles">
+                <div data-aos="fade-up-right" data-aos-delay="300" class="b-first-block__title"
+                    id="b-first__block-main-title">
+                    {{ $t('firstBlock.title') }}
+                </div>
+                <div data-aos="fade-up-left" data-aos-delay="400" class="b-first-block__subtitle">
+                    {{ $t('firstBlock.subtitle') }}
+                </div>
+            </section>
+            <section data-aos="zoom-out-right" data-aos-easing="ease-in-quart" data-aos-delay="700" data-aos-offset="0"
+                class="b-first-block__image">
+                <img class="b-first-block__image-desk" src="../assets/images/first-main-block-desk.svg" alt="first-main-block-desk">
+                <img class="b-first-block__image-tablet" src="../assets/images/first-main-block-tablet.svg" alt="first-main-block-tablet">
+                <!-- <img class="b-first-block__image-mobile" src="../assets/images/first-main-block-mobile.svg" alt="first-main-block-mobile"> -->
+                <div class="b-first-block__image-mobile">
+                    <img src="../assets/images/first-main-block-mobile.svg" alt="first-main-block-mobile">
+                </div>
+            </section>
+        </div>
     </main>
 </template>
 
@@ -20,8 +27,8 @@
 @import "assets/styles/base.scss";
 
 .b {
-    &-first__block {
-        &-main-title {
+    &-first-block {
+        &__title {
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
@@ -35,7 +42,6 @@
                 margin-top: 40px;
             }
 
-
             @media(max-width: $md2) {
                 font-weight: 800;
                 font-size: 48px;
@@ -45,17 +51,26 @@
                 font-weight: 800;
                 font-size: 32px;
             }
+
+            @media(max-width: $md4) {
+                font-size: 20px;
+            }
         }
 
-        &-image {
+        &__image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 600px;
-            @media(max-width: $md2) {
+            @media(max-width: $md2) and (min-width: $md4) {
                 min-height: 400px;
             }
-            @media(max-width: $md3) {
+            @media(max-width: $md4) {
                 min-height: 200px;
             }
+            
             &-desk {
+                align-self: flex-start;
                 @media(max-width: $md3) {
                     display: none;
                 }
@@ -64,24 +79,39 @@
             &-tablet {
                 display: none;
 
-                @media(max-width: $md3) {
+                @media(max-width: $md3) and (min-width: $md4) {
                     display: block;
                     margin-top: 30px;
+                    width: 110%;
+                }
+            }
+
+            &-mobile {
+                display: none;
+                margin-top: 20px;
+                @media(max-width: $md4) {
+                    display: block;
                 }
             }
         }
 
-        &-subtitle {
+        &__subtitle {
             font-family: 'Inter';
             font-style: normal;
             font-weight: 500;
             font-size: 16px;
             line-height: 175%;
             color: #575775;
+            margin-top: 5px;
 
             @media(max-width: $md3) {
                 font-weight: 400;
                 font-size: 14px;
+            }
+
+            @media(max-width: $md4) {
+                font-size: 14px;
+                max-width: 270px;
             }
         }
     }
