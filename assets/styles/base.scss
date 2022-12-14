@@ -10,10 +10,6 @@ $md3: 767.98px;
 $md4: 479.98px;
 $font-color: #262541;
 
-html {
-  scroll-behavior: smooth;
-}
-
 *,
 *::before,
 *::after {
@@ -39,11 +35,14 @@ dl,
 dd {
   margin: 0;
 }
+html,
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  scroll-behavior: smooth;
+  position: relative;
 }
 ul[class],
 ol[class] {

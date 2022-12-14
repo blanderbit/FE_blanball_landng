@@ -1,4 +1,4 @@
-FROM node:18.9.0
+FROM node:18.9.1
 ENV APP_PATH='/app'
 RUN apt-get update && apt-get upgrade -y \
   && apt-get install --no-install-recommends -y

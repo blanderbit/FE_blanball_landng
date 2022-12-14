@@ -1,37 +1,53 @@
 <template>
-    <div class="b-header__wrapper">
+    <div class="b-header-wrapper">
         <header class="b-header">
-            <div class="b-header__content _container">
-                <section class="b-header__menu">
+            <div class="b-header-tablet-top__side">
+                <img src="../assets/images/burger-tablet.svg" alt="header-tablet-logo">
+                <div class="b-header-tablet__logo">
+                    <img src="../assets/images/header-tablet-logo.svg" alt="header-tablet-logo">
+                </div>
+                <input placeholder="Пошук" type="text" class="b-header-tablet__input">
+            </div>
+            <div class="b-header-mobile-top__side">
+                <img src="../assets/images/burger-moblo.svg" alt="header-mobile-logo">
+                <div class="b-header-mobile__logo">
+                    <img src="../assets/images/header-tablet-logo.svg" alt="header-mobile-logo">
+                </div>
+                <RegisterButton class="b-header-mobile__button" text="Зареєструватися"/>
+            </div>
+            <div class="b-header-content _container">
+                <section class="b-header-menu">
                     <HeaderMenu />
                 </section>
-                <section class="b-header__main-title">
-                    <div class="b-first__line">
-                        <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500" data-aos-offset="0"
-                            class="b-title__first_word">{{ $t('header.train')}}</div>
-                        <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="650" data-aos-offset="0"
-                            class="b-title__image" src="../assets/images/ball.svg" alt="ball">
-                        <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800" data-aos-offset="0"
-                            class="b-title__second_word"><span>{{ $t('header.play')}}</span></div>
-                        <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950" data-aos-offset="0"
-                            class="b-title__image" src="../assets/images/ball.svg" alt="ball">
+                <div class="b-header-left__side">
+                    <section class="b-header-title">
+                        <div class="b-header-title-first__line">
+                            <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500"
+                                data-aos-offset="0" class="b-header-title-first__line-first__word">{{ $t('header.train')
+                                }}</div>
+                            <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="650"
+                                data-aos-offset="0" class="b-header-title-first__line-ball__image"
+                                src="../assets/images/logo-ball.svg" alt="logo-ball">
+                            <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800"
+                                data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
+                                        $t('header.play')
+                                }}</span></div>
+                            <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950"
+                                data-aos-offset="0" class="b-header-title-first__line-ball__image"
+                                src="../assets/images/logo-ball.svg" alt="logo-ball">
+                        </div>
+                        <div class="b-header-title-second__line">
+                            <RegisterButton class="b-header-title-second__line-button" style=""
+                                text="Зареєструватися" />
+                            <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100"
+                                data-aos-offset="0" class="b-header-title-second__line-first__word">{{ $t('header.rest')
+                                }}</div>
+                        </div>
+                    </section>
+                    <div class="b-header-tablet-main__image">
+                        <img src="../assets/images/user-raiting.svg" alt="header-main-image-tablet">
                     </div>
-                    <div class="b-second__line">
-                        <RegisterButton text="Зареєструватися" class="b-title__register-button" />
-                        <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100" data-aos-offset="0"
-                            class="b-title__third_word">{{ $t('header.rest')}}</div>
-                    </div>
-                </section>
-                <section class="b__main-images">
-                    <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="330" data-aos-offset="0"
-                        class="b-user-raiting-image">
-                        <img src="../assets/images/user-raiting.svg" alt="user-raiting">
-                    </div>
-                    <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1400" data-aos-offset="0"
-                        class="b-iphone-image">
-                        <img src="../assets/images/Iphone1.svg" alt="Iphone1">
-                    </div>
-                </section>
+                </div>
             </div>
         </header>
     </div>
@@ -42,26 +58,129 @@
 
 <style lang="scss">
 @import "assets/styles/base.scss";
-
-
 .b {
     &-header {
-        background: url("../assets/images/Group_43.svg");
+        background: url("../assets/images/header-background-lines.svg");
         width: 100%;
         border-radius: 0px 0px 36px 36px;
         padding-top: 35px;
         background-repeat: no-repeat;
         padding-bottom: 80px;
 
-        &__wrapper {
+        @media(max-width: $md3) {
+            background: none;
+            padding-bottom: 40px;
+        }
+        @media(max-width: $md4) {
+            background: url("../assets/images/header-background-lines-mobile.svg");
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-top: 15px;
+        }
+
+        &-left__side {
+            display: flex;
+            flex-direction: column;
+        }
+        &-mobile {
+            &-top__side {
+                display: none;
+                justify-content: space-between;
+                padding-left: 20px;
+                margin-bottom: 40px;
+                @media(max-width: $md4) {
+                    display: flex;
+                }
+            }
+            &__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__button {
+                font-size: 1px;
+                margin-right: 0px;
+                font-style: normal;
+                font-weight: 500;
+                @media(max-width: 410px) {
+                    display: none;
+                }
+            }
+        }
+
+        &-tablet {
+            &-top__side {
+                display: none;
+                justify-content: space-between;
+                margin-bottom: 50px;
+                padding-left: 20px;
+                @media(max-width: $md3) and (min-width: $md4) {
+                    display: flex;
+                }
+            }
+            &__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__input {
+                align-items: center;
+                background: url('../assets/images/header-tablet-input-seach.svg') #FFFFFF;
+                background-repeat: no-repeat;
+                background-position: right;
+                padding: 10px 12px;
+                width: 224px;
+                height: 40px;
+                border: 1px solid #DFDEED;
+                outline: none;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                color: #575775;
+                border-radius: 6px;
+
+                &:focus {
+                    background: #FFFFFF;
+                }
+            }
+
+            &-main__image {
+                display: none;
+                margin-top: 20px;
+
+                @media(max-width: $md3) {
+                    display: block;
+                }
+            }
+        }
+
+        &-wrapper {
             background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
             background-position: center top;
             background-repeat: no-repeat;
+            border-radius: 0px 0px 36px 36px;
+
+            @media(max-width: 1250px) {
+                background-size: 100%;
+                padding: 0px 20px;
+            }
+            @media(max-width: $md3) {
+                background: radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+                background-position: bottom;
+                background-repeat: no-repeat;
+                border-radius: 0px 0px 18px 18px;
+                padding: 0px 20px 0px 0px;
+            }
+
+            @media(max-width: $md4) {
+                background: radial-gradient(160.46% 72.64% at 50% 31.94%, #40B5A3 0%, #0F4E44 100%);
+            }
         }
 
-        &__main-title {
-            width: 329px;
-            height: 88px;
+        &-title {
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
@@ -69,71 +188,128 @@
             line-height: 122.222222222%;
             text-transform: capitalize;
             color: $font-color;
-        }
-    }
 
-    &-first__block {
-        border-radius: 0px 0px 32px 32px;
-        max-height: 200px;
-        background-color: #fff;
-    }
+            @media(max-width: $md1) {
+                font-size: 64px;
+            }
 
-    &-first__line {
-        display: flex;
-        align-items: center;
-    }
+            @media(max-width: 1100px) {
+                font-size: 60px;
+            }
 
-    &-second__line {
-        display: flex;
-        align-items: center;
-    }
+            @media(max-width: 1050px) {
+                font-size: 56px;
+                margin-top: -10px;
+            }
 
-    &-title__register-button {
-        padding: 12px 16px;
-        width: 200px;
-        height: 48px;
-        border-radius: 12px;
-        margin-top: 15px;
-    }
+            @media(max-width: $md2) {
+                font-size: 48px;
+            }
 
-    &__main-images {
-        display: flex;
-        justify-content: space-between;
-    }
+            @media(max-width: 870px) {
+                font-size: 42px;
+            }
 
-    &-user-raiting-image {
-        margin-top: 130px;
-        margin-left: -20px;
-    }
+            @media(max-width: 830px) {
+                font-size: 40px;
+                margin-top: -20px;
+            }
 
-    &-title {
-        &__second_word {
-            background-image: url("../assets/images/green_elipse.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 100px;
-            min-width: 192px;
+            @media(max-width: $md3) {
+                font-size: 68px;
+                background: url("../assets/images/header-background-tablet.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 10px 20px;
+                border-radius: 12px;
+            }
 
-            span {
-                margin-left: 20px;
+            @media(max-width: 630px) {
+                font-size: 60px;
+            }
+
+            @media(max-width: 595px) {
+                font-size: 54px;
+            }
+
+            @media(max-width: 560px) {
+                font-size: 50px;
+            }
+
+            @media(max-width: 535px) {
+                font-size: 46px;
+                padding: 10px 15px;
+            }
+
+            @media(max-width: 505px) {
+                font-size: 40px;
+            }
+
+            @media(max-width: 395px) {
+                font-size: 36px;
+            }
+            @media(max-width: 370px) {
+                font-size: 32px;
+            }
+
+            &-first__line {
+                display: flex;
+                align-items: center;
+
+                &-second__word {
+                    background-image: url("../assets/images/green_elipse.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: left center;
+                    padding-bottom: 10px;
+                    margin-bottom: -10px;
+                    padding-right: 10px;
+                    margin-right: -10px;
+
+
+                    @media(max-width: $md2) {
+                        background: none;
+                    }
+
+                    span {
+                        margin-left: 20px;
+                        @media(max-width: $md4) {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                &-ball__image {
+                    align-self: flex-end;
+                    margin-left: 5px;
+
+                    @media(max-width: $md4) {
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
+                }
+            }
+
+            &-second__line {
+                display: flex;
+                align-items: center;
+
+                &-button {
+                    width: 190px;
+                    font-weight: 700;
+                    height: 50px;
+
+                    @media(max-width: $md2) {
+                        width: 160px;
+                        height: 40px;
+                    }
+
+                    @media(max-width: $md4) {
+                        display: none;
+                    }
+                }
             }
         }
-
-        &__third_word {
-            margin-left: 10px;
-        }
-
-        &__image {
-            align-self: flex-end;
-            margin-left: 5px;
-        }
-    }
-
-    &-iphone-image {
-        margin-left: 20px;
-        height: 100%;
-        padding: 0px 45px 53px 30px;
-        margin-top: -70px;
     }
 }
 </style>

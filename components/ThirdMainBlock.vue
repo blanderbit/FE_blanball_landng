@@ -1,37 +1,42 @@
 <template>
     <main class="b-third__block" id="b-third__block">
-        <section class="b-third__block-main-section">
+        <!-- <section class="b-third__block-main-section">
             <div class="b-main-section__content _container">
                 <div class="b-main-section-title" v-html="$t('thirdBlock.mainSection.title')">
                 </div>
                 <div class="b-main-section-subtitle" v-html="$t('thirdBlock.mainSection.subtitle')">
                 </div>
                 <div class="b-main-section-images">
-                    <div class="b-main-section__iphone-images">
-                        <img src="../assets/images/iphones.svg" alt="iphone-image" />
+                    <div class="b-main-section-images-iphone">
+                        <img data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                            class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg" alt="">
+                        <img data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                            class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg" alt="">
                     </div>
                 </div>
             </div>
-        </section>
-        <section
-            class="b-third__block-before-footer-section">
-            <div class="b-before-footer-section__content _container">
-                <div class="b-before-footer-section__left-side">
-                    <div class="b-before-footer-section__title" v-html="$t('thirdBlock.beforeFooterSection.title')">
+        </section> -->
+        <section class="b-third__block-before-footer-section">
+            <div class="b-third__block-before-footer-section__content _container">
+                <div class="b-third__block-before-footer-section__left-side">
+                    <div class="b-third__block-before-footer-section__title"
+                        v-html="$t('thirdBlock.beforeFooterSection.title')">
                     </div>
-                    <div class="b-before-footer-section__email-input">
-                        <label class="b-before-footer-section__input-label" for="name">{{ $t('thirdBlock.beforeFooterSection.inputLabel')}}</label>
-                        <div class="input__create-account__section">
-                            <input class="b-before-footer-section__input" placeholder="E-mail"
-                                type="text" id="name" name="name">
-                            <RegisterButton text="Створити акаунт"/>
+                    <div class="b-third__block-before-footer-section__email-input">
+                        <label class="b-third__block-before-footer-section__input-label" for="name">{{
+                                $t('thirdBlock.beforeFooterSection.inputLabel')
+                        }}</label>
+                        <div class="b-third__block-before-footer-section__input-create-account__section">
+                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text" id="name"
+                                name="name">
+                            <RegisterButton style="height: 45px; margin-right: 0px;" text="Створити акаунт" />
                         </div>
                     </div>
                 </div>
-                <div 
-                    class="b-before-footer-section__right-side wow slideInLeft">
-                    <img class="b-right-side__image-desk" src="../assets/images/Frame_1472.svg" alt="Frame_1472" />
-                    <img class="b-right-side__image-tablet" src="../assets/images/Frame_1473.svg" alt="Frame_1473" />
+                <div class="b-third__block-before-footer-section__right-side">
+                    <img class="b-third__block-before-footer-section__right-side__image-desk"
+                        src="../assets/images/third-main-block-before-footer-section-iphone-desk.svg"
+                        alt="third-main-block-before-footer-section-iphone-desk" />
                 </div>
             </div>
         </section>
@@ -44,48 +49,199 @@
 
 <style lang="scss">
 @import "assets/styles/base.scss";
-
 .b {
     &-third__block {
         margin-bottom: 160px;
-    }
 
-    &-right-side__image {
-        &-desk {
-            @media(max-width: $md2) {
-                display: none;
-            }
+        @media(max-width: $md4) {
+            padding: 0px 15px 0px 15px;
         }
 
-        &-tablet {
-            display: none;
+        &-before-footer-section {
+            margin-top: 150px;
+            &__content {
+                padding: 40px 60px 52px 20px;
+                border-radius: 24px;
+                max-height: 315px;
+                display: flex;
+                justify-content: space-between;
+                background-size: cover;
+                background: url("../assets/images/third-main-block-second-section-background-desk.svg"), #262541;
 
-            @media(max-width: $md2) {
-                display: block;
+                @media(max-width: $md2) {
+                    padding-right: 0px;
+                }
+
+                @media(max-width: $md3) {
+                    max-height: 245px;
+                    padding: 15px 20px 26px 20px;
+                    background-repeat: no-repeat;
+                    background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), #262541;
+                    background-position: center;
+                }
+            }
+            &__left-side {
+               @media(max-width: $md4) {
+                    width: 100%;
+               }
+            }
+
+            &__right-side {
+                align-self: center;
+                margin-bottom: 40px;
+
+                &__image-desk {
+                    @media(max-width: $md3) {
+                        display: none;
+                    }
+                }
+            }
+
+            &__title {
+                font-family: 'Exo 2';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 44px;
+                line-height: 133%;
+                color: #FFFFFF;
+                margin-bottom: 25px;
+
+                @media(max-width: $md2) {
+                    font-size: 38px;
+                }
+
+                @media(max-width: 850px) {
+                    font-size: 32px;
+                    margin-bottom: 10px;
+                }
+
+                @media(max-width: 550px) {
+                    font-size: 28px;
+                }
+
+                @media(max-width: 500px) {
+                    font-size: 26px;
+                }
+
+                @media(max-width: $md4) {
+                    font-size: 23px;
+                }
+
+                @media(max-width: 330px) {
+                    font-size: 21px;
+                }
+            }
+
+            &__email-input {
+                display: inline-flex;
+                flex-direction: column;
+
+                @media(max-width: $md4) {
+                    width: 100%;
+                }
+            }
+
+            &__input {
+                padding: 12px 8px;
+                border: 1px solid #C5C5D3;
+                border-radius: 8px;
+                background-color: transparent;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+                color: #C5C5D3;
+                margin-right: 15px;
+                margin-bottom: 10px;
+
+                @media(max-width: $md4) {
+                    margin-right: 0px;
+                }
+
+                &-create-account__section {
+                    @media(max-width: 850px) {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    @media(max-width: $md3) {
+                        flex-direction: row;
+                    }
+
+                    @media(max-width: $md4) {
+                        width: 100%;
+                        flex-direction: column;
+                    }
+                }
+
+                &-label {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 15px;
+                    line-height: 20px;
+                    color: #FFFFFF;
+                    margin-bottom: 10px;
+                    max-width: 200px;
+
+                    @media(max-width: $md2) {
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }
+
 
     &-main-section {
         &__content {
-            background: url("../assets/images/Group_65.svg");
-            background-position: center center;
+            background: url("../assets/images/third-main-block-main-section-background-desk.svg");
+            background-position: center bottom;
             background-repeat: no-repeat;
-            height: 1400px;
             display: block;
 
             @media(max-width: $md3) {
-                background: url("../assets/images/Ellipse_38.svg");
-                background-position: center center;
+                background: url("../assets/images/third-main-block-main-section-background-tablet.svg");
                 background-repeat: no-repeat;
-                height: 1200px;
+                background-position: center bottom;
+                background-size: contain;
             }
         }
 
         &-images {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            margin-bottom: 150px;
+
+            @media(max-width: $md3) {
+                margin-bottom: 100px;
+            }
+
+            &-iphone {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__1 {
+                    margin-bottom: 50px;
+                    margin-right: 10px;
+
+                    @media(max-width: $md3) {
+                        max-width: 300px;
+                        margin-right: 0px;
+                    }
+                }
+
+                &__2 {
+                    margin-top: 150px;
+                    margin-left: 40px;
+
+                    @media(max-width: $md3) {
+                        max-width: 300px;
+                        margin-left: 0px;
+                        margin-top: 100px;
+                    }
+                }
+            }
         }
 
         &-title {
@@ -109,6 +265,15 @@
                 font-size: 32px;
                 margin: 50px 0px 10px 0px;
             }
+
+            @media(max-width: 600px) {
+                font-size: 26px;
+            }
+
+            @media(max-width: $md4) {
+                font-size: 20px;
+                text-align: left;
+            }
         }
 
         &-subtitle {
@@ -116,93 +281,13 @@
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
-            line-height: 24px;
+            line-height: 150%;
             text-align: center;
             color: #575775;
-            margin-bottom: 15px;
-        }
-    }
 
-    &-before-footer-section {
-        &__content {
-            padding: 40px 60px 52px;
-            border-radius: 24px;
-            max-height: 316px;
-            display: flex;
-            justify-content: space-between;
-            background: url("../assets/images/Group_69.svg"), #262541;
-
-            @media(max-width: $md2) {
-                max-height: 245px;
-                padding: 15px 0px 40px;
-                background-repeat: no-repeat;
-                background: url("../assets/images/Froup_71.svg"), #262541;
-            }
-        }
-
-        &__right-side {
-            align-self: center;
-            margin-bottom: 40px;
-        }
-        &__left-side {
-            margin-left: 10px;
-        }
-
-        &__title {
-            font-family: 'Exo 2';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 48px;
-            line-height: 133%;
-            color: #FFFFFF;
-            margin-bottom: 25px;
-
-            @media(max-width: $md2) {
-                font-size: 34px;
-                margin-bottom: 20px;
-            }
-
-            @media(max-width: $md3) {
-                font-size: 32px;
-                margin-bottom: 20px;
-            }
-        }
-
-        &__email-input {
-            display: inline-flex;
-            flex-direction: column;
-        }
-
-        &__input {
-            padding: 12px 8px;
-            border: 1px solid #C5C5D3;
-            border-radius: 8px;
-            background-color: transparent;
-            width: 300px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 140%;
-            color: #C5C5D3;
-            margin-right: 15px;
-
-            @media(max-width: $md2) {
-                width: 250px;
-            }
-
-            &-label {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 15px;
-                line-height: 20px;
-                color: #FFFFFF;
-                margin-bottom: 10px;
-
-                @media(max-width: $md2) {
-                    font-size: 14px;
-                }
+            @media(max-width: $md4) {
+                font-size: 14px;
+                text-align: left;
             }
         }
     }
