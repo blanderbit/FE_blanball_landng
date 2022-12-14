@@ -1,9 +1,9 @@
 <template>
    <Header/>
-   <!-- <FirstMainBlock/> -->
-   <!-- <SecondMainBlock/> -->
-   <!-- <ThirdMainBlock/> -->
-   <!-- <Footer/> -->
+   <FirstMainBlock/>
+   <SecondMainBlock/>
+   <ThirdMainBlock/>
+   <Footer/>
 </template>
 
 <script setup>

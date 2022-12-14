@@ -7,7 +7,7 @@
                 <img class="b-footer-desk__logo-small" src="../assets/images/logo-ball.svg" alt="footer-logo-small" />
             </div>
             <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0"
-                :stylings="customStyle" />
+                :stylings="navigationItemStyles" />
             <div class="b-footer-desk__arrow">
                 <span data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="800" data-aos-offset="0">{{
                         $t('footer.blanball')
@@ -34,13 +34,19 @@
                         <label class="b-footer-tablet-main__side-input-label" for="name">Підписатись на розсилку
                         </label>
                         <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="text" id="name"
-                            ame="name">
+                            name="name">
                     </div>
                     <a class="b-footer-tablet-main__side-subscribe-button">Підписатись</a>
-                    <Navigation style="margin-top: 30px;" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
-                        data-aos-offset="0" :stylings="customStyle" :navigationBodyStyles="navigationBodyStyles" />
-                    <HeaderMenuRoute />
+                    <div class="b-footer-tablet-navigation">
+                        <Navigation style="margin-top: 30px;" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
+                            data-aos-delay="600" data-aos-offset="0" :stylings="navigationItemStyles"
+                            :navigationBodyStyles="navigationBodyStyles" />
+                    </div>
                 </div>
+            </div>
+            <div class="b-footer-mobile-navigation">
+                <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
+                data-aos-delay="600" data-aos-offset="0" :stylings="navigationItemStylesMobile"/>
             </div>
             <div class="b-footer-tablet-bottom__side">
                 <div class="b-footer-tablet-bottom__side-title">
@@ -56,10 +62,15 @@
 export default {
     data() {
         return {
-            customStyle: {
+            navigationItemStyles: {
                 'color': '#fff',
                 'font-size': '14px',
                 'line-height': '250%',
+            },
+            navigationItemStylesMobile: {
+                'color': '#fff',
+                'font-size': '12px',
+                'line-height': '130%',
             },
             navigationBodyStyles: {
                 'flex-direction': 'column',
@@ -72,15 +83,8 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-.b-navigation__link {
-    color: #fff;
-}
-</style>
-
 <style lang="scss">
 @import "assets/styles/base.scss";
-
 .b {
     &-footer {
 
@@ -141,12 +145,25 @@ export default {
                 }
             }
         }
+        &-mobile {
+            &-navigation {
+                display: none;
+                @media(max-width: 650px) {
+                    display: block;
+                }
+            }
+        }
 
         &-tablet {
             display: none;
 
             @media(max-width: $md3) {
                 display: block;
+            }
+            &-navigation {
+                @media(max-width: 650px) {
+                    display: none;
+                }
             }
 
             &-body {
@@ -155,6 +172,9 @@ export default {
 
                 @media(max-width: $md3) and (min-width: $md4) {
                     border-radius: 0px 0px 20px 20px;
+                }
+                @media(max-width: $md4) {
+                    padding: 15px 20px 10px 20px;
                 }
             }
 
@@ -172,6 +192,12 @@ export default {
                     line-height: 120%;
                     color: #FFFFFF;
                     margin-top: 30px;
+
+                    @media(max-width: $md4) {
+                        display: flex;
+                        justify-content: center;
+
+                    }
                 }
             }
 
@@ -215,9 +241,16 @@ export default {
                     line-height: 140%;
                     color: #C5C5D3;
                     margin-top: 5px;
+                    @media(max-width: 410px) {
+                        max-width: 200px;
+                    }
 
                     &-block {
                         max-width: 250px;
+
+                        @media(max-width: 410px) {
+                            max-width: 200px;
+                        }
                     }
 
                     &-label {

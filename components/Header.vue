@@ -1,6 +1,20 @@
 <template>
     <div class="b-header-wrapper">
         <header class="b-header">
+            <div class="b-header-tablet-top__side">
+                <img src="../assets/images/burger-tablet.svg" alt="header-tablet-logo">
+                <div class="b-header-tablet__logo">
+                    <img src="../assets/images/header-tablet-logo.svg" alt="header-tablet-logo">
+                </div>
+                <input placeholder="Пошук" type="text" class="b-header-tablet__input">
+            </div>
+            <div class="b-header-mobile-top__side">
+                <img src="../assets/images/burger-moblo.svg" alt="header-mobile-logo">
+                <div class="b-header-mobile__logo">
+                    <img src="../assets/images/header-tablet-logo.svg" alt="header-mobile-logo">
+                </div>
+                <RegisterButton class="b-header-mobile__button" text="Зареєструватися"/>
+            </div>
             <div class="b-header-content _container">
                 <section class="b-header-menu">
                     <HeaderMenu />
@@ -16,18 +30,23 @@
                                 src="../assets/images/logo-ball.svg" alt="logo-ball">
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800"
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
-                                    $t('header.play')
+                                        $t('header.play')
                                 }}</span></div>
                             <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950"
                                 data-aos-offset="0" class="b-header-title-first__line-ball__image"
                                 src="../assets/images/logo-ball.svg" alt="logo-ball">
                         </div>
                         <div class="b-header-title-second__line">
-                            <RegisterButton class="b-header-title-second__line-button" style="" text="Зареєструватися" />
+                            <RegisterButton class="b-header-title-second__line-button" style=""
+                                text="Зареєструватися" />
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100"
-                                data-aos-offset="0" class="b-header-title-second__line-first__word">{{ $t('header.rest') }}</div>
+                                data-aos-offset="0" class="b-header-title-second__line-first__word">{{ $t('header.rest')
+                                }}</div>
                         </div>
                     </section>
+                    <div class="b-header-tablet-main__image">
+                        <img src="../assets/images/user-raiting.svg" alt="header-main-image-tablet">
+                    </div>
                 </div>
             </div>
         </header>
@@ -50,25 +69,114 @@
 
         @media(max-width: $md3) {
             background: none;
+            padding-bottom: 40px;
         }
+        @media(max-width: $md4) {
+            background: url("../assets/images/header-background-lines-mobile.svg");
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-top: 15px;
+        }
+
         &-left__side {
             display: flex;
             flex-direction: column;
+        }
+        &-mobile {
+            &-top__side {
+                display: none;
+                justify-content: space-between;
+                padding-left: 20px;
+                margin-bottom: 40px;
+                @media(max-width: $md4) {
+                    display: flex;
+                }
+            }
+            &__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__button {
+                font-size: 1px;
+                margin-right: 0px;
+                font-style: normal;
+                font-weight: 500;
+                @media(max-width: 410px) {
+                    display: none;
+                }
+            }
+        }
+
+        &-tablet {
+            &-top__side {
+                display: none;
+                justify-content: space-between;
+                margin-bottom: 50px;
+                padding-left: 20px;
+                @media(max-width: $md3) and (min-width: $md4) {
+                    display: flex;
+                }
+            }
+            &__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__input {
+                align-items: center;
+                background: url('../assets/images/header-tablet-input-seach.svg') #FFFFFF;
+                background-repeat: no-repeat;
+                background-position: right;
+                padding: 10px 12px;
+                width: 224px;
+                height: 40px;
+                border: 1px solid #DFDEED;
+                outline: none;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                color: #575775;
+                border-radius: 6px;
+
+                &:focus {
+                    background: #FFFFFF;
+                }
+            }
+
+            &-main__image {
+                display: none;
+                margin-top: 20px;
+
+                @media(max-width: $md3) {
+                    display: block;
+                }
+            }
         }
 
         &-wrapper {
             background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
             background-position: center top;
             background-repeat: no-repeat;
-            // @media(max-width: $md3) {
-            //     background: url("../assets/images/header-background-tablet.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
-            //     background-position: bottom;
-            //     background-repeat: no-repeat;
-            // }
+            border-radius: 0px 0px 36px 36px;
 
             @media(max-width: 1250px) {
                 background-size: 100%;
                 padding: 0px 20px;
+            }
+            @media(max-width: $md3) {
+                background: radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+                background-position: bottom;
+                background-repeat: no-repeat;
+                border-radius: 0px 0px 18px 18px;
+                padding: 0px 20px 0px 0px;
+            }
+
+            @media(max-width: $md4) {
+                background: radial-gradient(160.46% 72.64% at 50% 31.94%, #40B5A3 0%, #0F4E44 100%);
             }
         }
 
@@ -109,6 +217,39 @@
 
             @media(max-width: $md3) {
                 font-size: 68px;
+                background: url("../assets/images/header-background-tablet.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 10px 20px;
+                border-radius: 12px;
+            }
+
+            @media(max-width: 630px) {
+                font-size: 60px;
+            }
+
+            @media(max-width: 595px) {
+                font-size: 54px;
+            }
+
+            @media(max-width: 560px) {
+                font-size: 50px;
+            }
+
+            @media(max-width: 535px) {
+                font-size: 46px;
+                padding: 10px 15px;
+            }
+
+            @media(max-width: 505px) {
+                font-size: 40px;
+            }
+
+            @media(max-width: 395px) {
+                font-size: 36px;
+            }
+            @media(max-width: 370px) {
+                font-size: 32px;
             }
 
             &-first__line {
@@ -132,31 +273,43 @@
 
                     span {
                         margin-left: 20px;
+                        @media(max-width: $md4) {
+                            margin-left: 10px;
+                        }
                     }
                 }
 
                 &-ball__image {
                     align-self: flex-end;
                     margin-left: 5px;
+
+                    @media(max-width: $md4) {
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
                 }
             }
 
             &-second__line {
                 display: flex;
                 align-items: center;
+
                 &-button {
-                    width: 190px; 
+                    width: 190px;
                     font-weight: 700;
                     height: 50px;
+
                     @media(max-width: $md2) {
                         width: 160px;
                         height: 40px;
+                    }
+
+                    @media(max-width: $md4) {
+                        display: none;
                     }
                 }
             }
         }
     }
-
-
 }
 </style>

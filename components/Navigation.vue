@@ -89,7 +89,10 @@ export default {
             line-height: 142%;
             color: $font-color;
             transition: color 0.3s ease 0s;
-            margin-left: 20px;
+
+            @media(max-width: 430px) {
+                font-size: 12px;
+            }
 
             @media(max-width: 850px) {
                 font-size: 13px;
@@ -98,6 +101,16 @@ export default {
             @media(min-width: $md2) {
                 &:hover {
                     color: red;
+                }
+            }
+        }
+
+        &__item {
+            margin-left: 20px;
+
+            @media(max-width: 650px) {
+                &:first-child {
+                    margin-left: 0px;
                 }
             }
         }

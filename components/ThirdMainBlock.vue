@@ -1,6 +1,6 @@
 <template>
     <main class="b-third__block" id="b-third__block">
-        <section class="b-third__block-main-section">
+        <!-- <section class="b-third__block-main-section">
             <div class="b-main-section__content _container">
                 <div class="b-main-section-title" v-html="$t('thirdBlock.mainSection.title')">
                 </div>
@@ -15,28 +15,28 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="b-third__block-before-footer-section">
-            <div class="b-before-footer-section__content _container">
-                <div class="b-before-footer-section__left-side">
-                    <div class="b-before-footer-section__title" v-html="$t('thirdBlock.beforeFooterSection.title')">
+            <div class="b-third__block-before-footer-section__content _container">
+                <div class="b-third__block-before-footer-section__left-side">
+                    <div class="b-third__block-before-footer-section__title"
+                        v-html="$t('thirdBlock.beforeFooterSection.title')">
                     </div>
-                    <div class="b-before-footer-section__email-input">
-                        <label class="b-before-footer-section__input-label" for="name">{{ $t('thirdBlock.beforeFooterSection.inputLabel') }}</label>
-                        <div class="b-before-footer-section__input-create-account__section">
-                            <input class="b-before-footer-section__input" placeholder="E-mail" type="text" id="name"
+                    <div class="b-third__block-before-footer-section__email-input">
+                        <label class="b-third__block-before-footer-section__input-label" for="name">{{
+                                $t('thirdBlock.beforeFooterSection.inputLabel')
+                        }}</label>
+                        <div class="b-third__block-before-footer-section__input-create-account__section">
+                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text" id="name"
                                 name="name">
-                            <RegisterButton text="Створити акаунт" />
+                            <RegisterButton style="height: 45px; margin-right: 0px;" text="Створити акаунт" />
                         </div>
                     </div>
                 </div>
-                <div class="b-before-footer-section__right-side">
-                    <img class="b-right-side__image-desk"
+                <div class="b-third__block-before-footer-section__right-side">
+                    <img class="b-third__block-before-footer-section__right-side__image-desk"
                         src="../assets/images/third-main-block-before-footer-section-iphone-desk.svg"
                         alt="third-main-block-before-footer-section-iphone-desk" />
-                    <img class="b-right-side__image-tablet"
-                        src="../assets/images/third-main-block-before-footer-section-iphone-tab.svg"
-                        alt="third-main-block-before-footer-section-iphone-tablet" />
                 </div>
             </div>
         </section>
@@ -49,27 +49,150 @@
 
 <style lang="scss">
 @import "assets/styles/base.scss";
-
 .b {
     &-third__block {
         margin-bottom: 160px;
-    }
 
-    &-right-side__image {
-        &-desk {
-            @media(max-width: $md3) {
-                display: none;
-            }
+        @media(max-width: $md4) {
+            padding: 0px 15px 0px 15px;
         }
 
-        &-tablet {
-            display: none;
+        &-before-footer-section {
+            margin-top: 150px;
+            &__content {
+                padding: 40px 60px 52px 20px;
+                border-radius: 24px;
+                max-height: 315px;
+                display: flex;
+                justify-content: space-between;
+                background-size: cover;
+                background: url("../assets/images/third-main-block-second-section-background-desk.svg"), #262541;
 
-            @media(max-width: $md3) {
-                display: block;
+                @media(max-width: $md2) {
+                    padding-right: 0px;
+                }
+
+                @media(max-width: $md3) {
+                    max-height: 245px;
+                    padding: 15px 20px 26px 20px;
+                    background-repeat: no-repeat;
+                    background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), #262541;
+                    background-position: center;
+                }
+            }
+            &__left-side {
+               @media(max-width: $md4) {
+                    width: 100%;
+               }
+            }
+
+            &__right-side {
+                align-self: center;
+                margin-bottom: 40px;
+
+                &__image-desk {
+                    @media(max-width: $md3) {
+                        display: none;
+                    }
+                }
+            }
+
+            &__title {
+                font-family: 'Exo 2';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 44px;
+                line-height: 133%;
+                color: #FFFFFF;
+                margin-bottom: 25px;
+
+                @media(max-width: $md2) {
+                    font-size: 38px;
+                }
+
+                @media(max-width: 850px) {
+                    font-size: 32px;
+                    margin-bottom: 10px;
+                }
+
+                @media(max-width: 550px) {
+                    font-size: 28px;
+                }
+
+                @media(max-width: 500px) {
+                    font-size: 26px;
+                }
+
+                @media(max-width: $md4) {
+                    font-size: 23px;
+                }
+
+                @media(max-width: 330px) {
+                    font-size: 21px;
+                }
+            }
+
+            &__email-input {
+                display: inline-flex;
+                flex-direction: column;
+
+                @media(max-width: $md4) {
+                    width: 100%;
+                }
+            }
+
+            &__input {
+                padding: 12px 8px;
+                border: 1px solid #C5C5D3;
+                border-radius: 8px;
+                background-color: transparent;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+                color: #C5C5D3;
+                margin-right: 15px;
+                margin-bottom: 10px;
+
+                @media(max-width: $md4) {
+                    margin-right: 0px;
+                }
+
+                &-create-account__section {
+                    @media(max-width: 850px) {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    @media(max-width: $md3) {
+                        flex-direction: row;
+                    }
+
+                    @media(max-width: $md4) {
+                        width: 100%;
+                        flex-direction: column;
+                    }
+                }
+
+                &-label {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 15px;
+                    line-height: 20px;
+                    color: #FFFFFF;
+                    margin-bottom: 10px;
+                    max-width: 200px;
+
+                    @media(max-width: $md2) {
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }
+
 
     &-main-section {
         &__content {
@@ -165,104 +288,6 @@
             @media(max-width: $md4) {
                 font-size: 14px;
                 text-align: left;
-            }
-        }
-    }
-
-    &-before-footer-section {
-        &__content {
-            padding: 40px 60px 52px 20px;
-            border-radius: 24px;
-            max-height: 316px;
-            display: flex;
-            justify-content: space-between;
-            background: url("../assets/images/third-main-block-second-section-background-desk.svg"), #262541;
-
-            @media(max-width: $md2) {
-                padding-right: 0px;
-            }
-
-            @media(max-width: $md3) {
-                max-height: 245px;
-                padding: 15px 0px 40px;
-                padding: 15px 0px 40px 20px;
-                background-repeat: no-repeat;
-                background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), #262541;
-            }
-        }
-
-        &__right-side {
-            align-self: center;
-            margin-bottom: 40px;
-        }
-
-        &__title {
-            font-family: 'Exo 2';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 44px;
-            line-height: 133%;
-            color: #FFFFFF;
-            margin-bottom: 25px;
-
-            @media(max-width: $md2) {
-                font-size: 38px;
-            }
-
-            @media(max-width: 850px) {
-                font-size: 32px;
-                margin-bottom: 10px;
-            }
-
-            @media(max-width: $md3) {
-                max-width: 390px;
-            }
-        }
-
-        &__email-input {
-            display: inline-flex;
-            flex-direction: column;
-        }
-
-        &__input {
-            padding: 12px 8px;
-            border: 1px solid #C5C5D3;
-            border-radius: 8px;
-            background-color: transparent;
-            width: 300px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 140%;
-            color: #C5C5D3;
-            margin-right: 15px;
-            margin-bottom: 10px;
-
-            &-create-account__section {
-                @media(max-width: 850px) {
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-
-            @media(max-width: $md2) {
-                width: 250px;
-            }
-
-            &-label {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 15px;
-                line-height: 20px;
-                color: #FFFFFF;
-                margin-bottom: 10px;
-                max-width: 200px;
-
-                @media(max-width: $md2) {
-                    font-size: 14px;
-                }
             }
         }
     }

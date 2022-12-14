@@ -14,7 +14,6 @@
                 class="b-first-block__image">
                 <img class="b-first-block__image-desk" src="../assets/images/first-main-block-desk.svg" alt="first-main-block-desk">
                 <img class="b-first-block__image-tablet" src="../assets/images/first-main-block-tablet.svg" alt="first-main-block-tablet">
-                <!-- <img class="b-first-block__image-mobile" src="../assets/images/first-main-block-mobile.svg" alt="first-main-block-mobile"> -->
                 <div class="b-first-block__image-mobile">
                     <img src="../assets/images/first-main-block-mobile.svg" alt="first-main-block-mobile">
                 </div>
@@ -53,6 +52,12 @@
             }
 
             @media(max-width: $md4) {
+                font-size: 27px;
+            }
+            @media(max-width: 380px) {
+                font-size: 24px;
+            }
+            @media(max-width: 340px) {
                 font-size: 20px;
             }
         }
