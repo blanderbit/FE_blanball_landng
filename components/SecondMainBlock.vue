@@ -231,13 +231,13 @@
         &-second__section {
             width: 100%;
             border-radius: 0px 0px 36px 36px;
-            background-image: url('../assets/images/second-main-block-second-section-background.svg'),
+            background: url('../assets/images/second-main-block-second-section-background.svg'),
                 linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom;
             padding-bottom: 70px;
             min-height: 700px;
-            background-size: contain;
+            margin-top: -5px;
 
             &__image {
                 margin-top: 30px;

@@ -94,7 +94,7 @@
                 @media(max-width: $md3) and (min-width: $md4) {
                     display: block;
                     margin-top: 30px;
-                    width: 110%;
+                    width: 100%;
                 }
             }
 

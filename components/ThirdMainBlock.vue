@@ -1,6 +1,6 @@
 <template>
     <main class="b-third__block" id="b-third__block">
-        <!-- <section class="b-third__block-main-section">
+        <section class="b-third__block-main-section">
             <div class="b-main-section__content _container">
                 <div class="b-main-section-title" v-html="$t('thirdBlock.mainSection.title')">
                 </div>
@@ -8,14 +8,14 @@
                 </div>
                 <div class="b-main-section-images">
                     <div class="b-main-section-images-iphone">
-                        <img data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
-                            class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg" alt="">
-                        <img data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"
-                            class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg" alt="">
+                        <img class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg"
+                            alt="b-main-section-images-iphone-1">
+                        <img class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg"
+                            alt="b-main-section-images-iphone-2">
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <section class="b-third__block-before-footer-section">
             <div class="b-third__block-before-footer-section__content _container">
                 <div class="b-third__block-before-footer-section__left-side">
@@ -24,13 +24,13 @@
                     </div>
                     <div class="b-third__block-before-footer-section__email-input">
                         <label class="b-third__block-before-footer-section__input-label" for="name">{{
-                            $t('thirdBlock.beforeFooterSection.inputLabel')
+                                $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
                         <div class="b-third__block-before-footer-section__input-create-account__section">
                             <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text"
                                 id="name" name="name">
                             <RegisterButton style="height: 45px; margin-right: 0px;"
-                                :text="$t('buttons.create_account')"/>
+                                :text="$t('buttons.create_account')" />
                         </div>
                     </div>
                 </div>
@@ -60,8 +60,6 @@
         }
 
         &-before-footer-section {
-            margin-top: 150px;
-
             &__content {
                 padding: 40px 60px 52px 20px;
                 border-radius: 24px;
@@ -134,6 +132,7 @@
                 @media(max-width: 330px) {
                     font-size: 21px;
                 }
+
                 @media(max-width: 300px) {
                     font-size: 18px;
                 }
@@ -203,23 +202,27 @@
 
     &-main-section {
         &__content {
-            background: url("../assets/images/third-main-block-main-section-background-desk.svg");
             background-position: center bottom;
             background-repeat: no-repeat;
             display: block;
-
-            @media(max-width: $md3) {
-                background: url("../assets/images/third-main-block-main-section-background-tablet.svg");
-                background-repeat: no-repeat;
-                background-position: center bottom;
-                background-size: contain;
-            }
         }
 
         &-images {
             margin-bottom: 150px;
+            background: url("../assets/images/third-main-block-main-section-background-desk.svg");
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            margin-right: 20px;
+
+            @media(max-width: 900px) {
+                background-size: contain;
+            }
 
             @media(max-width: $md3) {
+                background: url("../assets/images/third-main-block-main-section-background-tablet.svg");
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                background-size: contain;
                 margin-bottom: 100px;
             }
 
@@ -231,21 +234,81 @@
                 &__1 {
                     margin-bottom: 50px;
                     margin-right: 10px;
+                    object-fit: contain;
 
                     @media(max-width: $md3) {
                         max-width: 300px;
                         margin-right: 0px;
+                    }
+
+                    @media(max-width: 700px) {
+                        max-width: 280px;
+
+                    }
+
+                    @media(max-width: 650px) {
+                        max-width: 250px;
+                    }
+
+                    @media(max-width: 600px) {
+                        max-width: 230px;
+                    }
+
+                    @media(max-width: 550px) {
+                        max-width: 210px;
+                    }
+
+                    @media(max-width: 520px) {
+                        max-width: 200px;
+                    }
+
+                    @media(max-width: 500px) {
+                        max-width: 190px;
+                    }
+
+                    @media(max-width: $md4) {
+                        max-width: 170px;
                     }
                 }
 
                 &__2 {
                     margin-top: 150px;
                     margin-left: 40px;
+                    object-fit: contain;
 
                     @media(max-width: $md3) {
                         max-width: 300px;
                         margin-left: 0px;
                         margin-top: 100px;
+                    }
+
+                    @media(max-width: 700px) {
+                        max-width: 280px;
+                    }
+
+                    @media(max-width: 650px) {
+                        max-width: 250px;
+                    }
+
+                    @media(max-width: 600px) {
+                        max-width: 230px;
+                    }
+
+                    @media(max-width: 550px) {
+                        max-width: 210px;
+                    }
+
+                    @media(max-width: 520px) {
+                        max-width: 200px;
+                    }
+
+                    @media(max-width: 500px) {
+                        max-width: 190px;
+                    }
+
+                    @media(max-width: $md4) {
+                        max-width: 170px;
+                        margin-top: 50px;
                     }
                 }
             }
@@ -295,6 +358,10 @@
             @media(max-width: $md4) {
                 font-size: 14px;
                 text-align: left;
+            }
+
+            @media(max-width: $md4) {
+                margin-bottom: 20px;
             }
         }
     }

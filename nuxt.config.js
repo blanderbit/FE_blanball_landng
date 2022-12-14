@@ -1,4 +1,6 @@
-export default {
+import Meta from './plugins/meta'
+
+export default defineNuxtConfig({
 	css: ["~/assets/styles/base.scss"],
 	postcss: {
 		plugins: {
@@ -7,13 +9,17 @@ export default {
 		},
 	},
 	plugins: [{ src: "@/plugins/aos", ssr: false, mode: "client" }],
-	head: {
-		meta: [
-			{ charset: 'utf-8' },
-			{ name: 'viewport', content: 'width=device-width, initial scale=1' },
-			{ hid: 'description', name: 'description', content: 'Meta description' }
-		]
+	app: {
+		head: {
+			title: 'Blanball',
+			link: [
+				{ rel: 'icon', type: 'image/x-icon', href: './public/favicon.ico' }
+			],
+			meta: Meta,
+		},
 	},
+	ssr: false,
+	preset: 'node-server',
 	router: {
 		scrollBehavior(to) {
 			if (to.hash) {
@@ -32,15 +38,9 @@ export default {
 	sitemap: {
 		cacheTime: 1,
 		defaults: {
-		  changefreq: 'daily',
-		  priority: 1,
-		  lastmod: new Date().toISOString(),
+			changefreq: 'daily',
+			priority: 1,
+			lastmod: new Date().toISOString(),
 		},
 	},
-};
-
-
-defineNuxtConfig({
-	ssr: false,
-	preset: 'node-server'
-})
+});
