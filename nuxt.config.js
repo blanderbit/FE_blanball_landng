@@ -1,4 +1,4 @@
-import Meta from './plugins/meta'
+import Meta from './src/plugins/meta'
 
 export default defineNuxtConfig({
 	css: ["~/assets/styles/base.scss"],
@@ -19,6 +19,7 @@ export default defineNuxtConfig({
 		},
 	},
 	ssr: false,
+	srcDir: 'src/',
 	preset: 'node-server',
 	router: {
 		scrollBehavior(to) {
