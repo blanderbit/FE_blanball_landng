@@ -29,7 +29,7 @@
                         <div class="b-third__block-before-footer-section__input-create-account__section">
                             <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text" id="name"
                                 name="name">
-                            <RegisterButton style="height: 45px; margin-right: 0px;" text="Створити акаунт" />
+                            <RegisterButton style="height: 45px; margin-right: 0px;"  :text="$t('thirdBlock.beforeFooterSection.create_account')" />
                         </div>
                     </div>
                 </div>
