@@ -3,12 +3,12 @@
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="logo">
                 <img class="b-menu__logo-desk" src="../assets/images/logo.svg" alt="desk-logo" />
-                <img class="b-menu__logo-small" src="../assets/images/logo-ball.svg" alt="small-logo"/>
+                <img class="b-menu__logo-small" src="../assets/images/logo-ball.svg" alt="small-logo" />
             </div>
             <Navigation data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" />
             <div class="b-menu__right-side">
-                <HeaderMenuRoute/>
-                <RegisterButton text="Зареєструватися" />
+                <HeaderMenuRoute />
+                <RegisterButton :text="$t('buttons.register')" />
             </div>
         </ul>
     </div>
@@ -26,6 +26,7 @@
             display: flex;
             align-items: center;
         }
+
         &__body {
             padding: 10px 0;
             align-items: center;

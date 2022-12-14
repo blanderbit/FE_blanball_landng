@@ -1,5 +1,5 @@
 <template>
-    <button onclick="location.href='http://178.151.201.167:49201/authentication/register'">{{ text }}</button>
+  <button onclick="location.href='http://178.151.201.167:49201/authentication/register'">{{ text }}</button>
 </template>
 
 <script>

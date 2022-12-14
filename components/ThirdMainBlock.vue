@@ -24,12 +24,13 @@
                     </div>
                     <div class="b-third__block-before-footer-section__email-input">
                         <label class="b-third__block-before-footer-section__input-label" for="name">{{
-                                $t('thirdBlock.beforeFooterSection.inputLabel')
+                            $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
                         <div class="b-third__block-before-footer-section__input-create-account__section">
-                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text" id="name"
-                                name="name">
-                            <RegisterButton style="height: 45px; margin-right: 0px;"  :text="$t('thirdBlock.beforeFooterSection.create_account')" />
+                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text"
+                                id="name" name="name">
+                            <RegisterButton style="height: 45px; margin-right: 0px;"
+                                :text="$t('buttons.create_account')"/>
                         </div>
                     </div>
                 </div>
@@ -49,6 +50,7 @@
 
 <style lang="scss">
 @import "assets/styles/base.scss";
+
 .b {
     &-third__block {
         margin-bottom: 160px;
@@ -59,6 +61,7 @@
 
         &-before-footer-section {
             margin-top: 150px;
+
             &__content {
                 padding: 40px 60px 52px 20px;
                 border-radius: 24px;
@@ -80,10 +83,11 @@
                     background-position: center;
                 }
             }
+
             &__left-side {
-               @media(max-width: $md4) {
+                @media(max-width: $md4) {
                     width: 100%;
-               }
+                }
             }
 
             &__right-side {
@@ -129,6 +133,9 @@
 
                 @media(max-width: 330px) {
                     font-size: 21px;
+                }
+                @media(max-width: 300px) {
+                    font-size: 18px;
                 }
             }
 

@@ -13,7 +13,7 @@
                 <div class="b-header-mobile__logo">
                     <img src="../assets/images/header-tablet-logo.svg" alt="header-mobile-logo">
                 </div>
-                <RegisterButton class="b-header-mobile__button" text="Зареєструватися"/>
+                <RegisterButton class="b-header-mobile__button" text="Зареєструватися" />
             </div>
             <div class="b-header-content _container">
                 <section class="b-header-menu">
@@ -37,8 +37,7 @@
                                 src="../assets/images/logo-ball.svg" alt="logo-ball">
                         </div>
                         <div class="b-header-title-second__line">
-                            <RegisterButton class="b-header-title-second__line-button" style=""
-                                text="Зареєструватися" />
+                            <RegisterButton class="b-header-title-second__line-button" :text="$t('buttons.register')" />
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100"
                                 data-aos-offset="0" class="b-header-title-second__line-first__word">{{ $t('header.rest')
                                 }}</div>
@@ -47,6 +46,9 @@
                     <div class="b-header-tablet-main__image">
                         <img src="../assets/images/user-raiting.svg" alt="header-main-image-tablet">
                     </div>
+                    <div class="b-header-mobile-main__image">
+                        <img src="../assets/images/header-main-image-mobile.svg" alt="header-main-image-mobile">
+                    </div>
                 </div>
             </div>
         </header>
@@ -54,10 +56,12 @@
 </template>
 
 <script>
+
 </script>
 
 <style lang="scss">
 @import "assets/styles/base.scss";
+
 .b {
     &-header {
         background: url("../assets/images/header-background-lines.svg");
@@ -71,6 +75,7 @@
             background: none;
             padding-bottom: 40px;
         }
+
         @media(max-width: $md4) {
             background: url("../assets/images/header-background-lines-mobile.svg");
             background-repeat: no-repeat;
@@ -82,26 +87,42 @@
             display: flex;
             flex-direction: column;
         }
+
         &-mobile {
             &-top__side {
                 display: none;
                 justify-content: space-between;
                 padding-left: 20px;
                 margin-bottom: 40px;
+
                 @media(max-width: $md4) {
                     display: flex;
                 }
             }
+
+            &-main__image {
+                display: none;
+
+                @media(max-width: $md4) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 5px;
+                }
+            }
+
             &__logo {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
+
             &__button {
                 font-size: 1px;
                 margin-right: 0px;
                 font-style: normal;
                 font-weight: 500;
+
                 @media(max-width: 410px) {
                     display: none;
                 }
@@ -114,10 +135,12 @@
                 justify-content: space-between;
                 margin-bottom: 50px;
                 padding-left: 20px;
+
                 @media(max-width: $md3) and (min-width: $md4) {
                     display: flex;
                 }
             }
+
             &__logo {
                 display: flex;
                 justify-content: center;
@@ -151,7 +174,7 @@
                 display: none;
                 margin-top: 20px;
 
-                @media(max-width: $md3) {
+                @media(max-width: $md3) and (min-width: $md4) {
                     display: block;
                 }
             }
@@ -167,6 +190,7 @@
                 background-size: 100%;
                 padding: 0px 20px;
             }
+
             @media(max-width: $md3) {
                 background: radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
                 background-position: bottom;
@@ -248,8 +272,12 @@
             @media(max-width: 395px) {
                 font-size: 36px;
             }
+
             @media(max-width: 370px) {
                 font-size: 32px;
+            }
+            @media(max-width: 350px) {
+                font-size: 28px;
             }
 
             &-first__line {
@@ -273,6 +301,7 @@
 
                     span {
                         margin-left: 20px;
+
                         @media(max-width: $md4) {
                             margin-left: 10px;
                         }

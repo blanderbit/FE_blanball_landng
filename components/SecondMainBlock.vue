@@ -7,8 +7,7 @@
                 </div>
                 <div class="b-second-block-first__section-main__image">
                     <div class="b-second-block-first__section-main__image-desk">
-                        <img 
-                            src="../assets/images/second-block-first-section-main-image-desk.svg" 
+                        <img src="../assets/images/second-block-first-section-main-image-desk.svg"
                             alt="second-block-first-section-main-image-desk">
                     </div>
                     <div class="b-second-block-first__section-main__image-tablet">
@@ -22,22 +21,20 @@
                     <div class="b-second-block-first__section-mobile__block">
                         <section class="b-second-block-first__section-mobile__block-first">
                             <div class="b-second-block-first__section-mobile__block__title">
-                                Обирайте конкретні дати проведення заходів
+                                {{ $t('secondBlock.secondSection.mobile_title') }}
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
-                                <img 
-                                src="../assets/images/b-second-block-first-section-mobile-block-1.svg" 
-                                alt="b-second-block-first-section-mobile-block-1">
+                                <img src="../assets/images/b-second-block-first-section-mobile-block-1.svg"
+                                    alt="b-second-block-first-section-mobile-block-1">
                             </div>
                         </section>
                         <section class="b-second-block-first__section-mobile__block-second">
                             <div class="b-second-block-first__section-mobile__block__title">
-                                Призначайте кольори форм гравцям обидвох команд
+                                {{ $t('secondBlock.secondSection.mobile_subtitle') }}
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
-                                <img 
-                                src="../assets/images/b-second-block-first-section-mobile-block-2.svg" 
-                                alt="b-second-block-first-section-mobile-block-2">
+                                <img src="../assets/images/b-second-block-first-section-mobile-block-2.svg"
+                                    alt="b-second-block-first-section-mobile-block-2">
                             </div>
                         </section>
                     </div>
@@ -61,8 +58,7 @@
                     <div class="b-second-block-second__section__image-mobile">
                         <img src="../assets/images/second-main-block-second-section-mob.svg"
                             alt="second-main-block-second-section-mobile">
-                        <img src="../assets/images/create-review-second-block.svg"
-                            alt="create-review-second-block">
+                        <img src="../assets/images/create-review-second-block.svg" alt="create-review-second-block">
                     </div>
                 </div>
             </div>
@@ -146,6 +142,7 @@
                     max-width: 520px;
                     padding-top: 30px;
                 }
+
                 @media(max-width: $md4) {
                     padding-top: 20px;
                 }
@@ -158,12 +155,14 @@
                 @media(max-width: $md4) {
                     display: block;
                 }
+
                 &-first {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
                 }
+
                 &-second {
                     display: flex;
                     justify-content: center;
@@ -232,8 +231,8 @@
         &-second__section {
             width: 100%;
             border-radius: 0px 0px 36px 36px;
-            background-image: url('../assets/images/second-main-block-second-section-background.svg'), 
-            linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
+            background-image: url('../assets/images/second-main-block-second-section-background.svg'),
+                linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom;
             padding-bottom: 70px;

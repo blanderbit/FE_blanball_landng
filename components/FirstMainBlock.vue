@@ -12,8 +12,10 @@
             </section>
             <section data-aos="zoom-out-right" data-aos-easing="ease-in-quart" data-aos-delay="700" data-aos-offset="0"
                 class="b-first-block__image">
-                <img class="b-first-block__image-desk" src="../assets/images/first-main-block-desk.svg" alt="first-main-block-desk">
-                <img class="b-first-block__image-tablet" src="../assets/images/first-main-block-tablet.svg" alt="first-main-block-tablet">
+                <img class="b-first-block__image-desk" src="../assets/images/first-main-block-desk.svg"
+                    alt="first-main-block-desk">
+                <img class="b-first-block__image-tablet" src="../assets/images/first-main-block-tablet.svg"
+                    alt="first-main-block-tablet">
                 <div class="b-first-block__image-mobile">
                     <img src="../assets/images/first-main-block-mobile.svg" alt="first-main-block-mobile">
                 </div>
@@ -54,9 +56,11 @@
             @media(max-width: $md4) {
                 font-size: 27px;
             }
+
             @media(max-width: 380px) {
                 font-size: 24px;
             }
+
             @media(max-width: 340px) {
                 font-size: 20px;
             }
@@ -67,15 +71,18 @@
             justify-content: center;
             align-items: center;
             min-height: 600px;
+
             @media(max-width: $md2) and (min-width: $md4) {
                 min-height: 400px;
             }
+
             @media(max-width: $md4) {
                 min-height: 200px;
             }
-            
+
             &-desk {
                 align-self: flex-start;
+
                 @media(max-width: $md3) {
                     display: none;
                 }
@@ -94,6 +101,7 @@
             &-mobile {
                 display: none;
                 margin-top: 20px;
+
                 @media(max-width: $md4) {
                     display: block;
                 }

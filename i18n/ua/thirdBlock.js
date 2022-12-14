@@ -6,6 +6,5 @@ export default {
     beforeFooterSection: {
         'title': 'Зберіть свою команду <br> вже сьогодні',
         'inputLabel': 'Електронна адреса',
-        'create_account': 'Створити акаунт',
     }
 }

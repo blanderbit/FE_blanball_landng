@@ -27,7 +27,7 @@
                     Підпишіться на нашу розсилку
                 </div>
                 <input class="b-first__news-block-right__side-input" placeholder="E-mail" type="text" id="name"
-                    ame="name">
+                    name="name">
             </section>
             <img src="../assets/images/news-first-block-left.svg" alt="">
         </div>
@@ -36,6 +36,7 @@
 
 <style lang="scss" scoped>
 @import "assets/styles/base.scss";
+
 .b {
     &-first__news-block {
         display: flex;

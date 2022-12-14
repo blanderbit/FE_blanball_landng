@@ -51,12 +51,15 @@ export default {
             align-items: center;
             border-left: 1px solid black;
             padding-left: 10px;
+
             @media(max-width: $md2) {
                 margin-right: 15px;
             }
+
             @media(max-width: 800px) {
                 padding-left: 0px;
             }
+
             &__arrow-image {
                 @media(max-width: 800px) {
                     display: none;

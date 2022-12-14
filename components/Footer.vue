@@ -25,18 +25,20 @@
                 <img src="../assets/images/footer-logo.svg" alt="footer-logo">
                 <NuxtLink :to="{ path: '/' }" :style="getStyle">
                     <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
-                        data-aos-offset="0" src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
+                        data-aos-offset="0" class="b-footer-tablet-top__side-arrow"
+                        src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
                 </NuxtLink>
             </div>
             <div class="b-footer-tablet-main__side">
                 <div class="b-footer-tablet-main__side-content">
                     <div class="b-footer-tablet-main__side-input-block">
-                        <label class="b-footer-tablet-main__side-input-label" for="name">Підписатись на розсилку
-                        </label>
+                        <label class="b-footer-tablet-main__side-input-label" for="name">{{
+                                $t('footer.subscribe_newsletter')
+                        }}</label>
                         <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="text" id="name"
                             name="name">
                     </div>
-                    <a class="b-footer-tablet-main__side-subscribe-button">Підписатись</a>
+                    <a class="b-footer-tablet-main__side-subscribe-button">{{ $t('buttons.subscribe') }}</a>
                     <div class="b-footer-tablet-navigation">
                         <Navigation style="margin-top: 30px;" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
                             data-aos-delay="600" data-aos-offset="0" :stylings="navigationItemStyles"
@@ -45,8 +47,8 @@
                 </div>
             </div>
             <div class="b-footer-mobile-navigation">
-                <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                data-aos-delay="600" data-aos-offset="0" :stylings="navigationItemStylesMobile"/>
+                <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
+                    data-aos-offset="0" :stylings="navigationItemStylesMobile" />
             </div>
             <div class="b-footer-tablet-bottom__side">
                 <div class="b-footer-tablet-bottom__side-title">
@@ -85,6 +87,7 @@ export default {
 
 <style lang="scss">
 @import "assets/styles/base.scss";
+
 .b {
     &-footer {
 
@@ -145,9 +148,11 @@ export default {
                 }
             }
         }
+
         &-mobile {
             &-navigation {
                 display: none;
+
                 @media(max-width: 650px) {
                     display: block;
                 }
@@ -160,6 +165,7 @@ export default {
             @media(max-width: $md3) {
                 display: block;
             }
+
             &-navigation {
                 @media(max-width: 650px) {
                     display: none;
@@ -173,6 +179,7 @@ export default {
                 @media(max-width: $md3) and (min-width: $md4) {
                     border-radius: 0px 0px 20px 20px;
                 }
+
                 @media(max-width: $md4) {
                     padding: 15px 20px 10px 20px;
                 }
@@ -181,6 +188,19 @@ export default {
             &-top__side {
                 display: flex;
                 justify-content: space-between;
+                position: relative;
+
+                @media(max-width: $md4) {
+                    position: relative;
+                }
+
+                &-arrow {
+                    @media(max-width: $md4) {
+                        position: absolute;
+                        right: 5px;
+                        top: -30px;
+                    }
+                }
             }
 
             &-bottom__side {
@@ -241,8 +261,13 @@ export default {
                     line-height: 140%;
                     color: #C5C5D3;
                     margin-top: 5px;
+
                     @media(max-width: 410px) {
                         max-width: 200px;
+                    }
+
+                    @media(max-width: 350px) {
+                        max-width: 170px;
                     }
 
                     &-block {
@@ -250,6 +275,10 @@ export default {
 
                         @media(max-width: 410px) {
                             max-width: 200px;
+                        }
+
+                        @media(max-width: 350px) {
+                            max-width: 170px;
                         }
                     }
 
@@ -260,10 +289,15 @@ export default {
                         font-size: 15px;
                         line-height: 20px;
                         color: #C5C5D3;
+
+                        @media(max-width: 350px) {
+                            font-size: 13px;
+                        }
                     }
                 }
             }
         }
     }
 }
+
 </style>
