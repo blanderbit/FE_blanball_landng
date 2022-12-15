@@ -1,19 +1,13 @@
 <template>
     <div class="b-header-wrapper">
         <header class="b-header">
-            <div class="b-header-tablet-top__side">
-                <img src="../assets/images/burger-tablet.svg" alt="header-tablet-logo">
-                <div class="b-header-tablet__logo">
+            <div class="b-header-top__side">
+                <BurgerMenu />
+                <div class="b-header-top__side__logo">
                     <img src="../assets/images/header-tablet-logo.svg" alt="header-tablet-logo">
                 </div>
-                <input placeholder="Пошук" type="text" class="b-header-tablet__input">
-            </div>
-            <div class="b-header-mobile-top__side">
-                <img src="../assets/images/burger-moblo.svg" alt="header-mobile-logo">
-                <div class="b-header-mobile__logo">
-                    <img src="../assets/images/header-tablet-logo.svg" alt="header-mobile-logo">
-                </div>
-                <RegisterButton class="b-header-mobile__button" text="Зареєструватися" />
+                <input placeholder="Пошук" type="text" class="b-header-top__side__input">
+                <RegisterButton class="b-header-top__side-register-button" text="Зареєструватися" />
             </div>
             <div class="b-header-content _container">
                 <section class="b-header-menu">
@@ -89,17 +83,6 @@
         }
 
         &-mobile {
-            &-top__side {
-                display: none;
-                justify-content: space-between;
-                padding-left: 20px;
-                margin-bottom: 40px;
-
-                @media(max-width: $md4) {
-                    display: flex;
-                }
-            }
-
             &-main__image {
                 display: none;
 
@@ -110,41 +93,29 @@
                     margin-top: 5px;
                 }
             }
+        }
 
-            &__logo {
+        &-top__side {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            padding-left: 20px;
+
+            @media(max-width: $md3) {
                 display: flex;
-                justify-content: center;
-                align-items: center;
             }
 
-            &__button {
-                font-size: 1px;
-                margin-right: 0px;
-                font-style: normal;
-                font-weight: 500;
+            &-register-button {
+                display: none;
+
+                @media(max-width: $md4) {
+                    display: block;
+                }
 
                 @media(max-width: 410px) {
                     display: none;
                 }
-            }
-        }
-
-        &-tablet {
-            &-top__side {
-                display: none;
-                justify-content: space-between;
-                margin-bottom: 50px;
-                padding-left: 20px;
-
-                @media(max-width: $md3) and (min-width: $md4) {
-                    display: flex;
-                }
-            }
-
-            &__logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
 
             &__input {
@@ -165,11 +136,23 @@
                 color: #575775;
                 border-radius: 6px;
 
+                @media(max-width: $md4) {
+                    display: none;
+                }
+
                 &:focus {
                     background: #FFFFFF;
                 }
             }
 
+            &__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        &-tablet {
             &-main__image {
                 display: none;
                 margin-top: 20px;
@@ -276,6 +259,7 @@
             @media(max-width: 370px) {
                 font-size: 32px;
             }
+
             @media(max-width: 350px) {
                 font-size: 28px;
             }

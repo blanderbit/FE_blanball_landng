@@ -24,6 +24,8 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "store.js": "^1.0.4",
+    "storejs": "^2.0.1",
     "vue-scrollto": "^2.20.0",
     "wowjs": "^1.1.3"
   }

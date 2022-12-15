@@ -1,125 +1,154 @@
 <template>
-<nav class="menu">
-    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
-    <label class="menu-open-button" for="menu-open">
-    <span class="lines line-1"></span>
-    <span class="lines line-2"></span>
-    <span class="lines line-3"></span>
-</label>
-
-   <a href="#" class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
-   <a href="#" class="menu-item green"> <i class="fa fa-coffee"></i> </a>
-   <a href="#" class="menu-item red"> <i class="fa fa-heart"></i> </a>
-   <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
-   <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
-   <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
-</nav>
-
+    <div class="b-burger">
+        <label @click="isMenuActive = !isMenuActive" class="b-burger-btn">
+            <img class="b-burger-btn-tablet" src="../assets/images/burger-tablet.svg" alt="burger-tablet">
+            <img class="b-burger-btn-mobile" src="../assets/images/burger-moblo.svg" alt="burger-mobile">
+        </label>
+        <transition name="fade">
+            <ul v-show="isMenuActive" class="b-burger-body">
+                <div class="b-burger-content">
+                    <div class="b-burger-content-logo">
+                        <img src="../assets/images/burger-active-logo.svg" alt="burger-active-logo">
+                    </div>
+                    <div class="b-burger-content-menu">
+                        <div class="b-burger-content-menu-title">Меню</div>
+                        <img class="b-burger-content-menu-сross" @click="isMenuActive = !isMenuActive"
+                            src="../assets/images/header-burger-active-cross.svg" alt="">
+                    </div>
+                    <div class="b-burger-content-navigation">
+                        <Navigation style="margin-top: 10px;" :stylings="navigationItemStyles"
+                            :navigationBodyStyles="navigationBodyStyles" />
+                    </div>
+                    <div class="b-burger-content-page-route">
+                        <HeaderMenuRoute />
+                    </div>
+                </div>
+            </ul>
+        </transition>
+    </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+    data() {
+        return {
+            navigationBodyStyles: {
+                'flex-direction': 'column',
+                'margin-right': '50px',
+                'max-width': '150px',
+            },
+            navigationItemStyles: {
+                'margin-left': '0px',
+            },
+            isMenuActive: false,
+        }
+    },
+}
+</script>
+
+<style scoped lang="scss">
 @import "assets/styles/base.scss";
 
-.b {
-    &-burger-menu {
-        &-tablet {
-            display: none;
+.fade-enter-active, .fade-leave-active {
+    transform: translateX(-300px);
+}
+.fade-enter, .fade-leave-to {
+  transform: translateX(-300px) 2s;
+}
 
-            @media(max-width: $md3) and (min-width: $md4) {
-                display: block;
+.b {
+    &-burger {
+        margin-right: 20px;
+
+        &-btn {
+            z-index: 1;
+
+            &-tablet {
+
+                display: none;
+
+                @media(max-width: $md3) and (min-width: $md4) {
+                    display: block;
+                }
+            }
+
+            &-mobile {
+                display: none;
+
+                @media(max-width: $md4) {
+                    display: block;
+                }
             }
         }
 
-        &-mobile {
-            display: none;
+        &-body {
+            display: block;
+            position: fixed;
+            width: 300px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: #fff;
+            box-shadow: 2px 2px 10px rgba(56, 56, 251, 0.1);
+            transition-duration: .25s;
+            z-index: 100;
 
             @media(max-width: $md4) {
-                display: block;
+                width: 250px;
+            }
+        }
+
+        &-content {
+            padding: 25px;
+
+            &-page-route {
+                margin-top: 15px;
+
+                &-text {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #575775;
+                }
+            }
+
+            &-menu {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                height: 32px;
+                border-bottom: 1px solid #EFEFF6;
+
+                &-title {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: #8A8AA8;
+                }
+            }
+
+            &-сross {
+                width: 10px;
+                height: 10px;
+            }
+
+            &-logo {
+                margin-bottom: 30px;
+            }
+
+            &-navigation {
+                height: 90px;
+                border-bottom: 1px solid #EFEFF6;
             }
         }
     }
-}
-
-#menu__toggle {
-    opacity: 0;
-}
-
-#menu__toggle:checked+.menu__btn>span {
-    transform: rotate(45deg);
-}
-
-#menu__toggle:checked+.menu__btn>span::before {
-    top: 0;
-    transform: rotate(0deg);
-}
-
-#menu__toggle:checked+.menu__btn>span::after {
-    top: 0;
-    transform: rotate(90deg);
-}
-
-#menu__toggle:checked~.menu__box {
-    left: 0 !important;
-}
-
-.menu__btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.menu__btn>span,
-.menu__btn>span::before,
-.menu__btn>span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #616161;
-    transition-duration: .25s;
-}
-
-.menu__btn>span::before {
-    content: '';
-    top: -8px;
-}
-
-.menu__btn>span::after {
-    content: '';
-    top: 8px;
-}
-
-.menu__box {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 300px;
-    height: 100%;
-    margin: 0;
-    padding: 80px 0;
-    list-style: none;
-    background-color: #ECEFF1;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-}
-
-.menu__item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    transition-duration: .25s;
-}
-
-.menu__item:hover {
-    background-color: #CFD8DC;
 }
 </style>

@@ -3,7 +3,7 @@
         <div class="b-first-block__content">
             <section class="b-first-block-titles">
                 <div data-aos="fade-up-right" data-aos-delay="300" class="b-first-block__title"
-                    id="b-first__block-main-title">
+                    id="b-first-block__title">
                     {{ $t('firstBlock.title') }}
                 </div>
                 <div data-aos="fade-up-left" data-aos-delay="400" class="b-first-block__subtitle">

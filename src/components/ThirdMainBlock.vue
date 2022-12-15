@@ -55,11 +55,11 @@
     &-third__block {
         margin-bottom: 160px;
 
-        @media(max-width: $md4) {
-            padding: 0px 15px 0px 15px;
-        }
-
         &-before-footer-section {
+            @media(max-width: $md4) {
+                padding: 0px 15px;
+            }
+
             &__content {
                 padding: 40px 60px 52px 20px;
                 border-radius: 24px;
@@ -267,7 +267,16 @@
                     }
 
                     @media(max-width: $md4) {
+                        max-width: 180px;
+                    }
+                    @media(max-width: 450px) {
                         max-width: 170px;
+                    }
+                    @media(max-width: 410px) {
+                        max-width: 160px;
+                    }
+                    @media(max-width: 390px) {
+                        max-width: 140px;
                     }
                 }
 
@@ -279,7 +288,7 @@
                     @media(max-width: $md3) {
                         max-width: 300px;
                         margin-left: 0px;
-                        margin-top: 100px;
+                        margin-top: 60px;
                     }
 
                     @media(max-width: 700px) {
@@ -307,8 +316,17 @@
                     }
 
                     @media(max-width: $md4) {
+                        max-width: 180px;
+                    }
+                    @media(max-width: 450px) {
                         max-width: 170px;
-                        margin-top: 50px;
+                    }
+                    @media(max-width: 410px) {
+                        max-width: 160px;
+                    }
+                    @media(max-width: 390px) {
+                        max-width: 140px;
+                        margin-top: 20px;
                     }
                 }
             }
@@ -344,6 +362,10 @@
                 font-size: 20px;
                 text-align: left;
             }
+            @media(max-width: 400px) {
+                font-size: 18px;
+                text-align: left;
+            }
         }
 
         &-subtitle {
@@ -354,6 +376,7 @@
             line-height: 150%;
             text-align: center;
             color: #575775;
+            margin-bottom: 20px;
 
             @media(max-width: $md4) {
                 font-size: 14px;
@@ -362,6 +385,9 @@
 
             @media(max-width: $md4) {
                 margin-bottom: 20px;
+            }
+            @media(max-width: 400px) {
+                font-size: 12px;
             }
         }
     }

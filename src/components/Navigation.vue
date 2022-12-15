@@ -38,11 +38,11 @@ export default {
                 routes = [
                     {
                         name: t('navigation.create_commands'),
-                        element: "#b-first__block-main-title"
+                        element: "#b-first-block__title"
                     },
                     {
                         name: t('navigation.organization_teams'),
-                        element: "#b-first__section-main__title"
+                        element: "#b-second-block-first__section__title"
                     },
                     {
                         name: t('navigation.evaluation_measures'),

@@ -2,7 +2,7 @@
     <main class="b-second-block">
         <section class="b-second-block-first__section">
             <div class="b-second-block-first__section__content _container">
-                <div class="b-second-block-first__section__title b-title" id="b-second-block-first__section-main__title"
+                <div class="b-second-block-first__section__title b-title" id="b-second-block-first__section__title"
                     v-html="$t('secondBlock.firstSection.title')">
                 </div>
                 <div class="b-second-block-first__section-main__image">
