@@ -73,6 +73,7 @@ export default {
                 font-size: 13px;
                 color: #575775;
                 margin-left: 10px;
+                transition: color 0.3s ease 0s;
 
                 @media(min-width: $md2) {
                     &:hover {

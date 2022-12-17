@@ -281,6 +281,9 @@
                     @media(max-width: 390px) {
                         max-width: 140px;
                     }
+                    @media(max-width: 350px) {
+                        max-width: 125px;
+                    }
                 }
 
                 &__2 {
@@ -330,6 +333,9 @@
                     @media(max-width: 390px) {
                         max-width: 140px;
                         margin-top: 20px;
+                    }
+                    @media(max-width: 350px) {
+                        max-width: 125px;
                     }
                 }
             }

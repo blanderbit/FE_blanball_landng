@@ -107,12 +107,6 @@ export default {
 
         &__item {
             margin-left: 20px;
-
-            // @media(max-width: 650px) {
-            //     &:first-child {
-            //         margin-left: 0px;
-            //     }
-            // }
         }
     }
 }
