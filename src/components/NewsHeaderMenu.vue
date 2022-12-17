@@ -8,7 +8,7 @@
             </div>
             <Navigation data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" />
             <div class="b-menu__right-side">
-                <RegisterButton text="Зареєструватися" />
+                <RegisterButton :text="$t('buttons.register')" />
             </div>
         </ul>
     </div>

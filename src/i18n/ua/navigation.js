@@ -7,4 +7,5 @@ export default {
     'announcements': 'Анонси',
     'articles': 'Статті',
     'popular': 'Популярне',
+    'menu': 'Меню',
 }

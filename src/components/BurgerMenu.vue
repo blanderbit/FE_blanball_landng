@@ -11,17 +11,17 @@
                         <img src="../assets/images/burger-active-logo.svg" alt="burger-active-logo">
                     </div>
                     <div class="b-burger-content-menu">
-                        <div class="b-burger-content-menu-title">Меню</div>
+                        <div class="b-burger-content-menu-title">{{ $t('navigation.menu') }}</div>
                         <img class="b-burger-content-menu-сross" @click="isMenuActive = !isMenuActive"
-                            src="../assets/images/header-burger-active-cross.svg" alt="">
+                            src="../assets/images/header-burger-active-cross.svg" alt="burger-active-cross">
                     </div>
                     <div class="b-burger-content-navigation">
-                        <Navigation style="margin-top: 10px; margin-left: -20px;;" :stylings="navigationItemStyles"
+                        <Navigation style="margin-top: 10px; margin-left: -20px;" :stylings="navigationItemStyles"
                             :navigationBodyStyles="navigationBodyStyles" />
                     </div>
                     <div class="b-burger-content-page-route">
                         <HeaderMenuRoute style="margin-left: -10px;" />
-                        <img src="../assets/images/news-arrow-right.svg" alt="">
+                        <img src="../assets/images/news-arrow-right.svg" alt="news-arrow-right">
                     </div>
                 </div>
             </ul>
@@ -50,11 +50,14 @@ export default {
 <style scoped lang="scss">
 @import "assets/styles/base.scss";
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
     transform: translateX(-300px);
 }
-.fade-enter, .fade-leave-to {
-  transform: translateX(-300px) 2s;
+
+.fade-enter,
+.fade-leave-to {
+    transform: translateX(-300px) 2s;
 }
 
 .b {
@@ -108,8 +111,6 @@ export default {
                 align-items: center;
 
                 &-text {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 142%;
@@ -126,8 +127,6 @@ export default {
                 border-bottom: 1px solid #EFEFF6;
 
                 &-title {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 500;
                     font-size: 12px;
                     line-height: 142%;
@@ -152,4 +151,3 @@ export default {
     }
 }
 </style>
-

@@ -83,7 +83,6 @@ export default {
         }
 
         &__link {
-            font-family: 'Inter';
             font-weight: 400;
             font-size: 14px;
             line-height: 142%;

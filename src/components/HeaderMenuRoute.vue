@@ -67,8 +67,6 @@ export default {
             }
 
             &-text {
-                font-family: 'Inter';
-                font-style: normal;
                 font-weight: 500;
                 font-size: 13px;
                 color: #575775;

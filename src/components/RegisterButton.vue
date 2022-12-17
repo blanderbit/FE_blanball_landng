@@ -18,8 +18,6 @@ button {
   background: #148783;
   border-radius: 8px;
   font-weight: 600;
-  font-family: 'Inter';
-  font-style: normal;
   padding: 8px 16px;
   font-size: 15px;
   margin-right: 20px;

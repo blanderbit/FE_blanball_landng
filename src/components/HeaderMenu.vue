@@ -61,8 +61,6 @@
                 width: 224px;
                 height: 40px;
                 border: 1px solid #DFDEED;
-                font-family: 'Inter';
-                font-style: normal;
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 166%;

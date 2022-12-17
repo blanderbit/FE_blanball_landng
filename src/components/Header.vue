@@ -16,7 +16,7 @@
                                 src="../assets/images/logo-ball.svg" alt="logo-ball">
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800"
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
-                                    $t('header.play')
+                                        $t('header.play')
                                 }}</span></div>
                             <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950"
                                 data-aos-offset="0" class="b-header-title-first__line-ball__image"
@@ -124,7 +124,6 @@
 
         &-title {
             font-family: 'Exo 2';
-            font-style: normal;
             font-weight: 700;
             font-size: 72px;
             line-height: 122%;

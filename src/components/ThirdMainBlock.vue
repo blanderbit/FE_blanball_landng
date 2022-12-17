@@ -10,7 +10,8 @@
                     <div class="b-main-section-images-iphone">
                         <img class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg"
                             alt="b-main-section-images-iphone-1">
-                        <img data-aos-offset="300" data-aos-easing="ease-in-sine" class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg"
+                        <img data-aos-offset="300" data-aos-easing="ease-in-sine"
+                            class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg"
                             alt="b-main-section-images-iphone-2">
                     </div>
                 </div>
@@ -24,7 +25,7 @@
                     </div>
                     <div class="b-third__block-before-footer-section__email-input">
                         <label class="b-third__block-before-footer-section__input-label" for="name">{{
-                            $t('thirdBlock.beforeFooterSection.inputLabel')
+                                $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
                         <div class="b-third__block-before-footer-section__input-create-account__section">
                             <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text"
@@ -67,7 +68,7 @@
                 display: flex;
                 justify-content: space-between;
                 background-size: cover;
-                background: url("../assets/images/third-main-block-second-section-background-desk.svg"), #262541;
+                background: url("../assets/images/third-main-block-second-section-background-desk.svg"), $font-color;
 
                 @media(max-width: $md2) {
                     padding-right: 0px;
@@ -77,7 +78,7 @@
                     max-height: 245px;
                     padding: 15px 20px 26px 20px;
                     background-repeat: no-repeat;
-                    background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), #262541;
+                    background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), $font-color;
                     background-position: center;
                 }
             }
@@ -101,7 +102,6 @@
 
             &__title {
                 font-family: 'Exo 2';
-                font-style: normal;
                 font-weight: 700;
                 font-size: 44px;
                 line-height: 133%;
@@ -152,8 +152,6 @@
                 border: 1px solid #C5C5D3;
                 border-radius: 8px;
                 background-color: transparent;
-                font-family: 'Inter';
-                font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 140%;
@@ -164,6 +162,7 @@
                 @media(max-width: 850px) and (min-width: $md3) {
                     margin-right: 0px;
                 }
+
                 @media(max-width: $md4) {
                     margin-right: 0px;
                 }
@@ -185,8 +184,6 @@
                 }
 
                 &-label {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 500;
                     font-size: 15px;
                     line-height: 20px;
@@ -272,15 +269,19 @@
                     @media(max-width: $md4) {
                         max-width: 180px;
                     }
+
                     @media(max-width: 450px) {
                         max-width: 170px;
                     }
+
                     @media(max-width: 410px) {
                         max-width: 160px;
                     }
+
                     @media(max-width: 390px) {
                         max-width: 140px;
                     }
+
                     @media(max-width: 350px) {
                         max-width: 125px;
                     }
@@ -324,16 +325,20 @@
                     @media(max-width: $md4) {
                         max-width: 180px;
                     }
+
                     @media(max-width: 450px) {
                         max-width: 170px;
                     }
+
                     @media(max-width: 410px) {
                         max-width: 160px;
                     }
+
                     @media(max-width: 390px) {
                         max-width: 140px;
                         margin-top: 20px;
                     }
+
                     @media(max-width: 350px) {
                         max-width: 125px;
                     }
@@ -343,7 +348,6 @@
 
         &-title {
             font-family: 'Exo 2';
-            font-style: normal;
             font-weight: 700;
             font-size: 56px;
             line-height: 137%;
@@ -371,10 +375,12 @@
                 font-size: 20px;
                 text-align: left;
             }
+
             @media(max-width: 400px) {
                 font-size: 18px;
                 text-align: left;
             }
+
             @media(max-width: 350px) {
                 font-size: 16px;
                 margin-top: 30px;
@@ -382,8 +388,6 @@
         }
 
         &-subtitle {
-            font-family: 'Inter';
-            font-style: normal;
             font-weight: 400;
             font-size: 16px;
             line-height: 150%;
@@ -399,9 +403,11 @@
             @media(max-width: $md4) {
                 margin-bottom: 20px;
             }
+
             @media(max-width: 400px) {
                 font-size: 12px;
             }
+
             @media(max-width: 350px) {
                 font-size: 11px;
             }

@@ -15,7 +15,7 @@
                 </div>
             </section>
             <section class="b-first__news-block-left__side">
-                <img src="../assets/images/news-main.svg" alt="">
+                <img src="../assets/images/news-main.svg" alt="news-main">
             </section>
         </div>
         <div class="b-first__news-block-right__side">
@@ -29,7 +29,7 @@
                 <input class="b-first__news-block-right__side-input" placeholder="E-mail" type="text" id="name"
                     name="name">
             </section>
-            <img src="../assets/images/news-first-block-left.svg" alt="">
+            <img src="../assets/images/news-first-block-left.svg" alt="news-first-block-left">
         </div>
     </main>
 </template>
@@ -57,11 +57,10 @@
 
             &-title {
                 font-family: 'Exo 2';
-                font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 150%;
-                color: #262541;
+                color: $font-color;
             }
 
             &-input {
@@ -70,16 +69,12 @@
                 height: 36px;
                 background: #FFFFFF;
                 border-radius: 6px;
-                font-family: 'Inter';
-                font-style: normal;
                 font-weight: 400;
                 font-size: 13px;
                 line-height: 184%;
                 color: #8A8AA8;
 
                 &-label {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 184%;
@@ -92,7 +87,7 @@
         }
 
         &-left__side {
-            background: #262541;
+            background: $font-color;
             border-radius: 8px;
             max-width: 770px;
             height: 240px;
@@ -107,7 +102,6 @@
 
             &-title {
                 font-family: 'Exo 2';
-                font-style: normal;
                 font-weight: 700;
                 font-size: 24px;
                 line-height: 133%;
@@ -123,8 +117,6 @@
             }
 
             &-subtitle {
-                font-family: 'Inter';
-                font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 142%;
@@ -139,8 +131,6 @@
             }
 
             &-details {
-                font-family: 'Inter';
-                font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 142%;

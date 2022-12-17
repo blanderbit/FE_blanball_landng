@@ -75,7 +75,6 @@
 .b {
     &-title {
         font-family: 'Exo 2';
-        font-style: normal;
         font-weight: 700;
         font-size: 56px;
         line-height: 128%;
@@ -171,8 +170,6 @@
                 }
 
                 &__title {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 600;
                     font-size: 16px;
                     line-height: 150%;
@@ -232,7 +229,7 @@
             width: 100%;
             border-radius: 0px 0px 36px 36px;
             background: url('../assets/images/second-main-block-second-section-background.svg'),
-                linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
+                linear-gradient(180deg, $font-color 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom;
             padding-bottom: 70px;
@@ -275,8 +272,6 @@
                     &::before {
                         content: 'Оцінюйте та коментуйте гру кожного з  учасників матчу';
                         display: block;
-                        font-family: 'Inter';
-                        font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 142%;
@@ -302,7 +297,7 @@
             }
 
             @media(max-width: $md3) {
-                background-image: url('../assets/images/second-block-background-tablet.svg'), linear-gradient(180deg, #262541 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
+                background-image: url('../assets/images/second-block-background-tablet.svg'), linear-gradient(180deg, $font-color 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
                 background-repeat: no-repeat;
                 background-position: bottom center;
             }

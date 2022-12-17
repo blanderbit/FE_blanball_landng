@@ -47,8 +47,8 @@
                 </div>
             </div>
             <div class="b-footer-mobile-navigation">
-                <Navigation style="margin-left: -20px" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
-                    data-aos-offset="0" :stylings="navigationItemStylesMobile" />
+                <Navigation style="margin-left: -20px" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
+                    data-aos-delay="600" data-aos-offset="0" :stylings="navigationItemStylesMobile" />
             </div>
             <div class="b-footer-tablet-bottom__side">
                 <div class="b-footer-tablet-bottom__side-title">
@@ -102,7 +102,7 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 height: 100px;
-                background-color: #262541;
+                background-color: $font-color;
             }
 
             &__logo {
@@ -174,7 +174,7 @@ export default {
 
             &-body {
                 padding: 15px 20px 25px 20px;
-                background-color: #262541;
+                background-color: $font-color;
 
                 @media(max-width: $md3) and (min-width: $md4) {
                     border-radius: 0px 0px 20px 20px;
@@ -205,8 +205,6 @@ export default {
 
             &-bottom__side {
                 &-title {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 400;
                     font-size: 12px;
                     line-height: 120%;
@@ -238,8 +236,6 @@ export default {
                     background: #575775;
                     border-radius: 6px;
                     margin-left: 5px;
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 400;
                     font-size: 13px;
                     line-height: 187%;
@@ -251,11 +247,9 @@ export default {
                     padding: 4px 12px;
                     background: transparent;
                     height: 40px;
-                    background: #262541;
+                    background: $font-color;
                     border: 1px solid #C5C5D3;
                     border-radius: 6px;
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 140%;
@@ -283,8 +277,6 @@ export default {
                     }
 
                     &-label {
-                        font-family: 'Inter';
-                        font-style: normal;
                         font-weight: 500;
                         font-size: 15px;
                         line-height: 133%;
@@ -299,5 +291,4 @@ export default {
         }
     }
 }
-
 </style>

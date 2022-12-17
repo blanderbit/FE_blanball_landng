@@ -31,7 +31,6 @@
     &-first-block {
         &__title {
             font-family: 'Exo 2';
-            font-style: normal;
             font-weight: 700;
             font-size: 56px;
             line-height: 122%;
@@ -110,8 +109,6 @@
         }
 
         &__subtitle {
-            font-family: 'Inter';
-            font-style: normal;
             font-weight: 500;
             font-size: 16px;
             line-height: 175%;
