@@ -10,7 +10,7 @@
                     <div class="b-main-section-images-iphone">
                         <img class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg"
                             alt="b-main-section-images-iphone-1">
-                        <img class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg"
+                        <img data-aos-offset="300" data-aos-easing="ease-in-sine" class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg"
                             alt="b-main-section-images-iphone-2">
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="b-third__block-before-footer-section__email-input">
                         <label class="b-third__block-before-footer-section__input-label" for="name">{{
-                                $t('thirdBlock.beforeFooterSection.inputLabel')
+                            $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
                         <div class="b-third__block-before-footer-section__input-create-account__section">
                             <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text"
@@ -161,6 +161,9 @@
                 margin-right: 15px;
                 margin-bottom: 10px;
 
+                @media(max-width: 850px) and (min-width: $md3) {
+                    margin-right: 0px;
+                }
                 @media(max-width: $md4) {
                     margin-right: 0px;
                 }
@@ -366,6 +369,10 @@
                 font-size: 18px;
                 text-align: left;
             }
+            @media(max-width: 350px) {
+                font-size: 16px;
+                margin-top: 30px;
+            }
         }
 
         &-subtitle {
@@ -388,6 +395,9 @@
             }
             @media(max-width: 400px) {
                 font-size: 12px;
+            }
+            @media(max-width: 350px) {
+                font-size: 11px;
             }
         }
     }

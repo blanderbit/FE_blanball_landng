@@ -74,7 +74,7 @@
                 font-style: normal;
                 font-weight: 400;
                 font-size: 13px;
-                line-height: 24px;
+                line-height: 184%;
                 color: #8A8AA8;
 
                 &-label {
@@ -82,7 +82,7 @@
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 184%;
                     margin-bottom: 12px;
                     margin-top: 5px;
                     color: #575775;
@@ -127,7 +127,7 @@
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
-                line-height: 20px;
+                line-height: 142%;
                 color: #E2E2E9;
                 margin: 12px 0px;
                 max-width: 330px;

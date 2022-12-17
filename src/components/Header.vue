@@ -7,7 +7,7 @@
                     <img src="../assets/images/header-tablet-logo.svg" alt="header-tablet-logo">
                 </div>
                 <input placeholder="Пошук" type="text" class="b-header-top__side__input">
-                <RegisterButton class="b-header-top__side-register-button" text="Зареєструватися" />
+                <RegisterButton class="b-header-top__side-register-button" :text="$t('buttons.register')" />
             </div>
             <div class="b-header-content _container">
                 <section class="b-header-menu">
@@ -24,7 +24,7 @@
                                 src="../assets/images/logo-ball.svg" alt="logo-ball">
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800"
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
-                                        $t('header.play')
+                                    $t('header.play')
                                 }}</span></div>
                             <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950"
                                 data-aos-offset="0" class="b-header-title-first__line-ball__image"
@@ -127,12 +127,11 @@
                 width: 224px;
                 height: 40px;
                 border: 1px solid #DFDEED;
-                outline: none;
                 font-family: 'Inter';
                 font-style: normal;
                 font-weight: 400;
                 font-size: 12px;
-                line-height: 20px;
+                line-height: 166%;
                 color: #575775;
                 border-radius: 6px;
 
@@ -192,7 +191,7 @@
             font-style: normal;
             font-weight: 700;
             font-size: 72px;
-            line-height: 122.222222222%;
+            line-height: 122%;
             text-transform: capitalize;
             color: $font-color;
 

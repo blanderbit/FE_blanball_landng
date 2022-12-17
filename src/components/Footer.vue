@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="b-footer-mobile-navigation">
-                <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
+                <Navigation style="margin-left: -20px" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600"
                     data-aos-offset="0" :stylings="navigationItemStylesMobile" />
             </div>
             <div class="b-footer-tablet-bottom__side">
@@ -242,7 +242,7 @@ export default {
                     font-style: normal;
                     font-weight: 400;
                     font-size: 13px;
-                    line-height: 24px;
+                    line-height: 187%;
                     color: #FFFFFF;
                     margin-bottom: -30px;
                 }
@@ -287,7 +287,7 @@ export default {
                         font-style: normal;
                         font-weight: 500;
                         font-size: 15px;
-                        line-height: 20px;
+                        line-height: 133%;
                         color: #C5C5D3;
 
                         @media(max-width: 350px) {

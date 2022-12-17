@@ -16,11 +16,12 @@
                             src="../assets/images/header-burger-active-cross.svg" alt="">
                     </div>
                     <div class="b-burger-content-navigation">
-                        <Navigation style="margin-top: 10px;" :stylings="navigationItemStyles"
+                        <Navigation style="margin-top: 10px; margin-left: -20px;;" :stylings="navigationItemStyles"
                             :navigationBodyStyles="navigationBodyStyles" />
                     </div>
                     <div class="b-burger-content-page-route">
-                        <HeaderMenuRoute />
+                        <HeaderMenuRoute style="margin-left: -10px;" />
+                        <img src="../assets/images/news-arrow-right.svg" alt="">
                     </div>
                 </div>
             </ul>
@@ -95,10 +96,6 @@ export default {
             box-shadow: 2px 2px 10px rgba(56, 56, 251, 0.1);
             transition-duration: .25s;
             z-index: 100;
-
-            @media(max-width: $md4) {
-                width: 250px;
-            }
         }
 
         &-content {
@@ -106,13 +103,16 @@ export default {
 
             &-page-route {
                 margin-top: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
                 &-text {
                     font-family: 'Inter';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 142%;
                     color: #575775;
                 }
             }
@@ -130,7 +130,7 @@ export default {
                     font-style: normal;
                     font-weight: 500;
                     font-size: 12px;
-                    line-height: 20px;
+                    line-height: 142%;
                     color: #8A8AA8;
                 }
             }

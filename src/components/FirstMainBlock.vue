@@ -70,6 +70,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             min-height: 600px;
 
             @media(max-width: $md2) and (min-width: $md4) {
@@ -116,9 +117,11 @@
             line-height: 175%;
             color: #575775;
             margin-top: 5px;
+            max-width: 500px;
 
             @media(max-width: $md3) {
                 font-weight: 400;
+                max-width: 400px;
                 font-size: 14px;
             }
 
