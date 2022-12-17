@@ -1,14 +1,6 @@
 <template>
     <div class="b-header-wrapper">
         <header class="b-header">
-            <div class="b-header-top__side">
-                <BurgerMenu />
-                <div class="b-header-top__side__logo">
-                    <img src="../assets/images/header-tablet-logo.svg" alt="header-tablet-logo">
-                </div>
-                <input placeholder="Пошук" type="text" class="b-header-top__side__input">
-                <RegisterButton class="b-header-top__side-register-button" :text="$t('buttons.register')" />
-            </div>
             <div class="b-header-content _container">
                 <section class="b-header-menu">
                     <HeaderMenu />
@@ -92,62 +84,6 @@
                     align-items: center;
                     margin-top: 5px;
                 }
-            }
-        }
-
-        &-top__side {
-            display: none;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 50px;
-            padding-left: 20px;
-
-            @media(max-width: $md3) {
-                display: flex;
-            }
-
-            &-register-button {
-                display: none;
-
-                @media(max-width: $md4) {
-                    display: block;
-                }
-
-                @media(max-width: 410px) {
-                    display: none;
-                }
-            }
-
-            &__input {
-                align-items: center;
-                background: url('../assets/images/header-tablet-input-seach.svg') #FFFFFF;
-                background-repeat: no-repeat;
-                background-position: right;
-                padding: 10px 12px;
-                width: 224px;
-                height: 40px;
-                border: 1px solid #DFDEED;
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 166%;
-                color: #575775;
-                border-radius: 6px;
-
-                @media(max-width: $md4) {
-                    display: none;
-                }
-
-                &:focus {
-                    background: #FFFFFF;
-                }
-            }
-
-            &__logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
         }
 

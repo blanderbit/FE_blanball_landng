@@ -1,5 +1,13 @@
 <template>
     <div class="b-menu">
+        <div class="b-menu-top__side">
+            <BurgerMenu />
+            <div class="b-menu-top__side__logo">
+                <img src="../assets/images/header-tablet-logo.svg" alt="menu-tablet-logo">
+            </div>
+            <input placeholder="Пошук" type="text" class="b-menu-top__side__input">
+            <RegisterButton class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
+        </div>
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="logo">
                 <img class="b-menu__logo-desk" src="../assets/images/logo.svg" alt="desk-logo" />
@@ -21,6 +29,61 @@
 .b {
     &-menu {
         margin-bottom: 20px;
+
+        &-top__side {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+
+            @media(max-width: $md3) {
+                display: flex;
+            }
+
+            &-register-button {
+                display: none;
+
+                @media(max-width: $md4) {
+                    display: block;
+                }
+
+                @media(max-width: 410px) {
+                    display: none;
+                }
+            }
+
+            &__input {
+                align-items: center;
+                background: url('../assets/images/header-tablet-input-seach.svg') #FFFFFF;
+                background-repeat: no-repeat;
+                background-position: right;
+                padding: 10px 12px;
+                width: 224px;
+                height: 40px;
+                border: 1px solid #DFDEED;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 166%;
+                color: #575775;
+                border-radius: 6px;
+
+                @media(max-width: $md4) {
+                    display: none;
+                }
+
+                &:focus {
+                    background: #FFFFFF;
+                }
+            }
+
+            &__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
 
         &__right-side {
             display: flex;
