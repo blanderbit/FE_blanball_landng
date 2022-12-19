@@ -205,6 +205,7 @@
             background-position: center bottom;
             background-repeat: no-repeat;
             display: block;
+            padding-left: 20px;
         }
 
         &-images {

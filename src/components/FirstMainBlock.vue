@@ -29,6 +29,7 @@
 
 .b {
     &-first-block {
+        padding-left: 20px;
         &__title {
             font-family: 'Exo 2';
             font-weight: 700;
@@ -69,7 +70,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             min-height: 600px;
 
             @media(max-width: $md2) and (min-width: $md4) {

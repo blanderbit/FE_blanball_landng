@@ -125,6 +125,7 @@
             background: radial-gradient(133.42% 69.74% at 36.01% -1.59%, #148581 0%, #148783 0.01%, #262642 100%);
             border-radius: 36px 36px 0px 0px;
             min-height: 700px;
+            padding-left: 20px;
 
             &__title {
                 padding-top: 60px;
@@ -235,6 +236,7 @@
             padding-bottom: 70px;
             min-height: 700px;
             margin-top: -5px;
+            padding-left: 20px;
 
             &__image {
                 margin-top: 30px;

@@ -26,6 +26,7 @@
     "aos": "^2.3.4",
     "store.js": "^1.0.4",
     "storejs": "^2.0.1",
+    "vue-animate-onscroll": "^1.0.8",
     "vue-scrollto": "^2.20.0",
     "wowjs": "^1.1.3"
   }

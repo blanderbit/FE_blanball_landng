@@ -3,10 +3,12 @@
         <div class="b-menu-top__side">
             <BurgerMenu />
             <div class="b-menu-top__side__logo">
-                <img src="../assets/images/header-tablet-logo.svg" alt="menu-tablet-logo">
+                <img v-if="$route.name === 'index'" src="../assets/images/header-tablet-logo.svg" alt="menu-tablet-logo">
+                <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" 
+                alt="menu-tablet-logo-black">
             </div>
             <input placeholder="Пошук" type="text" class="b-menu-top__side__input">
-            <RegisterButton class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
+            <RegisterButton style="margin-right: 0px;" class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="logo">
@@ -22,6 +24,16 @@
     </div>
 </template>
 
+<script>
+import { useRoute } from 'vue-router'
+
+export default {
+    data() {
+        const route = useRoute()
+        return route
+    },
+}
+</script>
 
 <style lang="scss">
 @import "assets/styles/base.scss";
@@ -29,6 +41,7 @@
 .b {
     &-menu {
         margin-bottom: 20px;
+        padding: 0px 10px;
 
         &-top__side {
             display: none;
@@ -42,13 +55,11 @@
 
             &-register-button {
                 display: none;
+                height: 38px;
+                font-size: 12px;
 
-                @media(max-width: $md4) {
+                @media(max-width: $md4) and (min-width: 420px) {
                     display: block;
-                }
-
-                @media(max-width: 410px) {
-                    display: none;
                 }
             }
 
@@ -66,6 +77,9 @@
                 line-height: 166%;
                 color: #575775;
                 border-radius: 6px;
+                @media(max-width: 550px) {
+                    width: 200px;
+                }
 
                 @media(max-width: $md4) {
                     display: none;

@@ -1,4 +1,4 @@
-import Meta, { APP_NAME } from './src/plugins/meta'
+import Meta from './src/plugins/meta'
 
 export default defineNuxtConfig({
 	css: ["~/assets/styles/base.scss"],
@@ -8,10 +8,12 @@ export default defineNuxtConfig({
 			autoprefixer: {},
 		},
 	},
-	plugins: [{ src: "@/plugins/aos", ssr: false, mode: "client" }],
+	plugins: [
+		{ src: '~/plugins/aos', mode: 'client' },
+	],
 	app: {
 		head: {
-			title: APP_NAME,
+			title: 'Blanball',
 			link: [
 				{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
 			],

@@ -2,7 +2,8 @@
     <div class="b-burger">
         <label @click="isMenuActive = !isMenuActive" class="b-burger-btn">
             <img class="b-burger-btn-tablet" src="../assets/images/burger-tablet.svg" alt="burger-tablet">
-            <img class="b-burger-btn-mobile" src="../assets/images/burger-moblo.svg" alt="burger-mobile">
+            <img v-if="$route.name === 'index'" class="b-burger-btn-mobile" src="../assets/images/burger-moblo.svg" alt="burger-mobile">
+            <img v-else class="b-burger-btn-mobile-news" src="../assets/images/burger-tablet.svg" alt="burger-mobile-news">
         </label>
         <transition name="fade">
             <ul v-show="isMenuActive" class="b-burger-body">
@@ -30,8 +31,10 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
 export default {
     data() {
+        const route = useRoute()
         return {
             navigationBodyStyles: {
                 'flex-direction': 'column',
@@ -42,6 +45,7 @@ export default {
                 'margin-left': '0px',
             },
             isMenuActive: false,
+            route,
         }
     },
 }
@@ -81,6 +85,14 @@ export default {
 
                 @media(max-width: $md4) {
                     display: block;
+                }
+                &-news {
+                    display: none;
+                    width: 32px;
+                    height: 32px;
+                    @media(max-width: $md4) {
+                        display: block;
+                    }
                 }
             }
         }

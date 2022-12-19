@@ -56,6 +56,7 @@
         padding-top: 35px;
         background-repeat: no-repeat;
         padding-bottom: 80px;
+        padding-left: 20px;
 
         @media(max-width: $md3) {
             background: none;
