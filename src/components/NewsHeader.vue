@@ -19,6 +19,7 @@
                 @media(max-width: $md3) {
                     box-shadow: none;
                     padding-right: 20px;
+                    padding-bottom: 0px;
                 }
                 @media(max-width: $md4) {
                     padding-top: 15px;

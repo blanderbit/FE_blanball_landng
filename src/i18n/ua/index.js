@@ -5,6 +5,7 @@ import SecondBlock from './secondBlock'
 import ThirdBlock from './thirdBlock'
 import Footer from './footer'
 import Buttons from './buttons'
+import NewsEmailForm from './newsEmailForm'
 
 export const UA_LANGUAGE = {
     navigation: Navigation,
@@ -14,4 +15,5 @@ export const UA_LANGUAGE = {
     thirdBlock: ThirdBlock,
     footer: Footer,
     buttons: Buttons,
+    newsEmailForm: NewsEmailForm
 }
