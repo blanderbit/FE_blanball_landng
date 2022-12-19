@@ -43,6 +43,7 @@ export default {
         display: flex;
         flex-direction: column;
         max-height: 150px;
+        margin-bottom: 25px;
         height: 100%;
         &-content {
             border-bottom: 1px solid #DFDEED;

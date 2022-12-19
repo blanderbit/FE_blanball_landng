@@ -27,7 +27,6 @@
             padding: 15px;
             display: flex;
             justify-content: space-between;
-
             &-left__side {
                 display: flex;
                 flex-direction: column;

@@ -3,6 +3,3 @@
   <NewsMainBlock/>
   <Footer/>
 </template>
- 
-<script>
-</script>

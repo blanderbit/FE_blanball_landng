@@ -17,7 +17,8 @@
                 <div class="b-news-main-story-content-detail">Детальніше</div>
             </div>
             <div class="b-news-main-story-content-right__side">
-                <img src="../assets/images/news-main.svg" alt="">
+                <img class="b-news-main-story-content-right__side-desk" src="../assets/images/news-main.svg" alt="">
+                <img class="b-news-main-story-content-right__side-mobile" src="../assets/images/f22.svg" alt="">
             </div>
         </div>
     </div>
@@ -27,22 +28,31 @@
 @import "assets/styles/base.scss";
 .b {
     &-news-main-story {
-        background: #262541;
         max-width: 800px;
         min-width: 600px;
         width: 100%;
+        background: url('../assets/images/main-story-background.svg') #262541;
         height: 240px;
         border-radius: 8px;
+        background-position: left;
+        background-repeat: no-repeat;
         @media(max-width: $md2) {
             min-width: 400px;
         }
         @media(max-width: $md4) {
+            background: url('../assets/images/main-story-background-moblo.svg') #262541;
+            background-repeat: no-repeat;
+            height: 430px;
             min-width: 300px;
         }
 
         &-content {
             display: flex;
             justify-content: space-between;
+
+            @media(max-width: $md4) {
+                flex-direction: column;
+            }
 
             &-left__side {
                 padding: 24px 0px 24px 24px;
@@ -51,9 +61,24 @@
             }
             &-right__side {
                 display: flex;
+                @media(max-width: $md4) {
+                    justify-content: right;
+                }
+                &-desk {
+                    margin-bottom: -5px;
+                    @media(max-width: $md4) {
+                        display: none;
+                    }
+                }
+                &-mobile {
+                    display: none;
+                    @media(max-width: $md4) {
+                        margin-top: -23px;
+                        display: flex;
+                    }
+                }
                 img {
                     border-radius: 8px;
-                    margin-bottom: -5px;
                 }
             }
 

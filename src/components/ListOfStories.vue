@@ -38,8 +38,12 @@ export default {
         padding: 20px 10px 0px 10px;
         column-gap: 40px;
         margin-bottom: 20px;
+        @media(max-width: $md3) {
+            padding: 40px 0px 0px 0px;
+        }
         @media(max-width: $md4) {
             grid-template-columns: 1fr;
+            padding: 20px 0px 0px 0px;
         }
     }
 }
