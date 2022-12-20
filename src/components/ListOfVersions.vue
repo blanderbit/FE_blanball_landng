@@ -15,9 +15,10 @@
             column-gap: 15px;
             margin-bottom: 80px;
         }
-        @media(max-width: $md4) {
+        @media(max-width: 500px) {
             grid-template-columns: 1fr;
             margin-bottom: 100px;
+            justify-items: center;
         }
     }
 }

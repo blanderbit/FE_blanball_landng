@@ -45,6 +45,9 @@
             height: 430px;
             min-width: 300px;
         }
+        @media(max-width: 350px) {
+            min-width: 200px;
+        }
 
         &-content {
             display: flex;
@@ -58,6 +61,9 @@
                 padding: 24px 0px 24px 24px;
                 display: flex;
                 flex-direction: column;
+                @media(max-width: $md4) {
+                    padding: 24px
+                }
             }
             &-right__side {
                 display: flex;
@@ -95,6 +101,9 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
+                @media(max-width: $md4) {
+                    max-width: none;
+                }
             }
 
             &-subtitle {
@@ -109,6 +118,9 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
+                @media(max-width: $md4) {
+                    max-width: none;
+                }
             }
 
             &-detail {

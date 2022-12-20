@@ -44,6 +44,7 @@ export default {
 .b {
     &-news-version {
         &-content {
+            max-width: 400px;
             padding: 16px;
             display: flex;
             align-items: top;

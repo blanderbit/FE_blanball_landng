@@ -12,6 +12,9 @@
                 <div class="b-email-form-card-left__side-input-button"></div>
             </div>
         </div>
+        <div class="b-email-form-card-right__side">
+            <img src="../assets/images/news-first-block-left.svg" alt="">
+        </div>
     </div>
 </template>
 
@@ -20,13 +23,23 @@
 .b {
     &-email-form {
         &-card {
-            max-width: 400px;
+            width: 400px;
             height: 152px;
             background: #EBEBFA;
             border-radius: 8px;
             padding: 15px;
             display: flex;
             justify-content: space-between;
+
+            @media(max-width: 1050px) and (min-width: $md3) {
+                width: 300px;
+            }
+            @media(max-width: 440px) {
+                width: 350px;
+            }
+            @media(max-width: 380px) {
+                width: 300px;
+            }
             &-left__side {
                 display: flex;
                 flex-direction: column;
@@ -34,7 +47,7 @@
                 &-title {
                     font-family: 'Exo 2';
                     font-weight: 700;
-                    max-width: 250px;
+                    max-width: 180px;
                     font-size: 16px;
                     line-height: 150%;
                     color: #262541;
@@ -52,6 +65,10 @@
                     line-height: 24px;
                     color: #8A8AA8;
                     margin-right: 10px;
+
+                    @media(max-width: 440px) {
+                        width: 170px;
+                    }
 
                     &-block {
                         display: flex;
@@ -83,6 +100,10 @@
                         line-height: 20px;
                         color: #575775;
                         margin: 5px 0px;
+                        max-width: 220px;
+                        @media(max-width: 440px) {
+                            font-size: 12px;
+                        }
                     }
                 }
             }

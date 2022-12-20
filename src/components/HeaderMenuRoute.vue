@@ -1,12 +1,13 @@
 <template>
     <div class="b-header-menu__route">
-        <div class="b-header-menu__route__arrow-image">
-            <img src="../assets/images/news-arrow-left.svg" alt="news-arrow">
+        <div  class="b-header-menu__route__arrow-image">
+            <img v-if="$route.name === 'index'" src="../assets/images/news-arrow-left.svg" alt="news-arrow">
         </div>
         <div class="b-header-menu__route-text">
             <NuxtLink :to="{ path: comp.path }">
                 {{ comp.text }}
             </NuxtLink>
+            <img v-if="$route.name === 'news'" src="../assets/images/news-arrow-right.svg" alt="news-arrow">
         </div>
     </div>
 </template>
@@ -34,7 +35,7 @@ export default {
             }
             return routes
         })
-        return { comp }
+        return { comp, route }
     }
 };
 </script>
@@ -49,9 +50,6 @@ export default {
             margin-right: 30px;
             display: flex;
             align-items: center;
-            border-left: 1px solid black;
-            padding-left: 10px;
-
             @media(max-width: $md2) {
                 margin-right: 15px;
             }
@@ -72,6 +70,10 @@ export default {
                 color: #575775;
                 margin-left: 10px;
                 transition: color 0.3s ease 0s;
+                display: flex;
+                img {
+                    margin-left: 10px;
+                }
 
                 @media(min-width: $md2) {
                     &:hover {

@@ -3,21 +3,30 @@
         <div class="b-menu-top__side">
             <BurgerMenu />
             <div class="b-menu-top__side__logo">
-                <img v-if="$route.name === 'index'" src="../assets/images/header-tablet-logo.svg" alt="menu-tablet-logo">
-                <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" 
-                alt="menu-tablet-logo-black">
+                <img v-if="$route.name === 'index'" src="../assets/images/header-tablet-logo.svg"
+                    alt="menu-tablet-logo">
+                <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" alt="menu-tablet-logo-black">
             </div>
             <input placeholder="Пошук" type="text" class="b-menu-top__side__input">
-            <RegisterButton style="margin-right: 0px;" class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
+            <RegisterButton style="margin-right: 0px;" class="b-menu-top__side-register-button"
+                :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">
-            <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="logo">
-                <img class="b-menu__logo-desk" src="../assets/images/logo.svg" alt="desk-logo" />
-                <img class="b-menu__logo-small" src="../assets/images/logo-ball.svg" alt="small-logo" />
+            <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
+                <img v-if="$route.name === 'index'" class="b-menu__logo-desk" src="../assets/images/logo.svg"
+                    alt="desk-logo" />
+                <img v-else class="b-menu__logo-desk" src="../assets/images/news-header-menu-logo.svg" alt="desk-logo">
+                <img v-if="$route.name === 'index'" class="b-menu__logo-small" src="../assets/images/logo-ball.svg"
+                    alt="small-logo" />
+                <img v-else class="b-menu__logo-small" src="../assets/images/news-header-menu-logo-small.svg"
+                    alt="small-logo" />
+                <HeaderMenuRoute v-if="$route.name === 'news'"
+                    style="margin-left: 30px; border-right: 1px solid black; padding-right: 5px;" />
             </div>
             <Navigation data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" />
             <div class="b-menu__right-side">
-                <HeaderMenuRoute />
+                <HeaderMenuRoute v-if="$route.name === 'index'"
+                    style="border-left: 1px solid black; padding-left: 5px;" />
                 <RegisterButton :text="$t('buttons.register')" />
             </div>
         </ul>
@@ -77,6 +86,7 @@ export default {
                 line-height: 166%;
                 color: #575775;
                 border-radius: 6px;
+
                 @media(max-width: 550px) {
                     width: 200px;
                 }
@@ -107,6 +117,10 @@ export default {
             align-items: center;
             display: flex;
             justify-content: space-between;
+
+            &-logo {
+                display: flex;
+            }
 
             @media(max-width: $md3) {
                 display: none;

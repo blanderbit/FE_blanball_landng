@@ -1,13 +1,34 @@
 <template>
     <div class="b-list-of-stories">
-        <NewsStory v-for="(n, i) in comp" :key="`news-story-${i}`" :data="n" />
+        <NewsStory @click="openStory(i)" :active="activeStoryIndex === i" style="" v-for="(n, i) in comp" :key="`news-story-${i}`" :data="n" />
     </div>
 </template>
 
 <script>
 export default {
+    methods: {
+        openStory(index){
+            let activeStoryIndex = index
+            return activeStoryIndex
+        }
+    },
     setup() {
         const comp = computed(() => [
+            {
+                'title': '-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2; -webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2; -webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2; -webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;',
+                'date': '06/02/2020',
+                'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.',
+            },
+            {
+                'title': 'title',
+                'date': '06/02/2020',
+                'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.',
+            },
+            {
+                'title': 'title',
+                'date': '06/02/2020',
+                'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.',
+            },
             {
                 'title': '-webkit-line-clamp: 2;-webkit-line-clamp: 2;-webkit-line-clamp: 2;',
                 'date': '06/02/2020',
@@ -22,7 +43,7 @@ export default {
                 'title': 'title',
                 'date': '06/02/2020',
                 'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias nostrum quae exercitationem laborum unde aspernatur dolorum fuga architecto, quaerat cupiditate repellat maiores ducimus molestiae laudantium delectus quisquam explicabo deserunt.',
-            }
+            },
         ])
         return { comp }
     }
@@ -33,16 +54,15 @@ export default {
 @import "assets/styles/base.scss";
 .b {
     &-list-of-stories {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         padding: 20px 10px 0px 10px;
-        column-gap: 40px;
         margin-bottom: 20px;
         @media(max-width: $md3) {
             padding: 40px 0px 0px 0px;
         }
         @media(max-width: $md4) {
-            grid-template-columns: 1fr;
             padding: 20px 0px 0px 0px;
         }
     }

@@ -34,7 +34,6 @@
 .b {
     &-news-main-block {
         padding: 0px 20px;
-
         &-content {
             display: flex;
             margin-top: 30px;
