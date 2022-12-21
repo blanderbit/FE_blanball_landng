@@ -6,7 +6,7 @@
                     {{ data.title }}
                 </div>
                 <div class="b-news-story-top-side-date">
-                    {{ data.date }}
+                    {{ active ? formatedDate.replaceAll(' ', '.') : formatedDate.replaceAll(' ', '/') }}
                 </div>
             </section>
             <section class="b-news-story-main-side">
@@ -15,7 +15,7 @@
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
                         <img class="b-news-story-main-side-body-img" v-if="active"
                             src="../assets/images/new-body-image.svg" alt="">
-                        {{ data.description }}
+                        {{ data.full_disc }}
                     </div>
                 </div>
             </section>
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
 export default {
     props: {
         data: {
@@ -41,6 +42,10 @@ export default {
             required: false,
             default: true,
         }
+    },
+    setup(props) {
+        const formatedDate = dayjs(props.data.created_at).format('MM DD YYYY')
+        return { formatedDate }
     }
 }
 </script>

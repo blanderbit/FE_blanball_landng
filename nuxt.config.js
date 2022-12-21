@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 				})
 			}
 			return window.scrollTo({ top: 0, behavior: 'smooth' })
-		}
+		},
 	},
 	modules: [
 		'@nuxtjs/robots',

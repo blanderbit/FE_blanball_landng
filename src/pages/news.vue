@@ -1,5 +1,5 @@
 <template>
-  <NewsHeader/>
-  <NewsMainBlock/>
-  <Footer/>
+  <NewsHeader />
+  <NewsMainBlock />
+  <Footer />
 </template>
