@@ -58,11 +58,11 @@ export default {
                     },
                     {
                         name: t('navigation.articles'),
-                        element: "#b-first__section-main__title"
+                        element: "#b-stories-title"
                     },
                     {
                         name: t('navigation.popular'),
-                        element: "#b-second__section-main__title"
+                        element: "#b-versions-title"
                     },
                 ]
             }

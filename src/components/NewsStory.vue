@@ -22,7 +22,7 @@
             <section class="b-news-story-bottom-side">
                 <div @click="active = !active" class="b-news-story-bottom-side-detail">
                     <span v-if="!active">Детальніше</span>
-                    <span v-else>Cховати</span>
+                    <span v-else>Згорнути</span>
                 </div>
             </section>
         </div>

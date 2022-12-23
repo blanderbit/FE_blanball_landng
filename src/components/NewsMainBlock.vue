@@ -7,12 +7,7 @@
             </div>
             <div class="b-news-main-block-content-right-side">
                 <NewsEmailForm class="b-news-main-block-content-right-side-email-form" />
-                <section class="b-news-main-block-content-right-side-versions">
-                    <div class="b-news-main-block-content-right-side-versions-title">
-                        Популярне
-                    </div>
-                    <ListOfVersions />
-                </section>
+                <ListOfVersions />
             </div>
         </div>
     </div>
@@ -24,7 +19,7 @@
 .b {
     &-news-main-block {
         padding: 0px 20px;
-        min-height: 1200px;
+        min-height: 1000px;
         margin-bottom: 180px;
 
         &-content {
@@ -46,19 +41,6 @@
 
                 @media(max-width: $md3) {
                     margin-right: 0px;
-                }
-            }
-
-            &-right-side {
-                &-versions {
-                    &-title {
-                        font-family: 'Exo 2';
-                        font-weight: 700;
-                        font-size: 16px;
-                        line-height: 150%;
-                        color: #262541;
-                        margin-top: 25px;
-                    }
                 }
             }
         }

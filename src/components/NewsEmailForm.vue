@@ -37,8 +37,13 @@
             @media(max-width: 440px) {
                 width: 350px;
             }
-            @media(max-width: 380px) {
+            @media(max-width: 390px) {
                 width: 300px;
+            }
+            &-right__side {
+                @media(max-width: 390px) {
+                    display: none;
+                }
             }
             &-left__side {
                 display: flex;

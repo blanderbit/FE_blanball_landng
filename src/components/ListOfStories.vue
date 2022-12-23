@@ -1,7 +1,7 @@
 <template>
     <div class="b-stories">
         <section class="b-stories-top-side">
-            <div class="b-stories-title">
+            <div class="b-stories-title" id="b-stories-title">
                 {{ $t('listOfStories.stories') }}
             </div>
             <div @click="changeOrdering()"  class="b-stories-filter">
@@ -29,7 +29,7 @@ import { ref } from 'vue'
 export default {
     setup() {
         let news = ref([])
-        let isPromiseActive = null
+        let isPromiseActive = ref()
         let countNewsOnNextPage = ref()
         let params = {
             page: 1,
@@ -41,19 +41,22 @@ export default {
             getNews({page: 1, ordering: params.ordering})
         }
         function getNews(params = null) {
-            isPromiseActive = true
             HTTP.get('news/client/news/list', { params })
                 .then((response) => {
+                    isPromiseActive.value = true
                     news.value = news.value.concat(response.data.results)
                         countNewsOnNextPage.value = response.data.total_count - response.data.page_size * response.data.current_page
                     countNewsOnNextPage.value = countNewsOnNextPage.value > 10 ? 10 : countNewsOnNextPage.value
-                }).finally(isPromiseActive = false)
+                }).finally(() => {isPromiseActive.value = false})
         }
+
         function getNewPage() {
             params.page += 1
             getNews(params = params)
         }
-        getNews(params=params)
+        getNews({
+            params: params
+        })
         return { news, getNewPage, countNewsOnNextPage, isPromiseActive, changeOrdering, params }
     }
 }

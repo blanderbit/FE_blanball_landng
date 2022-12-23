@@ -12,7 +12,7 @@
                 <span data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="800" data-aos-offset="0">{{
                         $t('footer.blanball')
                 }}</span>
-                <NuxtLink :to="{ path: '/' }" :style="getStyle">
+                <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
                     <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
                         data-aos-offset="0" src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
                 </NuxtLink>
@@ -23,7 +23,7 @@
         <div class="b-footer-tablet-body">
             <div class="b-footer-tablet-top__side">
                 <img src="../assets/images/footer-logo.svg" alt="footer-logo">
-                <NuxtLink :to="{ path: '/' }" :style="getStyle">
+                <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
                     <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
                         data-aos-offset="0" class="b-footer-tablet-top__side-arrow"
                         src="../assets/images/footer-arrow.svg" alt="footer-arrow" />

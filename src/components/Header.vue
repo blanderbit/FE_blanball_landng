@@ -1,11 +1,11 @@
 <template>
     <div class="b-header-wrapper">
-        <header class="b-header">
+        <header class="b-header" id="b-header">
             <div class="b-header-content _container">
-                <section class="b-header-menu">
-                    <HeaderMenu />
-                </section>
-                <div class="b-header-left__side">
+                <section class="b-header-content-top-side">
+                    <section class="b-header-menu">
+                        <HeaderMenu />
+                    </section>
                     <section class="b-header-title">
                         <div class="b-header-title-first__line">
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500"
@@ -29,12 +29,20 @@
                                 }}</div>
                         </div>
                     </section>
-                    <div class="b-header-tablet-main__image">
-                        <img src="../assets/images/user-raiting.svg" alt="header-main-image-tablet">
+                </section>
+                <section class="b-header-content-bottom-side">
+                    <div class="b-header-content-bottom-side-user-raiting">
+                        <img src="../assets/images/user-raiting.svg" alt="user-raiting">
                     </div>
-                    <div class="b-header-mobile-main__image">
-                        <img src="../assets/images/header-main-image-mobile.svg" alt="header-main-image-mobile">
+                    <div class="b-header-content-bottom-side-iphone">
+                        <img class="b-header-content-bottom-side-iphone" src="../assets/images/Iphone1.svg" alt="header-main-image-tablet">
                     </div>
+                </section>
+                <div class="b-header-tablet-main__image">
+                    <img src="../assets/images/user-raiting.svg" alt="header-main-image-tablet">
+                </div>
+                <div class="b-header-mobile-main__image">
+                    <img src="../assets/images/header-main-image-mobile.svg" alt="header-main-image-mobile">
                 </div>
             </div>
         </header>
@@ -48,19 +56,69 @@
 <style lang="scss">
 @import "assets/styles/base.scss";
 
+
 .b {
     &-header {
         background: url("../assets/images/header-background-lines.svg");
         width: 100%;
         border-radius: 0px 0px 36px 36px;
-        padding-top: 35px;
+        padding-top: 20px;
         background-repeat: no-repeat;
         padding-bottom: 80px;
-        padding-left: 20px;
+
+        @media(max-width: $md2) {
+            padding-bottom: 50px;
+        }
 
         @media(max-width: $md3) {
             background: none;
+            padding-left: 20px;
             padding-bottom: 40px;
+        }
+
+        &-content {
+            &-bottom-side {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                @media(max-width: $md3) {
+                        display: none;
+                    }
+                &-user-raiting {
+                    margin-top: 17px;
+                    margin-right: 15px;
+                }
+                &-iphone {
+                    margin-top: -80px;
+                    @media(max-width: 1050px) {
+                        margin-top: -70px;
+                    }
+                    @media(max-width: $md2) {
+                        margin-top: -60px;
+                    }
+                    @media(max-width: 900px) {
+                        margin-top: -50px;
+                    }
+                    @media(max-width: 830px) {
+                        margin-top: -40px;
+                    }
+                    img {
+                        background: #fff;
+                        border-radius: 30px;
+                        position: relative;
+                        padding: 0px 40px 30px 40px;
+                        @media(max-width: $md1) {
+                            padding: 0px 30px 20px 30px;
+                        }
+                    }
+                }
+            }
+            &-top-side {
+                @media(min-width: $md3) {
+                    border-radius: 30px;
+                    background: #fff;
+                    padding: 20px;
+                }
+            }
         }
 
         @media(max-width: $md4) {
@@ -100,7 +158,7 @@
         }
 
         &-wrapper {
-            background: url("../assets/images/header_background.svg"), radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
+            background: radial-gradient(68.91% 140.71% at 51.6% 34.95%, #43A99A 0%, #148783 37.59%, #0B5147 100%);
             background-position: center top;
             background-repeat: no-repeat;
             border-radius: 0px 0px 36px 36px;
@@ -241,6 +299,10 @@
             &-second__line {
                 display: flex;
                 align-items: center;
+
+                &-first__word {
+                    margin-left: 20px;
+                }
 
                 &-button {
                     width: 190px;

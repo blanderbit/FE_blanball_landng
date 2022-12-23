@@ -1,5 +1,5 @@
 <template>
-    <div class="b-menu">
+    <div class="b-menu" id="b-menu">
         <div class="b-menu-top__side">
             <BurgerMenu />
             <div class="b-menu-top__side__logo">
@@ -8,7 +8,7 @@
                 <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" alt="menu-tablet-logo-black">
             </div>
             <input placeholder="Пошук" type="text" class="b-menu-top__side__input">
-            <RegisterButton style="margin-right: 0px;" class="b-menu-top__side-register-button"
+            <RegisterButton  class="b-menu-top__side-register-button"
                 :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">

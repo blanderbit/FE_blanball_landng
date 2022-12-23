@@ -20,7 +20,6 @@ button {
   font-weight: 600;
   padding: 8px 16px;
   font-size: 15px;
-  margin-right: 20px;
   color: #FFFFFF;
   line-height: 160%;
   transition: background-color 0.4s ease 0s;
