@@ -7,6 +7,7 @@ import Footer from './footer'
 import Buttons from './buttons'
 import NewsEmailForm from './newsEmailForm'
 import ListOfStories  from './listOfStories'
+import Story from './story'
 
 export const UA_LANGUAGE = {
     navigation: Navigation,
@@ -18,4 +19,5 @@ export const UA_LANGUAGE = {
     buttons: Buttons,
     newsEmailForm: NewsEmailForm,
     listOfStories: ListOfStories,
+    story: Story,
 }

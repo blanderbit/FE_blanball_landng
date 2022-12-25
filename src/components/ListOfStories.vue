@@ -28,6 +28,10 @@ import { HTTP } from '../main'
 import { ref } from 'vue'
 export default {
     setup() {
+        const route = useRoute()
+        watch(route, (route, previous) => {
+            setTimeout(() => console.log(route.query.search), 1000)
+        })
         let news = ref([])
         let isPromiseActive = ref()
         let countNewsOnNextPage = ref()
@@ -135,4 +139,4 @@ export default {
         }
     }
 }
-</style> 
+</style>

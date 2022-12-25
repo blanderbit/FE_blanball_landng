@@ -7,9 +7,8 @@
                     alt="menu-tablet-logo">
                 <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" alt="menu-tablet-logo-black">
             </div>
-            <input placeholder="Пошук" type="text" class="b-menu-top__side__input">
-            <RegisterButton  class="b-menu-top__side-register-button"
-                :text="$t('buttons.register')" />
+            <input v-model.lazy="searchValue" placeholder="Пошук" type="text" class="b-menu-top__side__input">
+            <RegisterButton class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
@@ -37,10 +36,18 @@
 import { useRoute } from 'vue-router'
 
 export default {
-    data() {
+    setup() {
+        const searchValue = ref()
         const route = useRoute()
-        return route
-    },
+        const router = useRouter()
+        watch(searchValue, (searchValue, previous) => {
+            router.push({
+                path: '/news',
+                query: { search: searchValue },
+            })
+        })
+        return { searchValue, route }
+    }
 }
 </script>
 
@@ -78,6 +85,7 @@ export default {
                 background-repeat: no-repeat;
                 background-position: right;
                 padding: 10px 12px;
+                padding-right: 30px;
                 width: 224px;
                 height: 40px;
                 border: 1px solid #DFDEED;
@@ -93,10 +101,6 @@ export default {
 
                 @media(max-width: $md4) {
                     display: none;
-                }
-
-                &:focus {
-                    background: #FFFFFF;
                 }
             }
 

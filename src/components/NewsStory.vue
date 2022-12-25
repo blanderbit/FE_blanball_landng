@@ -6,7 +6,7 @@
                     {{ data.title }}
                 </div>
                 <div class="b-news-story-top-side-date">
-                    {{ active ? formatedDate.replaceAll(' ', '.') : formatedDate.replaceAll(' ', '/') }}
+                    {{formatedDate}}
                 </div>
             </section>
             <section class="b-news-story-main-side">
@@ -21,8 +21,7 @@
             </section>
             <section class="b-news-story-bottom-side">
                 <div @click="active = !active" class="b-news-story-bottom-side-detail">
-                    <span v-if="!active">Детальніше</span>
-                    <span v-else>Згорнути</span>
+                    <span>{{ active ? $t('story.сollapse')  : $t('story.detailed')}}</span>
                 </div>
             </section>
         </div>
@@ -44,7 +43,7 @@ export default {
         }
     },
     setup(props) {
-        const formatedDate = dayjs(props.data.created_at).format('MM DD YYYY')
+        const formatedDate = dayjs(props.data.created_at).format('MM/DD/YYYY')
         return { formatedDate }
     }
 }
@@ -129,7 +128,7 @@ export default {
                 &-text {
                     font-weight: 400;
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 133%;
                     color: #262541;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -160,7 +159,7 @@ export default {
             &-detail {
                 font-weight: 400;
                 font-size: 14px;
-                line-height: 20px;
+                line-height: 133%;
                 text-decoration-line: underline;
                 color: #575775;
                 margin: 10px 0px;

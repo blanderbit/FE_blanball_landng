@@ -104,7 +104,6 @@
                     img {
                         background: #fff;
                         border-radius: 30px;
-                        position: relative;
                         padding: 0px 40px 30px 40px;
                         @media(max-width: $md1) {
                             padding: 0px 30px 20px 30px;

@@ -7,7 +7,7 @@
             <label class="b-email-form-card-left__side-input-label" for="name">
                 {{ $t('newsEmailForm.subsribe_our_spam') }}</label>
             <div class="b-email-form-card-left__side-input-block">
-                <input class="b-email-form-card-left__side-input" placeholder="E-mail" type="text" id="name"
+                <input class="b-email-form-card-left__side-input" placeholder="E-mail" type="email" id="email"
                     name="name">
                 <div class="b-email-form-card-left__side-input-button"></div>
             </div>
@@ -24,7 +24,6 @@
     &-email-form {
         &-card {
             width: 400px;
-            height: 152px;
             background: #EBEBFA;
             border-radius: 8px;
             padding: 15px;
@@ -67,7 +66,7 @@
                     padding: 6px 12px;
                     font-weight: 400;
                     font-size: 13px;
-                    line-height: 24px;
+                    line-height: 184%;
                     color: #8A8AA8;
                     margin-right: 10px;
 
@@ -102,7 +101,7 @@
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
-                        line-height: 20px;
+                        line-height: 133%;
                         color: #575775;
                         margin: 5px 0px;
                         max-width: 220px;

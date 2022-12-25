@@ -28,10 +28,9 @@
                                 $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
                         <div class="b-third__block-before-footer-section__input-create-account__section">
-                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text"
-                                id="name" name="name">
-                            <RegisterButton style="height: 45px"
-                                :text="$t('buttons.create_account')" />
+                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="email"
+                                id="email" name="name">
+                            <RegisterButton style="height: 45px" :text="$t('buttons.create_account')" />
                         </div>
                     </div>
                 </div>
@@ -186,7 +185,7 @@
                 &-label {
                     font-weight: 500;
                     font-size: 15px;
-                    line-height: 20px;
+                    line-height: 133%;
                     color: #FFFFFF;
                     margin-bottom: 10px;
                     max-width: 200px;

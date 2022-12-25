@@ -1,7 +1,7 @@
 <template>
     <header class="b-news-header">
         <div class="b-news-header-content _container">
-            <HeaderMenu class="b-news-header-content-menu" />
+            <HeaderMenu style="padding-right: 20px;" class="b-news-header-content-menu" />
         </div>
     </header>
 </template>

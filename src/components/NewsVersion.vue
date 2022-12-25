@@ -74,7 +74,7 @@ export default {
             &-new {
                 font-weight: 500;
                 font-size: 12px;
-                line-height: 20px;
+                line-height: 150%;
                 text-align: center;
                 color: #148581;
                 display: flex;
@@ -104,7 +104,7 @@ export default {
                 font-weight: 400;
                 margin-top: 5px;
                 font-size: 14px;
-                line-height: 20px;
+                line-height: 133%;
                 color: #575775;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -123,7 +123,7 @@ export default {
                 &-value {
                     font-weight: 500;
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 133%;
                     color: #262541;
                     @media(max-width: 600px) {
                         font-size: 12px;

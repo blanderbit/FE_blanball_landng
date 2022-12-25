@@ -35,7 +35,7 @@
                         <label class="b-footer-tablet-main__side-input-label" for="name">{{
                                 $t('footer.subscribe_newsletter')
                         }}</label>
-                        <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="text" id="name"
+                        <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="email" id="email"
                             name="name">
                     </div>
                     <a class="b-footer-tablet-main__side-subscribe-button">{{ $t('buttons.subscribe') }}</a>

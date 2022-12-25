@@ -7,7 +7,7 @@
             <NuxtLink :to="{ path: comp.path }">
                 {{ comp.text }}
             </NuxtLink>
-            <img v-if="$route.name === 'news'" src="../assets/images/news-arrow-right.svg" alt="news-arrow">
+            <img class="b-header-menu__route__arrow-image" v-if="$route.name === 'news'" src="../assets/images/news-arrow-right.svg" alt="news-arrow">
         </div>
     </div>
 </template>

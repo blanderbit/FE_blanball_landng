@@ -1,12 +1,24 @@
 <template>
-    <div class="b-news-main-story">
+    <div class="b-news-main-story" :class="{'b-news-main-story-active': active}">
         <div class="b-news-main-story-content">
             <div class="b-news-main-story-content-left__side">
                 <div class="b-news-main-story-content-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Laboriosam quasi labore odit dicta asperiores dolorem repudiandae, minima suscipit nihil quo quaerat
                     amet, rerum, possimus non quisquam facilis quod eum sint?
                 </div>
-                <div class="b-news-main-story-content-subtitle">
+                <div class="b-news-main-story-content-subtitle" :class="{'b-news-main-story-content-subtitle-active': active}">
+                    Тут ключові тези з майбутнього оновлення.
+                    Що саме можна буде зробити, що покращиться,
+                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
+                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
+                    doloremque hic ab.
+                    Тут ключові тези з майбутнього оновлення.
+                    Що саме можна буде зробити, що покращиться,
+                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
+                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
+                    doloremque hic ab.
                     Тут ключові тези з майбутнього оновлення.
                     Що саме можна буде зробити, що покращиться,
                     що прибереться і так далі. fdfdfdfdfddffdfdfddf
@@ -14,7 +26,9 @@
                     sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
                     doloremque hic ab.
                 </div>
-                <div class="b-news-main-story-content-detail">Детальніше</div>
+                <div @click="active=!active" class="b-news-main-story-content-detail">
+                    {{ active ? $t('story.сollapse')  : $t('story.detailed')}}
+                </div>
             </div>
             <div class="b-news-main-story-content-right__side">
                 <img class="b-news-main-story-content-right__side-desk" src="../assets/images/news-main.svg" alt="">
@@ -23,7 +37,17 @@
         </div>
     </div>
 </template>
-   
+
+<script>
+export default {
+    props: {
+        active: {
+            type: Boolean,
+            default: false,
+        }
+    }
+}
+</script>
 <style lang="scss" scoped>
 @import "assets/styles/base.scss";
 .b {
@@ -32,7 +56,7 @@
         min-width: 600px;
         width: 100%;
         background: url('../assets/images/main-story-background.svg') #262541;
-        height: 240px;
+        max-height: 243px;
         border-radius: 8px;
         background-position: left;
         background-repeat: no-repeat;
@@ -42,21 +66,22 @@
         @media(max-width: $md4) {
             background: url('../assets/images/main-story-background-moblo.svg') #262541;
             background-repeat: no-repeat;
-            height: 430px;
+            max-height: 430px;
             min-width: 300px;
         }
         @media(max-width: 350px) {
             min-width: 200px;
         }
-
+        &-active {
+            max-height: none;
+        }
         &-content {
             display: flex;
+            height: 100%;
             justify-content: space-between;
-
             @media(max-width: $md4) {
                 flex-direction: column;
             }
-
             &-left__side {
                 padding: 24px 0px 24px 24px;
                 display: flex;
@@ -71,7 +96,6 @@
                     justify-content: right;
                 }
                 &-desk {
-                    margin-bottom: -5px;
                     @media(max-width: $md4) {
                         display: none;
                     }
@@ -87,7 +111,6 @@
                     border-radius: 8px;
                 }
             }
-
             &-title {
                 font-family: 'Exo 2';
                 font-weight: 700;
@@ -105,7 +128,6 @@
                     max-width: none;
                 }
             }
-
             &-subtitle {
                 font-weight: 400;
                 font-size: 14px;
@@ -118,15 +140,22 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
+                &-active {
+                    -webkit-line-clamp: inherit;
+                }
                 @media(max-width: $md4) {
                     max-width: none;
                 }
             }
-
             &-detail {
                 font-size: 14px;
                 text-decoration: underline;
                 color: #E2E2E9;
+                @media(min-width: $md2) {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
             }
         }
     }
