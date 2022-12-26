@@ -37,7 +37,7 @@
 
             &-left-side {
                 margin-right: 20px;
-                width: 110%;
+                width: 100%;
 
                 @media(max-width: $md3) {
                     width: 100%;

@@ -7,7 +7,7 @@
                     alt="menu-tablet-logo">
                 <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" alt="menu-tablet-logo-black">
             </div>
-            <input v-model.lazy="searchValue" placeholder="Пошук" type="text" class="b-menu-top__side__input">
+            <input v-model="searchValue" placeholder="Пошук" type="text" class="b-menu-top__side__input">
             <RegisterButton class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">

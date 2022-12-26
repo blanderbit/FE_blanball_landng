@@ -25,6 +25,24 @@
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
                     sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
                     doloremque hic ab.
+                    Тут ключові тези з майбутнього оновлення.
+                    Що саме можна буде зробити, що покращиться,
+                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
+                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
+                    doloremque hic ab.
+                    Тут ключові тези з майбутнього оновлення.
+                    Що саме можна буде зробити, що покращиться,
+                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
+                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
+                    doloremque hic ab.
+                    Тут ключові тези з майбутнього оновлення.
+                    Що саме можна буде зробити, що покращиться,
+                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
+                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
+                    doloremque hic ab.
                 </div>
                 <div @click="active=!active" class="b-news-main-story-content-detail">
                     {{ active ? $t('story.сollapse')  : $t('story.detailed')}}
@@ -58,7 +76,6 @@ export default {
         background: url('../assets/images/main-story-background.svg') #262541;
         max-height: 243px;
         border-radius: 8px;
-        background-position: left;
         background-repeat: no-repeat;
         @media(max-width: $md2) {
             min-width: 400px;
@@ -73,6 +90,9 @@ export default {
             min-width: 200px;
         }
         &-active {
+            background: url('../assets/images/main-story-active-background.svg') #262541;
+            background-repeat: no-repeat;
+            background-size: cover;
             max-height: none;
         }
         &-content {
