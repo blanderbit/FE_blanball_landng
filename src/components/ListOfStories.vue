@@ -29,8 +29,14 @@ import { ref } from 'vue'
 export default {
     setup() {
         const route = useRoute()
+        let timeOut
         watch(route, (route, previous) => {
-            setTimeout(() => console.log(route.query.search), 1000)
+            clearTimeout(timeOut)
+            function searhNews() {
+                news.value.length = 0
+                getNews({'search': route.query.search})
+            }
+            timeOut = setTimeout(searhNews, 500);
         })
         let news = ref([])
         let isPromiseActive = ref()

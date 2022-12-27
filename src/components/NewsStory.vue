@@ -73,7 +73,7 @@ export default {
         &-top-side {
             display: flex;
             justify-content: space-between;
-            align-items: top;
+            align-items: center;
 
             &-title {
                 font-family: 'Exo 2';
@@ -81,18 +81,9 @@ export default {
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 150%;
-                width: 75%;
                 color: #262541;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
                 margin-bottom: 10px;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-
                 &-active {
-                    width: 60%;
-                    -webkit-line-clamp: 2;
                 }
             }
 
