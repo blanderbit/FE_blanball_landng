@@ -7,8 +7,14 @@
                     alt="menu-tablet-logo">
                 <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" alt="menu-tablet-logo-black">
             </div>
-            <input v-model="searchValue" placeholder="Пошук" type="text" class="b-menu-top__side__input">
-            <RegisterButton class="b-menu-top__side-register-button" :text="$t('buttons.register')" />
+            <input 
+                v-model="searchValue" 
+                placeholder="Пошук" 
+                type="text" 
+                class="b-menu-top__side__input">
+            <RegisterButton 
+                class="b-menu-top__side-register-button" 
+                :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
@@ -26,7 +32,8 @@
             <div class="b-menu__right-side">
                 <HeaderMenuRoute v-if="$route.name === 'index'"
                     style="border-left: 1px solid black; padding-left: 5px;" />
-                <RegisterButton :text="$t('buttons.register')" />
+                <RegisterButton 
+                    :text="$t('buttons.register')" />
             </div>
         </ul>
     </div>

@@ -3,7 +3,9 @@
         Популярне
     </div>
     <div class="b-versions-list-of-versions">
-        <NewsVersion v-for="(n, i) in 2" :isNewVersion="i === 0" :key="`news-version-${i}`" />
+        <NewsVersion v-for="(n, i) in 2" 
+        :isNewVersion="i === 0" 
+        :key="`news-version-${i}`" />
     </div>
 </template>
 

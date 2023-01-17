@@ -4,8 +4,11 @@
             <div class="b-stories-title" id="b-stories-title">
                 {{ $t('listOfStories.stories') }}
             </div>
-            <div @click="changeOrdering()"  class="b-stories-filter">
-                {{ params.ordering === 'id' ? $t('listOfStories.filter') : $t('listOfStories.un-filter') }}
+            <div @click="changeOrdering()"  
+                class="b-stories-filter">
+                {{ params.ordering === 'id' 
+                ? $t('listOfStories.filter') 
+                : $t('listOfStories.un-filter') }}
             </div>
         </section>
         <div class="b-stories-list-of-stories">
@@ -16,7 +19,9 @@
                 :data="n" />
         </div>
         <Spinner :active="isPromiseActive" />
-        <div  v-if="countNewsOnNextPage > 0 && !isPromiseActive"  @click="getNewPage()" class="b-stories-load-more">
+        <div  v-if="countNewsOnNextPage > 0 && !isPromiseActive" 
+             @click="getNewPage()" 
+             class="b-stories-load-more">
             {{ $t('listOfStories.show-more') }} {{ countNewsOnNextPage }} {{ $t('listOfStories.articles') }}
         </div>
     </div>
@@ -24,7 +29,7 @@
 
 
 <script>
-import { HTTP } from '../main'
+import { HTTP } from "../main";
 import { ref } from 'vue'
 export default {
     setup() {
@@ -67,7 +72,14 @@ export default {
         getNews({
             params: params
         })
-        return { news, getNewPage, countNewsOnNextPage, isPromiseActive, changeOrdering, params }
+        return { 
+            news, 
+            getNewPage, 
+            countNewsOnNextPage, 
+            isPromiseActive, 
+            changeOrdering, 
+            params
+        }
     }
 }
 </script>

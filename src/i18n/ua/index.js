@@ -8,6 +8,8 @@ import Buttons from './buttons'
 import NewsEmailForm from './newsEmailForm'
 import ListOfStories  from './listOfStories'
 import Story from './story'
+import Page404 from './404'
+import Page502 from './502'
 
 export const UA_LANGUAGE = {
     navigation: Navigation,
@@ -20,4 +22,6 @@ export const UA_LANGUAGE = {
     newsEmailForm: NewsEmailForm,
     listOfStories: ListOfStories,
     story: Story,
+    page404: Page404,
+    page502: Page502,
 }
