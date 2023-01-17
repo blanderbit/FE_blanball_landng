@@ -13,7 +13,9 @@
             </div>
         </div>
         <div class="b-email-form-card-right__side">
-            <img src="../assets/images/news-first-block-left.svg" alt="">
+            <nuxt-img 
+                src="/images/news-first-block-left.svg" 
+                alt="" />
         </div>
     </div>
 </template>
@@ -83,7 +85,7 @@
                         width: 56px;
                         height: 36px;
                         border-radius: 6px;
-                        background: url('../assets/images/news-right-side-letter.svg') #262541;
+                        background: url('/images/news-right-side-letter.svg') #262541;
                         background-position: center;
                         background-repeat: no-repeat;
                         transition: background-color 0.3s ease 0s;

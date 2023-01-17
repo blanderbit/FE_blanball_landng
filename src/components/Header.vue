@@ -11,16 +11,26 @@
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500"
                                 data-aos-offset="0" class="b-header-title-first__line-first__word">{{ $t('header.train')
                                 }}</div>
-                            <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="650"
-                                data-aos-offset="0" class="b-header-title-first__line-ball__image"
-                                src="../assets/images/logo-ball.svg" alt="logo-ball">
+                            <nuxt-img 
+                                data-aos="fade-zoom-in" 
+                                data-aos-easing="linear" 
+                                data-aos-delay="650"
+                                data-aos-offset="0" 
+                                class="b-header-title-first__line-ball__image"
+                                src="/images/logo-ball.svg" 
+                                alt="logo-ball" />
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800"
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
                                         $t('header.play')
                                 }}</span></div>
-                            <img data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="950"
-                                data-aos-offset="0" class="b-header-title-first__line-ball__image"
-                                src="../assets/images/logo-ball.svg" alt="logo-ball">
+                            <nuxt-img 
+                                data-aos="fade-zoom-in" 
+                                data-aos-easing="linear" 
+                                data-aos-delay="950"
+                                data-aos-offset="0" 
+                                class="b-header-title-first__line-ball__image"
+                                src="/images/logo-ball.svg" 
+                                alt="logo-ball" />
                         </div>
                         <div class="b-header-title-second__line">
                             <RegisterButton class="b-header-title-second__line-button" :text="$t('buttons.register')" />
@@ -32,17 +42,26 @@
                 </section>
                 <section class="b-header-content-bottom-side">
                     <div class="b-header-content-bottom-side-user-raiting">
-                        <img src="../assets/images/user-raiting.svg" alt="user-raiting">
+                        <nuxt-img 
+                            src="/images/user-raiting.svg" 
+                            alt="user-raiting" />
                     </div>
                     <div class="b-header-content-bottom-side-iphone">
-                        <img class="b-header-content-bottom-side-iphone" src="../assets/images/Iphone1.svg" alt="header-main-image-tablet">
+                        <nuxt-img 
+                            class="b-header-content-bottom-side-iphone" 
+                            src="/images/Iphone1.svg" 
+                            alt="header-main-image-tablet" />
                     </div>
                 </section>
                 <div class="b-header-tablet-main__image">
-                    <img src="../assets/images/user-raiting.svg" alt="header-main-image-tablet">
+                    <nuxt-img 
+                        src="/images/user-raiting.svg" 
+                        alt="header-main-image-tablet" />
                 </div>
                 <div class="b-header-mobile-main__image">
-                    <img src="../assets/images/header-main-image-mobile.svg" alt="header-main-image-mobile">
+                    <nuxt-img 
+                        src="/images/header-main-image-mobile.svg" 
+                        alt="header-main-image-mobile" />
                 </div>
             </div>
         </header>
@@ -59,7 +78,7 @@
 
 .b {
     &-header {
-        background: url("../assets/images/header-background-lines.svg");
+        background: url("/images/header-background-lines.svg");
         width: 100%;
         border-radius: 0px 0px 36px 36px;
         padding-top: 20px;
@@ -121,7 +140,7 @@
         }
 
         @media(max-width: $md4) {
-            background: url("../assets/images/header-background-lines-mobile.svg");
+            background: url("images/header-background-lines-mobile.svg");
             background-repeat: no-repeat;
             background-position: right;
             padding-top: 15px;
@@ -216,7 +235,7 @@
 
             @media(max-width: $md3) {
                 font-size: 68px;
-                background: url("../assets/images/header-background-tablet.svg");
+                background: url("/images/header-background-tablet.svg");
                 background-position: center;
                 background-repeat: no-repeat;
                 padding: 10px 20px;
@@ -261,7 +280,7 @@
                 align-items: center;
 
                 &-second__word {
-                    background-image: url("../assets/images/green_elipse.svg");
+                    background-image: url("/images/green_elipse.svg");
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: left center;

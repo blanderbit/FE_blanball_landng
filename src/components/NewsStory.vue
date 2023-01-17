@@ -13,8 +13,8 @@
                 <div class="b-news-story-main-side-body">
                     <div class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
-                        <img class="b-news-story-main-side-body-img" v-if="active"
-                            src="../assets/images/new-body-image.svg" alt="">
+                        <nuxt-img class="b-news-story-main-side-body-img" v-if="active"
+                            src="/images/new-body-image.svg" alt="" />
                         {{ data.full_disc }}
                     </div>
                 </div>

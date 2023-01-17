@@ -1,13 +1,18 @@
 <template>
     <div class="b-header-menu__route">
         <div  class="b-header-menu__route__arrow-image">
-            <img v-if="$route.name === 'index'" src="../assets/images/news-arrow-left.svg" alt="news-arrow">
+            <nuxt-img v-if="$route.name === 'index'" 
+                src="/images/news-arrow-left.svg" 
+                alt="news-arrow" />
         </div>
         <div class="b-header-menu__route-text">
             <NuxtLink :to="{ path: comp.path }">
                 {{ comp.text }}
             </NuxtLink>
-            <img class="b-header-menu__route__arrow-image" v-if="$route.name === 'news'" src="../assets/images/news-arrow-right.svg" alt="news-arrow">
+            <nuxt-img v-if="$route.name === 'news'"  
+                class="b-header-menu__route__arrow-image" 
+                src="/images/news-arrow-right.svg" 
+                alt="news-arrow" />
         </div>
     </div>
 </template>

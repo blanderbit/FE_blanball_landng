@@ -49,8 +49,12 @@
                 </div>
             </div>
             <div class="b-news-main-story-content-right__side">
-                <img class="b-news-main-story-content-right__side-desk" src="../assets/images/news-main.svg" alt="">
-                <img class="b-news-main-story-content-right__side-mobile" src="../assets/images/f22.svg" alt="">
+                <nuxt-img class="b-news-main-story-content-right__side-desk" 
+                    src="/images/news-main.svg" 
+                    alt="" />
+                <nuxt-img class="b-news-main-story-content-right__side-mobile" 
+                    src="/images/f22.svg" 
+                    alt="" />
             </div>
         </div>
     </div>
@@ -73,7 +77,7 @@ export default {
         max-width: 800px;
         min-width: 600px;
         width: 100%;
-        background: url('../assets/images/main-story-background.svg') #262541;
+        background: url('/images/main-story-background.svg') #262541;
         max-height: 243px;
         border-radius: 8px;
         background-repeat: no-repeat;
@@ -81,7 +85,7 @@ export default {
             min-width: 400px;
         }
         @media(max-width: $md4) {
-            background: url('../assets/images/main-story-background-moblo.svg') #262541;
+            background: url('/images/main-story-background-moblo.svg') #262541;
             background-repeat: no-repeat;
             max-height: 430px;
             min-width: 300px;
@@ -90,7 +94,7 @@ export default {
             min-width: 200px;
         }
         &-active {
-            background: url('../assets/images/main-story-active-background.svg') #262541;
+            background: url('/images/main-story-active-background.svg') #262541;
             background-repeat: no-repeat;
             background-size: cover;
             max-height: none;

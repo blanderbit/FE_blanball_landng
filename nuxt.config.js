@@ -37,6 +37,7 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/robots',
 		'@funken-studio/sitemap-nuxt-3',
+		'@nuxt/image-edge',
 	],
 	sitemap: {
 		cacheTime: 1,

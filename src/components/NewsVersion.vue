@@ -2,7 +2,9 @@
     <div class="b-news-version">
         <div class="b-news-version-content">
             <div class="b-news-version-content-left__side">
-                <img src="../assets/images/news-version-image.svg" alt="news-version-image">
+                <nuxt-img 
+                    src="/images/news-version-image.svg" 
+                    alt="news-version-image" />
             </div>
             <div class="b-news-version-content-main__side">
                 <div class="b-news-version-content-main__side-top">
@@ -23,8 +25,10 @@
                     <div class="b-news-version-content-version-date">
                         10.04.2022
                     </div>
-                    <img class="b-news-version-content-version-arrow" src="../assets/images/news-version-arrow.svg"
-                        alt="news-version-content-version-arrow">
+                    <nuxt-img 
+                        class="b-news-version-content-version-arrow" 
+                        src="/images/news-version-arrow.svg"
+                        alt="news-version-content-version-arrow" />
                 </div>
             </div>
         </div>

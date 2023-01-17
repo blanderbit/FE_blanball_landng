@@ -7,16 +7,19 @@
                 </div>
                 <div class="b-second-block-first__section-main__image">
                     <div class="b-second-block-first__section-main__image-desk">
-                        <img src="../assets/images/second-block-first-section-main-image-desk.svg"
-                            alt="second-block-first-section-main-image-desk">
+                        <nuxt-img 
+                            src="/images/second-block-first-section-main-image-desk.svg"
+                            alt="second-block-first-section-main-image-desk" />
                     </div>
                     <div class="b-second-block-first__section-main__image-tablet">
-                        <img src="../assets/images/second-block-first-section-tablet.svg"
-                            alt="second-block-first-section-tablet">
+                        <nuxt-img 
+                            src="/images/second-block-first-section-tablet.svg"
+                            alt="second-block-first-section-tablet" />
                     </div>
                     <div class="b-second-block-first__section-main__image-mobile">
-                        <img src="../assets/images/second-block-first-section-mobile.svg"
-                            alt="second-block-first-section-mobile">
+                        <nuxt-img 
+                            src="/images/second-block-first-section-mobile.svg"
+                            alt="second-block-first-section-mobile" />
                     </div>
                     <div class="b-second-block-first__section-mobile__block">
                         <section class="b-second-block-first__section-mobile__block-first">
@@ -24,8 +27,9 @@
                                 {{ $t('secondBlock.secondSection.mobile_title') }}
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
-                                <img src="../assets/images/b-second-block-first-section-mobile-block-1.svg"
-                                    alt="b-second-block-first-section-mobile-block-1">
+                                <nuxt-img 
+                                    src="/images/b-second-block-first-section-mobile-block-1.svg"
+                                    alt="b-second-block-first-section-mobile-block-1" />
                             </div>
                         </section>
                         <section class="b-second-block-first__section-mobile__block-second">
@@ -33,8 +37,9 @@
                                 {{ $t('secondBlock.secondSection.mobile_subtitle') }}
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
-                                <img src="../assets/images/b-second-block-first-section-mobile-block-2.svg"
-                                    alt="b-second-block-first-section-mobile-block-2">
+                                <nuxt-img 
+                                    src="/images/b-second-block-first-section-mobile-block-2.svg"
+                                    alt="b-second-block-first-section-mobile-block-2" />
                             </div>
                         </section>
                     </div>
@@ -46,19 +51,25 @@
                 <div class="b-second-block-second__section-main__title b-title" id="b-second__section-main__title"
                     v-html="$t('secondBlock.secondSection.title')">
                 </div>
+                <div>
                 <div class="b-second-block-second__section__image">
                     <div class="b-second-block-second__section__image-desk">
-                        <img src="../assets/images/second-main-block-second-section-desk.svg"
-                            alt="second-main-block-second-section-desk">
+                        <nuxt-img 
+                            src="/images/second-main-block-second-section-desk.svg"
+                            alt="second-main-block-second-section-desk" />
                     </div>
                     <div class="b-second-block-second__section__image-tablet">
-                        <img src="../assets/images/second-main-block-second-section-tablet.svg"
-                            alt="second-main-block-second-section-tablet">
+                        <nuxt-img 
+                            src="/images/second-main-block-second-section-tablet.svg"
+                            alt="second-main-block-second-section-tablet" />
                     </div>
-                    <div class="b-second-block-second__section__image-mobile">
-                        <img src="../assets/images/second-main-block-second-section-mob.svg"
-                            alt="second-main-block-second-section-mobile">
-                        <img src="../assets/images/create-review-second-block.svg" alt="create-review-second-block">
+                    <div class="b-second-block-second__section__image-mobile" />
+                        <nuxt-img 
+                            src="/images/second-main-block-second-section-mob.svg"
+                            alt="second-main-block-second-section-mobile" />
+                        <nuxt-img 
+                            src="/images/create-review-second-block.svg" 
+                            alt="create-review-second-block" />
                     </div>
                 </div>
             </div>
@@ -229,7 +240,7 @@
         &-second__section {
             width: 100%;
             border-radius: 0px 0px 36px 36px;
-            background: url('../assets/images/second-main-block-second-section-background.svg'),
+            background: url('/images/second-main-block-second-section-background.svg'),
                 linear-gradient(180deg, $font-color 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
             background-repeat: no-repeat;
             background-position: bottom;
@@ -299,7 +310,7 @@
             }
 
             @media(max-width: $md3) {
-                background-image: url('../assets/images/second-block-background-tablet.svg'), linear-gradient(180deg, $font-color 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
+                background-image: url('/images/second-block-background-tablet.svg'), linear-gradient(180deg, $font-color 0%, #204557 24%, #1A666D 42.09%, #148783 100%, #148783 100%);
                 background-repeat: no-repeat;
                 background-position: bottom center;
             }

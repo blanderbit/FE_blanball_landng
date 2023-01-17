@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@intlify/nuxt3": "^0.2.4",
+    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "autoprefixer": "^10.4.13",
     "nuxt": "3.0.0",
     "nuxt-gsap-module": "^1.7.2",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
+    "@nuxt/image": "^0.7.1",
     "@nuxtjs/i18n": "^7.3.0",
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/sitemap": "^2.4.0",

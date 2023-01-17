@@ -2,7 +2,7 @@
     <div class="b-404">
         <div class="b-404-content">
             <div class="b-404-image">
-                <img src="../assets/images/404.svg" alt="404">
+                <nuxt-img src="/images/404.svg" alt="404" />
             </div>
             <div class="b-404-card">
                 <div class="b-404-card-title">
