@@ -21,6 +21,7 @@
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
     "@nuxtjs/robots": "^3.0.0",
     "aos": "^2.3.4",
+    "autoprefixer": "^10.4.13",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
     "html-minifier": "^4.0.0"
