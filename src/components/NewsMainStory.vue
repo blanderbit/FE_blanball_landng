@@ -50,9 +50,11 @@
             </div>
             <div class="b-news-main-story-content-right__side">
                 <nuxt-img class="b-news-main-story-content-right__side-desk" 
+                    preload
                     src="/images/news-main.svg" 
                     alt="" />
                 <nuxt-img class="b-news-main-story-content-right__side-mobile" 
+                    preload
                     src="/images/f22.svg" 
                     alt="" />
             </div>

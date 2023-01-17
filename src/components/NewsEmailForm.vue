@@ -14,6 +14,7 @@
         </div>
         <div class="b-email-form-card-right__side">
             <nuxt-img 
+                preload
                 src="/images/news-first-block-left.svg" 
                 alt="" />
         </div>

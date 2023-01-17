@@ -7,17 +7,20 @@
                 </div>
                 <div class="b-second-block-first__section-main__image">
                     <div class="b-second-block-first__section-main__image-desk">
-                        <nuxt-img 
+                        <nuxt-img   
+                            preload
                             src="/images/second-block-first-section-main-image-desk.svg"
                             alt="second-block-first-section-main-image-desk" />
                     </div>
                     <div class="b-second-block-first__section-main__image-tablet">
                         <nuxt-img 
+                            preload
                             src="/images/second-block-first-section-tablet.svg"
                             alt="second-block-first-section-tablet" />
                     </div>
                     <div class="b-second-block-first__section-main__image-mobile">
-                        <nuxt-img 
+                        <nuxt-img
+                            preload 
                             src="/images/second-block-first-section-mobile.svg"
                             alt="second-block-first-section-mobile" />
                     </div>
@@ -28,6 +31,7 @@
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
                                 <nuxt-img 
+                                    preload
                                     src="/images/b-second-block-first-section-mobile-block-1.svg"
                                     alt="b-second-block-first-section-mobile-block-1" />
                             </div>
@@ -38,6 +42,7 @@
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
                                 <nuxt-img 
+                                    preload
                                     src="/images/b-second-block-first-section-mobile-block-2.svg"
                                     alt="b-second-block-first-section-mobile-block-2" />
                             </div>
@@ -55,19 +60,23 @@
                 <div class="b-second-block-second__section__image">
                     <div class="b-second-block-second__section__image-desk">
                         <nuxt-img 
+                            preload
                             src="/images/second-main-block-second-section-desk.svg"
                             alt="second-main-block-second-section-desk" />
                     </div>
                     <div class="b-second-block-second__section__image-tablet">
                         <nuxt-img 
+                            preload
                             src="/images/second-main-block-second-section-tablet.svg"
                             alt="second-main-block-second-section-tablet" />
                     </div>
                     <div class="b-second-block-second__section__image-mobile" />
-                        <nuxt-img 
+                        <nuxt-img
+                            preload 
                             src="/images/second-main-block-second-section-mob.svg"
                             alt="second-main-block-second-section-mobile" />
-                        <nuxt-img 
+                        <nuxt-img
+                            preload 
                             src="/images/create-review-second-block.svg" 
                             alt="create-review-second-block" />
                     </div>

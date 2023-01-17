@@ -3,6 +3,7 @@
         <div class="b-news-version-content">
             <div class="b-news-version-content-left__side">
                 <nuxt-img 
+                    preload
                     src="/images/news-version-image.svg" 
                     alt="news-version-image" />
             </div>
@@ -26,6 +27,7 @@
                         10.04.2022
                     </div>
                     <nuxt-img 
+                        preload
                         class="b-news-version-content-version-arrow" 
                         src="/images/news-version-arrow.svg"
                         alt="news-version-content-version-arrow" />

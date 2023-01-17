@@ -11,7 +11,8 @@
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500"
                                 data-aos-offset="0" class="b-header-title-first__line-first__word">{{ $t('header.train')
                                 }}</div>
-                            <nuxt-img 
+                            <nuxt-img
+                                preload
                                 data-aos="fade-zoom-in" 
                                 data-aos-easing="linear" 
                                 data-aos-delay="650"
@@ -23,14 +24,15 @@
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
                                         $t('header.play')
                                 }}</span></div>
-                            <nuxt-img 
+                            <nuxt-img
+                                preload
                                 data-aos="fade-zoom-in" 
                                 data-aos-easing="linear" 
                                 data-aos-delay="950"
                                 data-aos-offset="0" 
                                 class="b-header-title-first__line-ball__image"
                                 src="/images/logo-ball.svg" 
-                                alt="logo-ball" />
+                                alt="logo-ball"/>
                         </div>
                         <div class="b-header-title-second__line">
                             <RegisterButton class="b-header-title-second__line-button" :text="$t('buttons.register')" />
@@ -42,26 +44,31 @@
                 </section>
                 <section class="b-header-content-bottom-side">
                     <div class="b-header-content-bottom-side-user-raiting">
-                        <nuxt-img 
+                        <nuxt-img
+                            preload
                             src="/images/user-raiting.svg" 
-                            alt="user-raiting" />
+                            alt="user-raiting"/>
                     </div>
                     <div class="b-header-content-bottom-side-iphone">
-                        <nuxt-img 
+                        <nuxt-img
+                            preload
                             class="b-header-content-bottom-side-iphone" 
                             src="/images/Iphone1.svg" 
-                            alt="header-main-image-tablet" />
+                            alt="header-main-image-tablet"/>
                     </div>
                 </section>
                 <div class="b-header-tablet-main__image">
-                    <nuxt-img 
+                    <nuxt-img
+                        preload
                         src="/images/user-raiting.svg" 
-                        alt="header-main-image-tablet" />
+                        alt="header-main-image-tablet"/>
                 </div>
                 <div class="b-header-mobile-main__image">
-                    <nuxt-img 
+                    <nuxt-img
+                        preload
                         src="/images/header-main-image-mobile.svg" 
-                        alt="header-main-image-mobile" />
+                        alt="header-main-image-mobile" 
+                        preset="blanball" />
                 </div>
             </div>
         </header>

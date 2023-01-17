@@ -3,10 +3,14 @@
         <ul class="b-footer-desk-body">
             <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0"
                 class="b-footer-desk__logo">
-                <nuxt-img class="b-footer-desk__logo-desk" 
+                <nuxt-img
+                    preload 
+                    class="b-footer-desk__logo-desk" 
                     src="/images/footer-logo.svg" 
                     alt="footer-logo" />
-                <nuxt-img class="b-footer-desk__logo-small" 
+                <nuxt-img
+                    preload 
+                    class="b-footer-desk__logo-small" 
                     src="/images/logo-ball.svg" 
                     alt="footer-logo-small" />
             </div>
@@ -17,7 +21,9 @@
                         $t('footer.blanball')
                 }}</span>
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
-                    <nuxt-img data-aos="fade-zoom-in" 
+                    <nuxt-img
+                        preload 
+                        data-aos="fade-zoom-in" 
                         data-aos-easing="ease-in-back" 
                         data-aos-delay="1000"
                         data-aos-offset="0" src="/images/footer-arrow.svg" alt="footer-arrow" />
@@ -29,10 +35,12 @@
         <div class="b-footer-tablet-body">
             <div class="b-footer-tablet-top__side">
                 <nuxt-img 
+                    preload
                     src="/images/footer-logo.svg" 
                     alt="footer-logo" />
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
                     <nuxt-img 
+                        preload
                         data-aos="fade-zoom-in" 
                         data-aos-easing="ease-in-back" 
                         data-aos-delay="1000"

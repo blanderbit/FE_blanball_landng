@@ -1,6 +1,7 @@
 import Meta from './src/plugins/meta'
 
 export default defineNuxtConfig({
+	loading: '~/components/loading.vue',
 	css: ["~/assets/styles/base.scss"],
 	postcss: {
 		plugins: {
@@ -39,6 +40,19 @@ export default defineNuxtConfig({
 		'@funken-studio/sitemap-nuxt-3',
 		'@nuxt/image-edge',
 	],
+
+	image: {
+		presets: {
+			blanball: {
+				modifiers: {
+					quality: '10',
+					prerender: true,
+					loading: 'lazy',
+				}
+			}
+		}
+	},
+
 	sitemap: {
 		cacheTime: 1,
 		defaults: {

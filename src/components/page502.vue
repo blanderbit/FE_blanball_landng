@@ -2,7 +2,10 @@
     <div class="b-502">
         <div class="b-502-content">
             <div class="b-502-image">
-                <nuxt-img src="images/502.svg" alt="502" />
+                <nuxt-img
+                    preload 
+                    src="images/502.svg" 
+                    alt="502" />
             </div>
             <div class="b-502-card">
                 <div class="b-502-card-title">

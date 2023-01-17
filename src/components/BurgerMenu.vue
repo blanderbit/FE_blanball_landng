@@ -1,14 +1,20 @@
 <template>
     <div class="b-burger">
         <label @click="isMenuActive = !isMenuActive" class="b-burger-btn">
-            <nuxt-img class="b-burger-btn-tablet" 
+            <nuxt-img class="b-burger-btn-tablet"
+                preload
+                preset="blanball"
                 src="/images/burger-tablet.svg" 
                 alt="burger-tablet" />
-            <nuxt-img v-if="$route.name === 'index'" 
+            <nuxt-img v-if="$route.name === 'index'"
+                preload
+                preset="blanball"
                 class="b-burger-btn-mobile" 
                 src="/images/burger-moblo.svg" 
                 alt="burger-mobile" />
-            <nuxt-img v-else 
+            <nuxt-img v-else
+                preload
+                preset="blanball"
                 class="b-burger-btn-mobile-news" 
                 src="/images/burger-tablet.svg" 
                 alt="burger-mobile-news" />
@@ -17,12 +23,18 @@
             <ul v-show="isMenuActive" class="b-burger-body">
                 <div class="b-burger-content">
                     <div class="b-burger-content-logo">
-                        <nuxt-img src="/images/burger-active-logo.svg" 
+                        <nuxt-img
+                            preload
+                            preset="blanball"
+                            src="/images/burger-active-logo.svg" 
                             alt="burger-active-logo" />
                     </div>
                     <div class="b-burger-content-menu">
                         <div class="b-burger-content-menu-title">{{ $t('navigation.menu') }}</div>
-                        <nuxt-img class="b-burger-content-menu-сross" 
+                        <nuxt-img
+                            preload
+                            preset="blanball"
+                            class="b-burger-content-menu-сross" 
                             @click="isMenuActive = !isMenuActive"
                             src="/images/header-burger-active-cross.svg" 
                             alt="burger-active-cross" />
@@ -33,7 +45,11 @@
                     </div>
                     <div class="b-burger-content-page-route">
                         <HeaderMenuRoute style="margin-left: -10px;" />
-                        <nuxt-img src="/images/news-arrow-right.svg" alt="news-arrow-right" />
+                        <nuxt-img
+                            preload
+                            preset="blanball" 
+                            src="/images/news-arrow-right.svg" 
+                            alt="news-arrow-right" />
                     </div>
                 </div>
             </ul>

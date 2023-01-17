@@ -6,7 +6,8 @@
                 <nuxt-img v-if="$route.name === 'index'" 
                     src="/images/header-tablet-logo.svg"
                     alt="menu-tablet-logo" />
-                <nuxt-img v-else 
+                <nuxt-img v-else
+                    preload
                     src="/images/header-menu-top-side-logo-black.svg" 
                     alt="menu-tablet-logo-black" />
             </div>
@@ -22,17 +23,21 @@
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
                 <nuxt-img v-if="$route.name === 'index'" 
+                    preload
                     class="b-menu__logo-desk" 
                     src="/images/logo.svg"
                     alt="desk-logo" />
                 <nuxt-img v-else class="b-menu__logo-desk" 
+                    preload
                     src="/images/news-header-menu-logo.svg" 
                     alt="desk-logo"/>
                 <nuxt-img v-if="$route.name === 'index'" 
+                    preload
                     class="b-menu__logo-small" 
                     src="/images/logo-ball.svg"
                     alt="small-logo" />
                 <nuxt-img v-else class="b-menu__logo-small" 
+                    preload
                     src="/images/news-header-menu-logo-small.svg"
                     alt="small-logo" />
                 <HeaderMenuRoute v-if="$route.name === 'news'"

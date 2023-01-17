@@ -12,14 +12,22 @@
             </section>
             <section data-aos="zoom-out-right" data-aos-easing="ease-in-quart" data-aos-delay="700" data-aos-offset="0"
                 class="b-first-block__image">
-                <nuxt-img class="b-first-block__image-desk" 
+                <nuxt-img
+                    preload
+                    class="b-first-block__image-desk" 
                     src="/images/first-main-block-desk.svg"
                     alt="first-main-block-desk" />
-                <nuxt-img class="b-first-block__image-tablet" 
+                <nuxt-img 
+                    preload
+                    preset="blanball"
+                    class="b-first-block__image-tablet" 
                     src="/images/first-main-block-tablet.svg"
                     alt="first-main-block-tablet" />
                 <div class="b-first-block__image-mobile">
-                    <nuxt-img src="/images/first-main-block-mobile.svg" 
+                    <nuxt-img 
+                    preload
+                    preset="blanball"
+                    src="/images/first-main-block-mobile.svg" 
                     alt="first-main-block-mobile" />
                 </div>
             </section>
