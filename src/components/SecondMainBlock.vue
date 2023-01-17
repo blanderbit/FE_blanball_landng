@@ -56,7 +56,6 @@
                 <div class="b-second-block-second__section-main__title b-title" id="b-second__section-main__title"
                     v-html="$t('secondBlock.secondSection.title')">
                 </div>
-                <div>
                 <div class="b-second-block-second__section__image">
                     <div class="b-second-block-second__section__image-desk">
                         <nuxt-img 
@@ -70,7 +69,8 @@
                             src="/images/second-main-block-second-section-tablet.svg"
                             alt="second-main-block-second-section-tablet" />
                     </div>
-                    <div class="b-second-block-second__section__image-mobile" />
+
+                    <div class="b-second-block-second__section__image-mobile">
                         <nuxt-img
                             preload 
                             src="/images/second-main-block-second-section-mob.svg"
@@ -86,10 +86,12 @@
     </main>
 </template>
 
+
+
 <script>
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "assets/styles/base.scss";
 
 .b {
@@ -224,6 +226,7 @@
                 }
 
                 &-mobile {
+                    
                     display: none;
 
                     @media(max-width: $md4) {
