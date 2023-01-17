@@ -3,15 +3,15 @@ import Meta from './src/plugins/meta'
 export default defineNuxtConfig({
 	loading: '~/components/loading.vue',
 	css: ["~/assets/styles/base.scss"],
-	postcss: {
-		plugins: {
-			tailwindcss: {},
-			autoprefixer: {},
-		},
-	},
 	plugins: [
 		{ src: '~/plugins/aos', mode: 'client' },
 	],
+	buildModules: [
+		['@nuxt-modules/compression', {
+			algorithm: 'brotliCompress'
+		}]
+	],
+	cache: true,
 	app: {
 		head: {
 			title: 'Blanball',
@@ -52,7 +52,6 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-
 	sitemap: {
 		cacheTime: 1,
 		defaults: {
