@@ -1,4 +1,5 @@
 import Meta from './src/plugins/meta'
+import viteCompression from 'vite-plugin-compression';
 
 export default defineNuxtConfig({
 	loading: '~/components/loading.vue',
@@ -8,6 +9,9 @@ export default defineNuxtConfig({
 			tailwindcss: {},
 			autoprefixer: {},
 		},
+	},
+	vite: {
+		plugins: [viteCompression({ algorithm: 'brotliCompress' })]
 	},
 	plugins: [
 		{ src: '~/plugins/aos', mode: 'client' },
@@ -51,6 +55,25 @@ export default defineNuxtConfig({
 				}
 			}
 		}
+	},
+
+	build: {
+		html: {
+			minify: {
+				collapseBooleanAttributes: true,
+				decodeEntities: true,
+				minifyCSS: true,
+				minifyJS: true,
+				processConditionalComments: true,
+				removeEmptyAttributes: true,
+				removeRedundantAttributes: true,
+				trimCustomFragments: true,
+				useShortDoctype: true,
+				removeComments: true,
+				preserveLineBreaks: false,
+				collapseWhitespace: true
+			}
+		},
 	},
 
 	sitemap: {
