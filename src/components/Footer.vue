@@ -3,8 +3,16 @@
         <ul class="b-footer-desk-body">
             <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0"
                 class="b-footer-desk__logo">
-                <img class="b-footer-desk__logo-desk" src="../assets/images/footer-logo.svg" alt="footer-logo" />
-                <img class="b-footer-desk__logo-small" src="../assets/images/logo-ball.svg" alt="footer-logo-small" />
+                <nuxt-img
+                    preload 
+                    class="b-footer-desk__logo-desk" 
+                    src="/images/footer-logo.svg" 
+                    alt="footer-logo" />
+                <nuxt-img
+                    preload 
+                    class="b-footer-desk__logo-small" 
+                    src="/images/logo-ball.svg" 
+                    alt="footer-logo-small" />
             </div>
             <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0"
                 :stylings="navigationItemStyles" />
@@ -13,8 +21,12 @@
                         $t('footer.blanball')
                 }}</span>
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
-                    <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
-                        data-aos-offset="0" src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
+                    <nuxt-img
+                        preload 
+                        data-aos="fade-zoom-in" 
+                        data-aos-easing="ease-in-back" 
+                        data-aos-delay="1000"
+                        data-aos-offset="0" src="/images/footer-arrow.svg" alt="footer-arrow" />
                 </NuxtLink>
             </div>
         </ul>
@@ -22,11 +34,20 @@
     <footer class="b-footer-tablet">
         <div class="b-footer-tablet-body">
             <div class="b-footer-tablet-top__side">
-                <img src="../assets/images/footer-logo.svg" alt="footer-logo">
+                <nuxt-img 
+                    preload
+                    src="/images/footer-logo.svg" 
+                    alt="footer-logo" />
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
-                    <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000"
-                        data-aos-offset="0" class="b-footer-tablet-top__side-arrow"
-                        src="../assets/images/footer-arrow.svg" alt="footer-arrow" />
+                    <nuxt-img 
+                        preload
+                        data-aos="fade-zoom-in" 
+                        data-aos-easing="ease-in-back" 
+                        data-aos-delay="1000"
+                        data-aos-offset="0" 
+                        class="b-footer-tablet-top__side-arrow"
+                        src="/images/footer-arrow.svg" 
+                        alt="footer-arrow" />
                 </NuxtLink>
             </div>
             <div class="b-footer-tablet-main__side">
@@ -35,7 +56,7 @@
                         <label class="b-footer-tablet-main__side-input-label" for="name">{{
                                 $t('footer.subscribe_newsletter')
                         }}</label>
-                        <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="text" id="name"
+                        <input class="b-footer-tablet-main__side-input" placeholder="E-mail" type="email" id="email"
                             name="name">
                     </div>
                     <a class="b-footer-tablet-main__side-subscribe-button">{{ $t('buttons.subscribe') }}</a>

@@ -7,13 +7,16 @@
             <label class="b-email-form-card-left__side-input-label" for="name">
                 {{ $t('newsEmailForm.subsribe_our_spam') }}</label>
             <div class="b-email-form-card-left__side-input-block">
-                <input class="b-email-form-card-left__side-input" placeholder="E-mail" type="text" id="name"
+                <input class="b-email-form-card-left__side-input" placeholder="E-mail" type="email" id="email"
                     name="name">
                 <div class="b-email-form-card-left__side-input-button"></div>
             </div>
         </div>
         <div class="b-email-form-card-right__side">
-            <img src="../assets/images/news-first-block-left.svg" alt="">
+            <nuxt-img 
+                preload
+                src="/images/news-first-block-left.svg" 
+                alt="" />
         </div>
     </div>
 </template>
@@ -24,7 +27,6 @@
     &-email-form {
         &-card {
             width: 400px;
-            height: 152px;
             background: #EBEBFA;
             border-radius: 8px;
             padding: 15px;
@@ -67,7 +69,7 @@
                     padding: 6px 12px;
                     font-weight: 400;
                     font-size: 13px;
-                    line-height: 24px;
+                    line-height: 184%;
                     color: #8A8AA8;
                     margin-right: 10px;
 
@@ -84,7 +86,7 @@
                         width: 56px;
                         height: 36px;
                         border-radius: 6px;
-                        background: url('../assets/images/news-right-side-letter.svg') #262541;
+                        background: url('/images/news-right-side-letter.svg') #262541;
                         background-position: center;
                         background-repeat: no-repeat;
                         transition: background-color 0.3s ease 0s;
@@ -102,7 +104,7 @@
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
-                        line-height: 20px;
+                        line-height: 133%;
                         color: #575775;
                         margin: 5px 0px;
                         max-width: 220px;

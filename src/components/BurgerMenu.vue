@@ -1,20 +1,43 @@
 <template>
     <div class="b-burger">
         <label @click="isMenuActive = !isMenuActive" class="b-burger-btn">
-            <img class="b-burger-btn-tablet" src="../assets/images/burger-tablet.svg" alt="burger-tablet">
-            <img v-if="$route.name === 'index'" class="b-burger-btn-mobile" src="../assets/images/burger-moblo.svg" alt="burger-mobile">
-            <img v-else class="b-burger-btn-mobile-news" src="../assets/images/burger-tablet.svg" alt="burger-mobile-news">
+            <nuxt-img class="b-burger-btn-tablet"
+                preload
+                preset="blanball"
+                src="/images/burger-tablet.svg" 
+                alt="burger-tablet" />
+            <nuxt-img v-if="$route.name === 'index'"
+                preload
+                preset="blanball"
+                class="b-burger-btn-mobile" 
+                src="/images/burger-moblo.svg" 
+                alt="burger-mobile" />
+            <nuxt-img v-else
+                preload
+                preset="blanball"
+                class="b-burger-btn-mobile-news" 
+                src="/images/burger-tablet.svg" 
+                alt="burger-mobile-news" />
         </label>
         <transition name="fade">
             <ul v-show="isMenuActive" class="b-burger-body">
                 <div class="b-burger-content">
                     <div class="b-burger-content-logo">
-                        <img src="../assets/images/burger-active-logo.svg" alt="burger-active-logo">
+                        <nuxt-img
+                            preload
+                            preset="blanball"
+                            src="/images/burger-active-logo.svg" 
+                            alt="burger-active-logo" />
                     </div>
                     <div class="b-burger-content-menu">
                         <div class="b-burger-content-menu-title">{{ $t('navigation.menu') }}</div>
-                        <img class="b-burger-content-menu-сross" @click="isMenuActive = !isMenuActive"
-                            src="../assets/images/header-burger-active-cross.svg" alt="burger-active-cross">
+                        <nuxt-img
+                            preload
+                            preset="blanball"
+                            class="b-burger-content-menu-сross" 
+                            @click="isMenuActive = !isMenuActive"
+                            src="/images/header-burger-active-cross.svg" 
+                            alt="burger-active-cross" />
                     </div>
                     <div class="b-burger-content-navigation">
                         <Navigation style="margin-top: 10px; margin-left: -20px;" :stylings="navigationItemStyles"
@@ -22,7 +45,11 @@
                     </div>
                     <div class="b-burger-content-page-route">
                         <HeaderMenuRoute style="margin-left: -10px;" />
-                        <img src="../assets/images/news-arrow-right.svg" alt="news-arrow-right">
+                        <nuxt-img
+                            preload
+                            preset="blanball" 
+                            src="/images/news-arrow-right.svg" 
+                            alt="news-arrow-right" />
                     </div>
                 </div>
             </ul>

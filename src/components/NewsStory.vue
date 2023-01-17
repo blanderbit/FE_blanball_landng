@@ -6,23 +6,25 @@
                     {{ data.title }}
                 </div>
                 <div class="b-news-story-top-side-date">
-                    {{ active ? formatedDate.replaceAll(' ', '.') : formatedDate.replaceAll(' ', '/') }}
+                    {{formatedDate}}
                 </div>
             </section>
             <section class="b-news-story-main-side">
                 <div class="b-news-story-main-side-body">
                     <div class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
-                        <img class="b-news-story-main-side-body-img" v-if="active"
-                            src="../assets/images/new-body-image.svg" alt="">
+                        <nuxt-img 
+                            v-if="active"
+                            preload
+                            class="b-news-story-main-side-body-img"
+                            src="/images/new-body-image.svg" alt="" />
                         {{ data.full_disc }}
                     </div>
                 </div>
             </section>
             <section class="b-news-story-bottom-side">
                 <div @click="active = !active" class="b-news-story-bottom-side-detail">
-                    <span v-if="!active">Детальніше</span>
-                    <span v-else>Згорнути</span>
+                    <span>{{ active ? $t('story.сollapse')  : $t('story.detailed')}}</span>
                 </div>
             </section>
         </div>
@@ -44,7 +46,7 @@ export default {
         }
     },
     setup(props) {
-        const formatedDate = dayjs(props.data.created_at).format('MM DD YYYY')
+        const formatedDate = dayjs(props.data.created_at).format('MM/DD/YYYY')
         return { formatedDate }
     }
 }
@@ -74,7 +76,7 @@ export default {
         &-top-side {
             display: flex;
             justify-content: space-between;
-            align-items: top;
+            align-items: center;
 
             &-title {
                 font-family: 'Exo 2';
@@ -82,18 +84,9 @@ export default {
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 150%;
-                width: 75%;
                 color: #262541;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
                 margin-bottom: 10px;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-
                 &-active {
-                    width: 60%;
-                    -webkit-line-clamp: 2;
                 }
             }
 
@@ -129,7 +122,7 @@ export default {
                 &-text {
                     font-weight: 400;
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 133%;
                     color: #262541;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -160,7 +153,7 @@ export default {
             &-detail {
                 font-weight: 400;
                 font-size: 14px;
-                line-height: 20px;
+                line-height: 133%;
                 text-decoration-line: underline;
                 color: #575775;
                 margin: 10px 0px;

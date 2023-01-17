@@ -8,11 +8,18 @@
                 </div>
                 <div class="b-main-section-images">
                     <div class="b-main-section-images-iphone">
-                        <img class="b-main-section-images-iphone__1" src="../assets/images/iphone2.svg"
-                            alt="b-main-section-images-iphone-1">
-                        <img data-aos-offset="300" data-aos-easing="ease-in-sine"
-                            class="b-main-section-images-iphone__2" src="../assets/images/Iphone.svg"
-                            alt="b-main-section-images-iphone-2">
+                        <nuxt-img 
+                            preload
+                            class="b-main-section-images-iphone__1" 
+                            src="/images/iphone2.svg"
+                            alt="b-main-section-images-iphone-1" />
+                        <nuxt-img 
+                            preload
+                            data-aos-offset="300" 
+                            data-aos-easing="ease-in-sine"
+                            class="b-main-section-images-iphone__2" 
+                            src="/images/Iphone.svg"
+                            alt="b-main-section-images-iphone-2" />
                     </div>
                 </div>
             </div>
@@ -28,16 +35,17 @@
                                 $t('thirdBlock.beforeFooterSection.inputLabel')
                         }}</label>
                         <div class="b-third__block-before-footer-section__input-create-account__section">
-                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="text"
-                                id="name" name="name">
-                            <RegisterButton style="height: 45px"
-                                :text="$t('buttons.create_account')" />
+                            <input class="b-third__block-before-footer-section__input" placeholder="E-mail" type="email"
+                                id="email" name="name">
+                            <RegisterButton style="height: 45px" :text="$t('buttons.create_account')" />
                         </div>
                     </div>
                 </div>
                 <div class="b-third__block-before-footer-section__right-side">
-                    <img class="b-third__block-before-footer-section__right-side__image-desk"
-                        src="../assets/images/third-main-block-before-footer-section-iphone-desk.svg"
+                    <nuxt-img 
+                        preload
+                        class="b-third__block-before-footer-section__right-side__image-desk"
+                        src="/images/third-main-block-before-footer-section-iphone-desk.svg"
                         alt="third-main-block-before-footer-section-iphone-desk" />
                 </div>
             </div>
@@ -68,7 +76,7 @@
                 display: flex;
                 justify-content: space-between;
                 background-size: cover;
-                background: url("../assets/images/third-main-block-second-section-background-desk.svg"), $font-color;
+                background: url("/images/third-main-block-second-section-background-desk.svg"), $font-color;
 
                 @media(max-width: $md2) {
                     padding-right: 0px;
@@ -78,7 +86,7 @@
                     max-height: 245px;
                     padding: 15px 20px 26px 20px;
                     background-repeat: no-repeat;
-                    background: url("../assets/images/third-main-block-second-section-background-tablet.svg"), $font-color;
+                    background: url("/images/third-main-block-second-section-background-tablet.svg"), $font-color;
                     background-position: center;
                 }
             }
@@ -186,7 +194,7 @@
                 &-label {
                     font-weight: 500;
                     font-size: 15px;
-                    line-height: 20px;
+                    line-height: 133%;
                     color: #FFFFFF;
                     margin-bottom: 10px;
                     max-width: 200px;
@@ -210,7 +218,7 @@
 
         &-images {
             margin-bottom: 150px;
-            background: url("../assets/images/third-main-block-main-section-background-desk.svg");
+            background: url("/images/third-main-block-main-section-background-desk.svg");
             background-position: center bottom;
             background-repeat: no-repeat;
             margin-right: 20px;
@@ -220,7 +228,7 @@
             }
 
             @media(max-width: $md3) {
-                background: url("../assets/images/third-main-block-main-section-background-tablet.svg");
+                background: url("/images/third-main-block-main-section-background-tablet.svg");
                 background-position: center bottom;
                 background-repeat: no-repeat;
                 background-size: contain;

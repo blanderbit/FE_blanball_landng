@@ -3,22 +3,42 @@
         <div class="b-menu-top__side">
             <BurgerMenu />
             <div class="b-menu-top__side__logo">
-                <img v-if="$route.name === 'index'" src="../assets/images/header-tablet-logo.svg"
-                    alt="menu-tablet-logo">
-                <img v-else src="../assets/images/header-menu-top-side-logo-black.svg" alt="menu-tablet-logo-black">
+                <nuxt-img v-if="$route.name === 'index'" 
+                    src="/images/header-tablet-logo.svg"
+                    alt="menu-tablet-logo" />
+                <nuxt-img v-else
+                    preload
+                    src="/images/header-menu-top-side-logo-black.svg" 
+                    alt="menu-tablet-logo-black" />
             </div>
-            <input placeholder="Пошук" type="text" class="b-menu-top__side__input">
-            <RegisterButton  class="b-menu-top__side-register-button"
+            <input 
+                v-model="searchValue" 
+                placeholder="Пошук" 
+                type="text" 
+                class="b-menu-top__side__input">
+            <RegisterButton 
+                class="b-menu-top__side-register-button" 
                 :text="$t('buttons.register')" />
         </div>
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
-                <img v-if="$route.name === 'index'" class="b-menu__logo-desk" src="../assets/images/logo.svg"
+                <nuxt-img v-if="$route.name === 'index'" 
+                    preload
+                    class="b-menu__logo-desk" 
+                    src="/images/logo.svg"
                     alt="desk-logo" />
-                <img v-else class="b-menu__logo-desk" src="../assets/images/news-header-menu-logo.svg" alt="desk-logo">
-                <img v-if="$route.name === 'index'" class="b-menu__logo-small" src="../assets/images/logo-ball.svg"
+                <nuxt-img v-else class="b-menu__logo-desk" 
+                    preload
+                    src="/images/news-header-menu-logo.svg" 
+                    alt="desk-logo"/>
+                <nuxt-img v-if="$route.name === 'index'" 
+                    preload
+                    class="b-menu__logo-small" 
+                    src="/images/logo-ball.svg"
                     alt="small-logo" />
-                <img v-else class="b-menu__logo-small" src="../assets/images/news-header-menu-logo-small.svg"
+                <nuxt-img v-else class="b-menu__logo-small" 
+                    preload
+                    src="/images/news-header-menu-logo-small.svg"
                     alt="small-logo" />
                 <HeaderMenuRoute v-if="$route.name === 'news'"
                     style="margin-left: 30px; border-right: 1px solid black; padding-right: 5px;" />
@@ -27,7 +47,8 @@
             <div class="b-menu__right-side">
                 <HeaderMenuRoute v-if="$route.name === 'index'"
                     style="border-left: 1px solid black; padding-left: 5px;" />
-                <RegisterButton :text="$t('buttons.register')" />
+                <RegisterButton 
+                    :text="$t('buttons.register')" />
             </div>
         </ul>
     </div>
@@ -37,10 +58,18 @@
 import { useRoute } from 'vue-router'
 
 export default {
-    data() {
+    setup() {
+        const searchValue = ref()
         const route = useRoute()
-        return route
-    },
+        const router = useRouter()
+        watch(searchValue, (searchValue, previous) => {
+            router.push({
+                path: '/news',
+                query: { search: searchValue },
+            })
+        })
+        return { searchValue, route }
+    }
 }
 </script>
 
@@ -74,10 +103,11 @@ export default {
 
             &__input {
                 align-items: center;
-                background: url('../assets/images/header-tablet-input-seach.svg') #FFFFFF;
+                background: url('/images/header-tablet-input-seach.svg') #FFFFFF;
                 background-repeat: no-repeat;
                 background-position: right;
                 padding: 10px 12px;
+                padding-right: 30px;
                 width: 224px;
                 height: 40px;
                 border: 1px solid #DFDEED;
@@ -93,10 +123,6 @@ export default {
 
                 @media(max-width: $md4) {
                     display: none;
-                }
-
-                &:focus {
-                    background: #FFFFFF;
                 }
             }
 

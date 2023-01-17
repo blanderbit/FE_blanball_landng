@@ -2,7 +2,10 @@
     <div class="b-news-version">
         <div class="b-news-version-content">
             <div class="b-news-version-content-left__side">
-                <img src="../assets/images/news-version-image.svg" alt="news-version-image">
+                <nuxt-img 
+                    preload
+                    src="/images/news-version-image.svg" 
+                    alt="news-version-image" />
             </div>
             <div class="b-news-version-content-main__side">
                 <div class="b-news-version-content-main__side-top">
@@ -23,8 +26,11 @@
                     <div class="b-news-version-content-version-date">
                         10.04.2022
                     </div>
-                    <img class="b-news-version-content-version-arrow" src="../assets/images/news-version-arrow.svg"
-                        alt="news-version-content-version-arrow">
+                    <nuxt-img 
+                        preload
+                        class="b-news-version-content-version-arrow" 
+                        src="/images/news-version-arrow.svg"
+                        alt="news-version-content-version-arrow" />
                 </div>
             </div>
         </div>
@@ -74,7 +80,7 @@ export default {
             &-new {
                 font-weight: 500;
                 font-size: 12px;
-                line-height: 20px;
+                line-height: 150%;
                 text-align: center;
                 color: #148581;
                 display: flex;
@@ -104,7 +110,7 @@ export default {
                 font-weight: 400;
                 margin-top: 5px;
                 font-size: 14px;
-                line-height: 20px;
+                line-height: 133%;
                 color: #575775;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -123,7 +129,7 @@ export default {
                 &-value {
                     font-weight: 500;
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 133%;
                     color: #262541;
                     @media(max-width: 600px) {
                         font-size: 12px;
