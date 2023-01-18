@@ -7,18 +7,55 @@
             <label class="b-email-form-card-left__side-input-label" for="name">
                 {{ $t('newsEmailForm.subsribe_our_spam') }}</label>
             <div class="b-email-form-card-left__side-input-block">
-                <input class="b-email-form-card-left__side-input" placeholder="E-mail" type="email" id="email"
+                    <input
+                    v-model="inputData" 
+                    class="b-email-form-card-left__side-input" 
+                    placeholder="E-mail" 
+                    type="email" 
+                    pattern=".+@gmail.com"
+                    id="email"
                     name="name">
-                <div class="b-email-form-card-left__side-input-button"></div>
+                <div 
+                    @click="sendEmail()"
+                    class="b-email-form-card-left__side-input-button"></div>
             </div>
         </div>
-        <div class="b-email-form-card-right__side">
+        <div 
+            class="b-email-form-card-right__side">
             <img 
                 src="/images/news-first-block-left.svg" 
-                alt="" />
+                alt="news-first-block-left" />
         </div>
     </div>
 </template>
+
+<script>
+import { HTTP } from "../main";
+
+export default {
+    setup() {
+        const inputData = ref('')
+
+        const sendEmail = async () => {
+
+            try {
+                await HTTP.post(
+                    'user/admin/get/user/email',
+                    {'email': inputData.value}
+                )
+                inputData.value = ''
+            }catch(e) {
+                console.log(e)
+            }
+        }
+
+        return {
+            inputData,
+            sendEmail,
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "assets/styles/base.scss";

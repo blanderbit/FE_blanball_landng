@@ -49,10 +49,14 @@ export default defineNuxtConfig({
 			return window.scrollTo({ top: 0, behavior: 'smooth' })
 		},
 	},
+	transpile: ["vee-validate/dist/rules"],
 	modules: [
 		'@nuxtjs/robots',
 		'@funken-studio/sitemap-nuxt-3',
 	],
+	pushAssets: (req, res, publicPath, preloadFiles) =>
+		preloadFiles
+			.filter(f => f.asType === 'script' && f.file === 'runtime.js'),
 
 	build: {
 		html: {
