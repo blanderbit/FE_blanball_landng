@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@intlify/nuxt3": "^0.2.4",
     "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "nuxt": "3.0.0",
@@ -24,6 +25,7 @@
     "autoprefixer": "^10.4.13",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "ipx": "^1.0.0-2"
   }
 }

@@ -60,9 +60,20 @@
                 margin-top: -100px;
             }
 
+            @media(max-width: 600px) {
+                max-width: 230px;
+                margin-right: -55px;
+                padding: 10px;
+                margin-top: -90px;
+            }
+
             &-button {
                 min-width: 100%;
                 font-size: 13px;
+
+                @media(max-width: 600px) {
+                    font-size: 12px;
+                }
             }
 
             &-title {
@@ -77,6 +88,10 @@
 
                 @media(max-width: 700px) {
                     font-size: 18px;
+                }
+
+                @media(max-width: 600px) {
+                    font-size: 16px;
                 }
 
             }

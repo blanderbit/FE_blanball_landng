@@ -19,8 +19,12 @@ export default defineNuxtConfig({
 	buildModules: [
 		['@nuxt-modules/compression', {
 			algorithm: 'brotliCompress'
-		}]
+		}, '@aceforth/nuxt-optimized-images',]
 	],
+	target: 'static',
+	optimizedImages: {
+		optimizeImages: true
+	},
 	cache: true,
 	app: {
 		head: {
