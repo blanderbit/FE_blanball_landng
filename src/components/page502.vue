@@ -66,12 +66,31 @@
                 margin-top: -90px;
             }
 
+            @media(max-width: 500px) {
+                margin-top: -50px;
+                max-width: 200px;
+                margin-right: -50px;
+            }
+
+            @media(max-width: 400px) {
+                margin-top: -40px;
+                margin-right: -45px;
+            }
+
+            @media(max-width: 350px) {
+                margin-right: -35px;
+            }
+
             &-button {
                 min-width: 100%;
                 font-size: 13px;
 
                 @media(max-width: 600px) {
                     font-size: 12px;
+                }
+
+                @media(max-width: 500px) {
+                    font-size: 10px;
                 }
             }
 
@@ -81,6 +100,7 @@
                 font-size: 22px;
                 line-height: 145%;
                 color: #262541;
+
                 @media(max-width: 800px) {
                     font-size: 20px;
                 }
@@ -91,6 +111,10 @@
 
                 @media(max-width: 600px) {
                     font-size: 16px;
+                }
+
+                @media(max-width: 500px) {
+                    font-size: 14px;
                 }
 
             }
@@ -110,7 +134,7 @@
 
                 @media(max-width: 700px) {
                     font-size: 12px;
-                }
+                }                
             }
         }
     }

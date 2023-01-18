@@ -34,6 +34,7 @@
         <div class="b-footer-tablet-body">
             <div class="b-footer-tablet-top__side">
                 <img 
+                    class="b-footer-tablet-top__side-logo"
                     src="/images/footer-logo.svg" 
                     alt="footer-logo" />
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
@@ -210,6 +211,9 @@ export default {
 
                 @media(max-width: $md4) {
                     position: relative;
+                }
+                &-logo {
+                    max-height: 30px;
                 }
 
                 &-arrow {
