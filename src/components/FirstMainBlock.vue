@@ -14,17 +14,17 @@
                 class="b-first-block__image">
                 <img
                     class="b-first-block__image-desk" 
-                    src="/images/first-main-block-desk.svg"
+                    src="/images/first-main-block-desk.png"
                     alt="first-main-block-desk" />
                 <img 
                     preset="blanball"
                     class="b-first-block__image-tablet" 
-                    src="/images/first-main-block-tablet.svg"
+                    src="/images/first-main-block-tablet.png"
                     alt="first-main-block-tablet" />
                 <div class="b-first-block__image-mobile">
                     <img 
                     preset="blanball"
-                    src="/images/first-main-block-mobile.svg" 
+                    src="/images/first-main-block-mobile.png" 
                     alt="first-main-block-mobile" />
                 </div>
             </section>

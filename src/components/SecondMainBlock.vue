@@ -8,17 +8,17 @@
                 <div class="b-second-block-first__section-main__image">
                     <div class="b-second-block-first__section-main__image-desk">
                         <img   
-                            src="/images/second-block-first-section-main-image-desk.svg"
+                            src="/images/second-block-first-section-main-image-desk.png"
                             alt="second-block-first-section-main-image-desk" />
                     </div>
                     <div class="b-second-block-first__section-main__image-tablet">
                         <img 
-                            src="/images/second-block-first-section-tablet.svg"
+                            src="/images/second-block-first-section-tablet.png"
                             alt="second-block-first-section-tablet" />
                     </div>
                     <div class="b-second-block-first__section-main__image-mobile">
                         <img
-                            src="/images/second-block-first-section-mobile.svg"
+                            src="/images/second-block-first-section-mobile.png"
                             alt="second-block-first-section-mobile" />
                     </div>
                     <div class="b-second-block-first__section-mobile__block">
@@ -28,7 +28,7 @@
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
                                 <img 
-                                    src="/images/b-second-block-first-section-mobile-block-1.svg"
+                                    src="/images/b-second-block-first-section-mobile-block-1.png"
                                     alt="b-second-block-first-section-mobile-block-1" />
                             </div>
                         </section>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="b-second-block-first__section-mobile__block__image">
                                 <img 
-                                    src="/images/b-second-block-first-section-mobile-block-2.svg"
+                                    src="/images/b-second-block-first-section-mobile-block-2.png"
                                     alt="b-second-block-first-section-mobile-block-2" />
                             </div>
                         </section>
@@ -54,7 +54,7 @@
                 <div class="b-second-block-second__section__image">
                     <div class="b-second-block-second__section__image-desk">
                         <img 
-                            src="/images/second-main-block-second-section-desk.svg"
+                            src="/images/second-main-block-second-section-desk.png"
                             alt="second-main-block-second-section-desk" />
                     </div>
                     <div class="b-second-block-second__section__image-tablet">
@@ -65,10 +65,10 @@
 
                     <div class="b-second-block-second__section__image-mobile">
                         <img
-                            src="/images/second-main-block-second-section-mob.svg"
+                            src="/images/second-main-block-second-section-mob.png"
                             alt="second-main-block-second-section-mobile" />
                         <img
-                            src="/images/create-review-second-block.svg" 
+                            src="/images/create-review-second-block.png" 
                             alt="create-review-second-block" />
                     </div>
                 </div>

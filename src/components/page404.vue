@@ -3,7 +3,7 @@
         <div class="b-404-content">
             <div class="b-404-image">
                 <img
-                    src="/images/404.svg" 
+                    src="/images/404.png" 
                     alt="404" />
             </div>
             <div class="b-404-card">

@@ -3,7 +3,7 @@
         <div class="b-502-content">
             <div class="b-502-image">
                 <img
-                    src="/images/502.svg" 
+                    src="/images/502.png" 
                     alt="502" />
             </div>
             <div class="b-502-card">

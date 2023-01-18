@@ -43,24 +43,24 @@
                 <section class="b-header-content-bottom-side">
                     <div class="b-header-content-bottom-side-user-raiting">
                         <img
-                            src="/images/user-raiting.svg" 
+                            src="/images/users-raiting.png" 
                             alt="user-raiting"/>
                     </div>
                     <div class="b-header-content-bottom-side-iphone">
                         <img
                             class="b-header-content-bottom-side-iphone" 
-                            src="/images/Iphone1.svg" 
+                            src="/images/Iphone1.png" 
                             alt="header-main-image-tablet"/>
                     </div>
                 </section>
                 <div class="b-header-tablet-main__image">
                     <img
-                        src="/images/user-raiting.svg" 
+                        src="/images/users-raiting.png" 
                         alt="header-main-image-tablet"/>
                 </div>
                 <div class="b-header-mobile-main__image">
                     <img
-                        src="/images/header-main-image-mobile.svg" 
+                        src="/images/header-main-image-mobile.png" 
                         alt="header-main-image-mobile" 
                         preset="blanball" />
                 </div>

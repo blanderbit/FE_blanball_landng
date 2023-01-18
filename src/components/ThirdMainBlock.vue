@@ -10,13 +10,13 @@
                     <div class="b-main-section-images-iphone">
                         <img 
                             class="b-main-section-images-iphone__1" 
-                            src="/images/iphone2.svg"
+                            src="/images/iphone2.png"
                             alt="b-main-section-images-iphone-1" />
                         <img 
                             data-aos-offset="300" 
                             data-aos-easing="ease-in-sine"
                             class="b-main-section-images-iphone__2" 
-                            src="/images/Iphone.svg"
+                            src="/images/Iphone.png"
                             alt="b-main-section-images-iphone-2" />
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="b-third__block-before-footer-section__right-side">
                     <img 
                         class="b-third__block-before-footer-section__right-side__image-desk"
-                        src="/images/third-main-block-before-footer-section-iphone-desk.svg"
+                        src="/images/third-main-block-before-footer-section-iphone-desk.png"
                         alt="third-main-block-before-footer-section-iphone-desk" />
                 </div>
             </div>
