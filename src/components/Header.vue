@@ -17,7 +17,7 @@
                                 data-aos-delay="650"
                                 data-aos-offset="0" 
                                 class="b-header-title-first__line-ball__image"
-                                src="/images/logo-ball.svg" 
+                                src="/images/logo-ball.png" 
                                 alt="logo-ball" />
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="800"
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
@@ -29,7 +29,7 @@
                                 data-aos-delay="950"
                                 data-aos-offset="0" 
                                 class="b-header-title-first__line-ball__image"
-                                src="/images/logo-ball.svg" 
+                                src="/images/logo-ball.png" 
                                 alt="logo-ball"/>
                         </div>
                         <div class="b-header-title-second__line">

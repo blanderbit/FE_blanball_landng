@@ -9,7 +9,7 @@
                     alt="footer-logo" />
                 <img 
                     class="b-footer-desk__logo-small" 
-                    src="/images/logo-ball.svg" 
+                    src="/images/logo-ball.png" 
                     alt="footer-logo-small" />
             </div>
             <Navigation data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600" data-aos-offset="0"

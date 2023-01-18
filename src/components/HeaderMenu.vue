@@ -23,14 +23,14 @@
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
                 <img v-if="$route.name === 'index'" 
                     class="b-menu__logo-desk" 
-                    src="/images/logo.svg"
+                    src="/images/logo.png"
                     alt="desk-logo" />
                 <img v-else class="b-menu__logo-desk" 
                     src="/images/news-header-menu-logo.svg" 
                     alt="desk-logo"/>
                 <img v-if="$route.name === 'index'" 
                     class="b-menu__logo-small" 
-                    src="/images/logo-ball.svg"
+                    src="/images/logo-ball.png"
                     alt="small-logo" />
                 <img v-else class="b-menu__logo-small" 
                     src="/images/news-header-menu-logo-small.svg"

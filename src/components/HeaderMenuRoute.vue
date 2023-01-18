@@ -2,7 +2,7 @@
     <div class="b-header-menu__route">
         <div  class="b-header-menu__route__arrow-image">
             <img v-if="$route.name === 'index'" 
-                src="/images/news-arrow-left.svg" 
+                src="/images/news-arrow-left.png" 
                 alt="news-arrow" />
         </div>
         <div class="b-header-menu__route-text">

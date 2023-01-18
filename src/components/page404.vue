@@ -14,6 +14,7 @@
                     {{ $t('page404.subtitle') }}
                 </div>
                 <RegisterButton class="b-404-card-button" 
+                :path="'/'"
                 :text="$t('page404.go-main')" />
             </div>
         </div>
@@ -110,6 +111,7 @@
             }
             &-button {
                 min-width: 100%;
+                height: 40px;
                 @media(max-width: 700px) {
                     font-size: 13px;
                 }
