@@ -73,6 +73,17 @@
                 max-width: 250px;
             }
 
+            @media(max-width: 500px) {
+                margin-right: -160px;
+                margin-top: -60px;
+                max-width: 230px;
+            }
+
+            @media(max-width: 450px) {
+                margin-top: -20px;
+                margin-right: -3px;
+            }
+
             &-title {
                 font-family: 'Exo 2';
                 font-weight: 700;
@@ -87,9 +98,15 @@
                 @media(max-width: 700px) {
                     font-size: 16px;
                 }
+
                 @media(max-width: 600px) {
                     font-size: 14px;
                 }
+
+                @media(max-width: 500px) {
+                    font-size: 13px;
+                }
+
             }
             &-button {
                 min-width: 100%;
