@@ -2,8 +2,7 @@
     <div class="b-news-version">
         <div class="b-news-version-content">
             <div class="b-news-version-content-left__side">
-                <nuxt-img 
-                    preload
+                <img 
                     src="/images/news-version-image.svg" 
                     alt="news-version-image" />
             </div>
@@ -26,8 +25,7 @@
                     <div class="b-news-version-content-version-date">
                         10.04.2022
                     </div>
-                    <nuxt-img 
-                        preload
+                    <img 
                         class="b-news-version-content-version-arrow" 
                         src="/images/news-version-arrow.svg"
                         alt="news-version-content-version-arrow" />

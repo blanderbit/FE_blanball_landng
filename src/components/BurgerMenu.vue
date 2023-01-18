@@ -1,19 +1,16 @@
 <template>
     <div class="b-burger">
         <label @click="isMenuActive = !isMenuActive" class="b-burger-btn">
-            <nuxt-img class="b-burger-btn-tablet"
-                preload
+            <img class="b-burger-btn-tablet"
                 preset="blanball"
                 src="/images/burger-tablet.svg" 
                 alt="burger-tablet" />
-            <nuxt-img v-if="$route.name === 'index'"
-                preload
+            <img v-if="$route.name === 'index'"
                 preset="blanball"
                 class="b-burger-btn-mobile" 
                 src="/images/burger-moblo.svg" 
                 alt="burger-mobile" />
-            <nuxt-img v-else
-                preload
+            <img v-else
                 preset="blanball"
                 class="b-burger-btn-mobile-news" 
                 src="/images/burger-tablet.svg" 
@@ -23,16 +20,14 @@
             <ul v-show="isMenuActive" class="b-burger-body">
                 <div class="b-burger-content">
                     <div class="b-burger-content-logo">
-                        <nuxt-img
-                            preload
+                        <img
                             preset="blanball"
                             src="/images/burger-active-logo.svg" 
                             alt="burger-active-logo" />
                     </div>
                     <div class="b-burger-content-menu">
                         <div class="b-burger-content-menu-title">{{ $t('navigation.menu') }}</div>
-                        <nuxt-img
-                            preload
+                        <img
                             preset="blanball"
                             class="b-burger-content-menu-сross" 
                             @click="isMenuActive = !isMenuActive"
@@ -45,8 +40,7 @@
                     </div>
                     <div class="b-burger-content-page-route">
                         <HeaderMenuRoute style="margin-left: -10px;" />
-                        <nuxt-img
-                            preload
+                        <img
                             preset="blanball" 
                             src="/images/news-arrow-right.svg" 
                             alt="news-arrow-right" />

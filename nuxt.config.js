@@ -52,20 +52,7 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/robots',
 		'@funken-studio/sitemap-nuxt-3',
-		'@nuxt/image-edge',
 	],
-
-	image: {
-		presets: {
-			blanball: {
-				modifiers: {
-					quality: '10',
-					prerender: true,
-					loading: 'lazy',
-				}
-			}
-		}
-	},
 
 	build: {
 		html: {

@@ -13,8 +13,7 @@
             </div>
         </div>
         <div class="b-email-form-card-right__side">
-            <nuxt-img 
-                preload
+            <img 
                 src="/images/news-first-block-left.svg" 
                 alt="" />
         </div>

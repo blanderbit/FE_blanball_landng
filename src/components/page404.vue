@@ -2,8 +2,7 @@
     <div class="b-404">
         <div class="b-404-content">
             <div class="b-404-image">
-                <nuxt-img
-                    preload 
+                <img
                     src="/images/404.svg" 
                     alt="404" />
             </div>

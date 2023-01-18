@@ -3,13 +3,11 @@
         <ul class="b-footer-desk-body">
             <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="400" data-aos-offset="0"
                 class="b-footer-desk__logo">
-                <nuxt-img
-                    preload 
+                <img
                     class="b-footer-desk__logo-desk" 
                     src="/images/footer-logo.svg" 
                     alt="footer-logo" />
-                <nuxt-img
-                    preload 
+                <img 
                     class="b-footer-desk__logo-small" 
                     src="/images/logo-ball.svg" 
                     alt="footer-logo-small" />
@@ -21,12 +19,13 @@
                         $t('footer.blanball')
                 }}</span>
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
-                    <nuxt-img
-                        preload 
+                    <img
                         data-aos="fade-zoom-in" 
                         data-aos-easing="ease-in-back" 
                         data-aos-delay="1000"
-                        data-aos-offset="0" src="/images/footer-arrow.svg" alt="footer-arrow" />
+                        data-aos-offset="0" 
+                        src="/images/footer-arrow.svg" 
+                        alt="footer-arrow" />
                 </NuxtLink>
             </div>
         </ul>
@@ -34,13 +33,11 @@
     <footer class="b-footer-tablet">
         <div class="b-footer-tablet-body">
             <div class="b-footer-tablet-top__side">
-                <nuxt-img 
-                    preload
+                <img 
                     src="/images/footer-logo.svg" 
                     alt="footer-logo" />
                 <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
-                    <nuxt-img 
-                        preload
+                    <img 
                         data-aos="fade-zoom-in" 
                         data-aos-easing="ease-in-back" 
                         data-aos-delay="1000"

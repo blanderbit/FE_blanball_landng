@@ -8,13 +8,11 @@
                 </div>
                 <div class="b-main-section-images">
                     <div class="b-main-section-images-iphone">
-                        <nuxt-img 
-                            preload
+                        <img 
                             class="b-main-section-images-iphone__1" 
                             src="/images/iphone2.svg"
                             alt="b-main-section-images-iphone-1" />
-                        <nuxt-img 
-                            preload
+                        <img 
                             data-aos-offset="300" 
                             data-aos-easing="ease-in-sine"
                             class="b-main-section-images-iphone__2" 
@@ -42,8 +40,7 @@
                     </div>
                 </div>
                 <div class="b-third__block-before-footer-section__right-side">
-                    <nuxt-img 
-                        preload
+                    <img 
                         class="b-third__block-before-footer-section__right-side__image-desk"
                         src="/images/third-main-block-before-footer-section-iphone-desk.svg"
                         alt="third-main-block-before-footer-section-iphone-desk" />

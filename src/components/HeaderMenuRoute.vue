@@ -1,8 +1,7 @@
 <template>
     <div class="b-header-menu__route">
         <div  class="b-header-menu__route__arrow-image">
-            <nuxt-img v-if="$route.name === 'index'" 
-                preload
+            <img v-if="$route.name === 'index'" 
                 src="/images/news-arrow-left.svg" 
                 alt="news-arrow" />
         </div>
@@ -10,8 +9,7 @@
             <NuxtLink :to="{ path: comp.path }">
                 {{ comp.text }}
             </NuxtLink>
-            <nuxt-img v-if="$route.name === 'news'"  
-                preload
+            <img v-if="$route.name === 'news'"  
                 class="b-header-menu__route__arrow-image" 
                 src="/images/news-arrow-right.svg" 
                 alt="news-arrow" />

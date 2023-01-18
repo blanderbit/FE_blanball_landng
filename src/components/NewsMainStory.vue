@@ -49,12 +49,10 @@
                 </div>
             </div>
             <div class="b-news-main-story-content-right__side">
-                <nuxt-img class="b-news-main-story-content-right__side-desk" 
-                    preload
+                <img class="b-news-main-story-content-right__side-desk" 
                     src="/images/news-main.svg" 
                     alt="" />
-                <nuxt-img class="b-news-main-story-content-right__side-mobile" 
-                    preload
+                <img class="b-news-main-story-content-right__side-mobile" 
                     src="/images/f22.svg" 
                     alt="" />
             </div>

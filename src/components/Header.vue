@@ -11,8 +11,7 @@
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500"
                                 data-aos-offset="0" class="b-header-title-first__line-first__word">{{ $t('header.train')
                                 }}</div>
-                            <nuxt-img
-                                preload
+                            <img
                                 data-aos="fade-zoom-in" 
                                 data-aos-easing="linear" 
                                 data-aos-delay="650"
@@ -24,8 +23,7 @@
                                 data-aos-offset="0" class="b-header-title-first__line-second__word"><span>{{
                                         $t('header.play')
                                 }}</span></div>
-                            <nuxt-img
-                                preload
+                            <img
                                 data-aos="fade-zoom-in" 
                                 data-aos-easing="linear" 
                                 data-aos-delay="950"
@@ -44,28 +42,24 @@
                 </section>
                 <section class="b-header-content-bottom-side">
                     <div class="b-header-content-bottom-side-user-raiting">
-                        <nuxt-img
-                            preload
+                        <img
                             src="/images/user-raiting.svg" 
                             alt="user-raiting"/>
                     </div>
                     <div class="b-header-content-bottom-side-iphone">
-                        <nuxt-img
-                            preload
+                        <img
                             class="b-header-content-bottom-side-iphone" 
                             src="/images/Iphone1.svg" 
                             alt="header-main-image-tablet"/>
                     </div>
                 </section>
                 <div class="b-header-tablet-main__image">
-                    <nuxt-img
-                        preload
+                    <img
                         src="/images/user-raiting.svg" 
                         alt="header-main-image-tablet"/>
                 </div>
                 <div class="b-header-mobile-main__image">
-                    <nuxt-img
-                        preload
+                    <img
                         src="/images/header-main-image-mobile.svg" 
                         alt="header-main-image-mobile" 
                         preset="blanball" />

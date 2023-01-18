@@ -3,11 +3,10 @@
         <div class="b-menu-top__side">
             <BurgerMenu />
             <div class="b-menu-top__side__logo">
-                <nuxt-img v-if="$route.name === 'index'" 
+                <img v-if="$route.name === 'index'" 
                     src="/images/header-tablet-logo.svg"
                     alt="menu-tablet-logo" />
-                <nuxt-img v-else
-                    preload
+                <img v-else
                     src="/images/header-menu-top-side-logo-black.svg" 
                     alt="menu-tablet-logo-black" />
             </div>
@@ -22,22 +21,18 @@
         </div>
         <ul class="b-menu__body">
             <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" class="b-menu__body-logo">
-                <nuxt-img v-if="$route.name === 'index'" 
-                    preload
+                <img v-if="$route.name === 'index'" 
                     class="b-menu__logo-desk" 
                     src="/images/logo.svg"
                     alt="desk-logo" />
-                <nuxt-img v-else class="b-menu__logo-desk" 
-                    preload
+                <img v-else class="b-menu__logo-desk" 
                     src="/images/news-header-menu-logo.svg" 
                     alt="desk-logo"/>
-                <nuxt-img v-if="$route.name === 'index'" 
-                    preload
+                <img v-if="$route.name === 'index'" 
                     class="b-menu__logo-small" 
                     src="/images/logo-ball.svg"
                     alt="small-logo" />
-                <nuxt-img v-else class="b-menu__logo-small" 
-                    preload
+                <img v-else class="b-menu__logo-small" 
                     src="/images/news-header-menu-logo-small.svg"
                     alt="small-logo" />
                 <HeaderMenuRoute v-if="$route.name === 'news'"
