@@ -59,7 +59,7 @@
                     </div>
                     <div class="b-second-block-second__section__image-tablet">
                         <img 
-                            src="/images/second-main-block-second-section-tablet.svg"
+                            src="/images/second-main-block-second-section-tablet.png"
                             alt="second-main-block-second-section-tablet" />
                     </div>
 

@@ -52,9 +52,6 @@
                 <img class="b-news-main-story-content-right__side-desk" 
                     src="/images/news-main.svg" 
                     alt="" />
-                <img class="b-news-main-story-content-right__side-mobile" 
-                    src="/images/f22.svg" 
-                    alt="" />
             </div>
         </div>
     </div>

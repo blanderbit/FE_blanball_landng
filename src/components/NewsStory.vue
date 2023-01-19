@@ -13,10 +13,6 @@
                 <div class="b-news-story-main-side-body">
                     <div class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
-                        <img 
-                            v-if="active"
-                            class="b-news-story-main-side-body-img"
-                            src="/images/new-body-image.svg" alt="" />
                         {{ data.full_disc }}
                     </div>
                 </div>
