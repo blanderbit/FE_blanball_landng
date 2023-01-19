@@ -109,25 +109,30 @@
                 }
                 &-iphone {
                     margin-top: -80px;
-                    @media(max-width: 1050px) {
+
+                    @media(max-width: 1150px) {
                         margin-top: -70px;
                     }
+                    @media(max-width: 1060px) {
+                        margin-top: -55px;
+                    }
                     @media(max-width: $md2) {
-                        margin-top: -60px;
-                    }
-                    @media(max-width: 900px) {
-                        margin-top: -50px;
-                    }
-                    @media(max-width: 830px) {
                         margin-top: -40px;
                     }
+                    @media(max-width: 900px) {
+                        margin-top: -40px;
+                    }
+                    @media(max-width: 850px) {
+                        margin-top: -30px;
+                    }
+                    @media(max-width: 800px) {
+                        margin-top: -25px;
+                    }
+                    
                     img {
                         background: #fff;
                         border-radius: 30px;
                         padding: 0px 40px 30px 40px;
-                        @media(max-width: $md1) {
-                            padding: 0px 30px 20px 30px;
-                        }
                     }
                 }
             }

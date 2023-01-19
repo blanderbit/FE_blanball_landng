@@ -79,6 +79,8 @@
             justify-content: center;
             align-items: center;
             min-height: 600px;
+            margin-left: -20px;
+            margin-bottom: 50px;
 
             @media(max-width: $md2) and (min-width: $md4) {
                 min-height: 400px;

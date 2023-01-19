@@ -9,9 +9,12 @@
             <NuxtLink :to="{ path: comp.path }">
                 {{ comp.text }}
             </NuxtLink>
-            <img v-if="$route.name === 'news'"  
-                class="b-header-menu__route__arrow-image" 
-                src="/images/news-arrow-right.svg" 
+        </div>
+
+        <div class="b-header-menu__route__arrow-image">
+            <img v-if="$route.name === 'news'"
+            style="margin-left: 10px;"
+            src="/images/news-arrow-right.svg" 
                 alt="news-arrow" />
         </div>
     </div>
@@ -55,6 +58,7 @@ export default {
             margin-right: 30px;
             display: flex;
             align-items: center;
+            justify-content: center;
             @media(max-width: $md2) {
                 margin-right: 15px;
             }
@@ -76,9 +80,6 @@ export default {
                 margin-left: 10px;
                 transition: color 0.3s ease 0s;
                 display: flex;
-                img {
-                    margin-left: 10px;
-                }
 
                 @media(min-width: $md2) {
                     &:hover {

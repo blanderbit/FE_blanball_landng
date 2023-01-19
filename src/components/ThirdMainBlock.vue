@@ -85,6 +85,7 @@
                     background-repeat: no-repeat;
                     background: url("/images/third-main-block-second-section-background-tablet.svg"), $font-color;
                     background-position: center;
+                    background-size: 110%;
                 }
             }
 
