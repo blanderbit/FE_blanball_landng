@@ -128,6 +128,12 @@
                     @media(max-width: 800px) {
                         margin-top: -25px;
                     }
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        right: 220;
+                        content: "fdddddddddddddddddddd";
+                    }
                     
                     img {
                         background: #fff;
@@ -325,7 +331,9 @@
                 align-items: center;
 
                 &-first__word {
-                    margin-left: 20px;
+                    @media(min-width: $md4) {
+                        margin-left: 20px;
+                    }
                 }
 
                 &-button {

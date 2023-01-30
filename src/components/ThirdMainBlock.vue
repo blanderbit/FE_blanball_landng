@@ -85,7 +85,11 @@
                     background-repeat: no-repeat;
                     background: url("/images/third-main-block-second-section-background-tablet.svg"), $font-color;
                     background-position: center;
-                    background-size: 110%;
+                    background-size: 120%;
+                }
+                @media(max-width: $md4) {
+                    background: url("/images/before-footer-mobile-background.png"), $font-color;
+                    background-repeat: no-repeat;
                 }
             }
 

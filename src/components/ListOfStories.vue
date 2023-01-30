@@ -15,7 +15,7 @@
             <NewsStory  
                 v-for="(n, i) in news" 
                 :active="activeStoryIndex === i" 
-                :key="`news-story-${i}`" 
+                :key="`news-story-${i}`"
                 :data="n" />
         </div>
         <Spinner :active="isPromiseActive" />
@@ -35,14 +35,6 @@ export default {
     setup() {
         const route = useRoute()
         let timeOut
-        watch(route, (route, previous) => {
-            clearTimeout(timeOut)
-            function searhNews() {
-                news.value.length = 0
-                getNews({'search': route.query.search})
-            }
-            timeOut = setTimeout(searhNews, 500);
-        })
         let news = ref([])
         let isPromiseActive = ref()
         let countNewsOnNextPage = ref()
@@ -50,8 +42,17 @@ export default {
             page: 1,
             ordering: 'id',
         }
+
+        watch(route, (route, previous) => {
+            clearTimeout(timeOut)
+            function searhNews() {
+                news.value = []
+                getNews({'search': route.query.search})
+            }
+            timeOut = setTimeout(searhNews, 500);
+        })
         function changeOrdering() {
-            news.value.length = 0
+            news.value = []
             params.ordering === 'id' ? params.ordering = '-id' : params.ordering = 'id'
             getNews({page: 1, ordering: params.ordering})
         }

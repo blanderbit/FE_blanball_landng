@@ -246,6 +246,10 @@ export default {
                     display: flex;
                     align-items: center;
                     height: 100px;
+
+                    @media(max-width: 325px) {
+                        height: 30px;
+                    }
                 }
 
                 &-subscribe-button {
@@ -263,6 +267,10 @@ export default {
                     line-height: 187%;
                     color: #FFFFFF;
                     margin-bottom: -30px;
+
+                    @media(max-width: 325px) {
+                        display: none;
+                    }
                 }
 
                 &-input {
@@ -286,6 +294,7 @@ export default {
                         max-width: 170px;
                     }
 
+        
                     &-block {
                         max-width: 250px;
 
@@ -295,6 +304,10 @@ export default {
 
                         @media(max-width: 350px) {
                             max-width: 170px;
+                        }
+
+                        @media(max-width: 325px) {
+                            display: none;
                         }
                     }
 

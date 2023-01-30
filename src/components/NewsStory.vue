@@ -1,22 +1,25 @@
 <template>
     <div class="b-news-story" :class="{ 'b-news-story-active': active }">
         <div class="b-news-story-content">
-            <section class="b-news-story-top-side">
+            <div>
+                <section class="b-news-story-top-side">
                 <div class="b-news-story-top-side-title" :class="{ 'b-news-story-top-side-title-active': active }">
                     {{ data.title }}
                 </div>
                 <div class="b-news-story-top-side-date">
-                    {{formatedDate}}
+                    {{ formatedDate }}
                 </div>
             </section>
             <section class="b-news-story-main-side">
                 <div class="b-news-story-main-side-body">
-                    <div class="b-news-story-main-side-body-text"
+                    <p class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
-                        {{ data.full_disc }}
-                    </div>
+                        <img v-if="active && data.image" class="b-news-story-main-side-body-img" :src="data.image" />
+                        {{ data.description }}
+                    </p>
                 </div>
             </section>
+            </div>
             <section class="b-news-story-bottom-side">
                 <div @click="active = !active" class="b-news-story-bottom-side-detail">
                     <span>{{ active ? $t('story.сollapse')  : $t('story.detailed')}}</span>
@@ -53,11 +56,26 @@ export default {
     &-news-story {
         flex-basis: 45%;
         margin-top: 10px;
-        height: 100%;
+        width: 100%;
+        max-width: 750px;
         border-bottom: 1.5px solid #DFDEED;
+
+        @media(max-width: 900px) {
+            flex-basis: 100%;
+        }
+
+        @media(max-width: $md3) {
+            flex-basis: 45%;
+        }
 
         @media(max-width: $md4) {
             flex-basis: 100%;
+        }
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            flex-direction: column;
         }
 
         &-active {
@@ -81,6 +99,14 @@ export default {
                 line-height: 150%;
                 color: #262541;
                 margin-bottom: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+                word-break: break-word;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                
                 &-active {
                 }
             }
@@ -91,6 +117,7 @@ export default {
                 line-height: 166%;
                 color: #575775;
                 margin-left: 20px;
+                margin-top: -5px;
             }
         }
 
@@ -98,20 +125,11 @@ export default {
             &-body {
                 &-img {
                     margin-bottom: 5px;
-                    margin-right: 10px;
+                    margin-right: 20px;
+                    max-height: 300px;
                     max-width: 300px;
-                    max-height: 200px;
                     float: left;
-                    @media(max-width: 900px) and (min-width: $md3) {
-                        float: none;
-                    }
-                    @media(max-width: 550px) {
-                        float: none;
-                    }
-
-                    @media(max-width: 350px) {
-                        max-width: 250px;
-                    }
+                    border-radius: 4px;
                 }
 
                 &-text {
@@ -121,20 +139,18 @@ export default {
                     color: #262541;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    
+                    max-width: 100%;
+                    word-break: break-word;
                     display: -webkit-box;
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
-
-                    @media(max-width: $md3) {
-                        -webkit-line-clamp: 3;
-                    }
 
                     @media(max-width: $md4) {
                         -webkit-line-clamp: 4;
                     }
 
                     &-active {
-                        display: block;
                         -webkit-line-clamp: inherit;
                         @media(max-width: $md4) {
                             column-count: 1;

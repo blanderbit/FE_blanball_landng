@@ -10,6 +10,38 @@ $md3: 767.98px;
 $md4: 479.98px;
 $font-color: #262541;
 
+.Vue-Toastification__toast {
+  background: #262541;
+  width: 320px;
+  padding: 16px;
+}
+
+.Vue-Toastification__toast--success {
+  background: #F4FDE8;
+  border: 1px solid #71BA12;
+  color: #262541;
+}
+.Vue-Toastification__toast--error {
+  background: #FFEEEE;
+  border: 1px solid #F43E3E;
+  color: #262541;
+}
+.Vue-Toastification__toast--warning {
+  background: #FFF4EC;
+  border: 1px solid #F6803C;
+  color: #262541;
+}
+.Vue-Toastification__toast--info {
+  background: #F7F7FE;
+  border: 1px solid #BFBEDA;
+  color: #262541;
+}
+
+
+.Vue-Toastification__close-button {
+  color: #575775;
+}
+
 *,
 *::before,
 *::after {
@@ -91,4 +123,26 @@ select {
 
 input {
   outline: none;
+}
+
+/* custom scrollbar */
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: #d6dee1;
 }

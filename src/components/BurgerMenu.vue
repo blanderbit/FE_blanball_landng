@@ -31,7 +31,7 @@
                             preset="blanball"
                             class="b-burger-content-menu-сross" 
                             @click="isMenuActive = !isMenuActive"
-                            src="/images/header-burger-active-cross.svg" 
+                            src="/images/cross.svg" 
                             alt="burger-active-cross" />
                     </div>
                     <div class="b-burger-content-navigation">

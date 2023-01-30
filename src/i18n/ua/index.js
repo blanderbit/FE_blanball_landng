@@ -10,6 +10,7 @@ import ListOfStories  from './listOfStories'
 import Story from './story'
 import Page404 from './404'
 import Page502 from './502'
+import Errors from './errors'
 
 export const UA_LANGUAGE = {
     navigation: Navigation,
@@ -24,4 +25,5 @@ export const UA_LANGUAGE = {
     story: Story,
     page404: Page404,
     page502: Page502,
+    errors: Errors
 }

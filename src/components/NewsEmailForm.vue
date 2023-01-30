@@ -6,19 +6,23 @@
             </div>
             <label class="b-email-form-card-left__side-input-label" for="name">
                 {{ $t('newsEmailForm.subsribe_our_spam') }}</label>
-            <div class="b-email-form-card-left__side-input-block">
-                    <input
-                    v-model="inputData" 
-                    class="b-email-form-card-left__side-input" 
-                    placeholder="E-mail" 
-                    type="email" 
-                    pattern=".+@gmail.com"
-                    id="email"
-                    name="name">
-                <div 
-                    @click="sendEmail()"
-                    class="b-email-form-card-left__side-input-button"></div>
-            </div>
+            <Form
+                v-slot="data" 
+                @submit="disableSubmit" 
+                :validation-schema="schema"
+                class="b-email-form-card-left__side-input-block">
+                <InputComponent
+                    style="margin-right: 10px;"
+                    v-model="inputData"
+                    :height="36"
+                    :width="208"
+                    placeholder="E-mail"
+                    name="email"/>
+                <div
+                    @click="sendEmail(data)"
+                    class="b-email-form-card-left__side-input-button">
+                </div>
+            </Form>
         </div>
         <div 
             class="b-email-form-card-right__side">
@@ -32,11 +36,42 @@
 <script>
 import { HTTP } from "../main";
 
+import { useToast } from "vue-toastification";
+import { useI18n } from "vue-i18n";
+
+import { Form } from "@system.it.flumx.com/vee-validate";
+
+import isEmailValidator from 'validator/lib/isEmail';
+
+import * as yup from "yup";
+
+
 export default {
+    components: {
+        Form,
+    },
     setup() {
         const inputData = ref('')
+        const toast = useToast()
+        const { t } = useI18n();
 
-        const sendEmail = async () => {
+        const schema = yup.object({
+            email: yup
+                .string()
+                .required('errors.email-required')
+                .test("is-valid", 
+                    (message) => 'errors.email-invalid', 
+                    (value) => value 
+                    ? isEmailValidator(value) 
+                    : new yup.ValidationError('errors.email-invalid')),
+        });
+
+
+        const sendEmail = async (data) => {
+            const { valid } = await data.validate();
+            if (!valid) {
+                return false;
+            }
 
             try {
                 await HTTP.post(
@@ -44,14 +79,18 @@ export default {
                     {'email': inputData.value}
                 )
                 inputData.value = ''
-            }catch(e) {
-                console.log(e)
-            }
+                toast.success(t('newsEmailForm.email-sended-success'))
+            }catch(e) {}
         }
 
         return {
             inputData,
             sendEmail,
+            schema,
+            disableSubmit: () => {
+                e.stopPropagation();
+                e.preventDefault();
+            }
         }
     }
 }
@@ -72,11 +111,8 @@ export default {
             @media(max-width: 1050px) and (min-width: $md3) {
                 width: 300px;
             }
-            @media(max-width: 440px) {
-                width: 350px;
-            }
-            @media(max-width: 390px) {
-                width: 300px;
+            @media(max-width: 550px) {
+                width: 100%;
             }
             &-right__side {
                 @media(max-width: 390px) {
@@ -98,21 +134,6 @@ export default {
                 }
 
                 &-input {
-                    width: 208px;
-                    height: 36px;
-                    background: #FFFFFF;
-                    border-radius: 6px;
-                    padding: 6px 12px;
-                    font-weight: 400;
-                    font-size: 13px;
-                    line-height: 184%;
-                    color: #8A8AA8;
-                    margin-right: 10px;
-
-                    @media(max-width: 440px) {
-                        width: 170px;
-                    }
-
                     &-block {
                         display: flex;
                     }
