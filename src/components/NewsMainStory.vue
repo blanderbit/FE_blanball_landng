@@ -113,6 +113,10 @@ export default {
             }
             &-right__side {
                 display: flex;
+
+                @media(max-width: 850px) and (min-width: $md3) {
+                    display: none;
+                }
                 @media(max-width: $md4) {
                     justify-content: right;
                 }

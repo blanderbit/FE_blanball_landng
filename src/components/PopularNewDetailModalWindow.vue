@@ -1,4 +1,5 @@
 <template>
+
     <div class="modal-wrapper" 
       v-if="active"
       :class="{ active: active }" 
@@ -19,11 +20,16 @@
                 </div>
             </section>
             <section class="modal-window-main-side">
-                <div class="main-side-title">
-                    {{ data.title }}
+                <div class="modal-window-main-side-content">
+                    <div class="main-side-image">
+                        <img :src="data.image">
+                    </div>
+                    <div class="main-side-title">
+                        <span v-html="data.title"></span>
+                    </div>
                 </div>
                 <div class="main-side-subtitle">
-                    {{ data.description }}
+                    <span v-html="data.description"></span>
                 </div>
             </section>
         </div>
@@ -56,6 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "assets/styles/base.scss";
 .modal-wrapper {
     position: fixed;
     top: 0;
@@ -88,23 +95,11 @@ export default {
         width: 650px;
     }
 
-    @media (max-width: 700px) {
-        width: 550px;
-    }
-
-    @media (max-width: 600px) {
-        width: 450px;
-    }
-
-    @media (max-width: 500px) {
-        width: 350px;
-    }
-
-    @media (max-width: 400px) {
-        width: 100%;
+    @media (max-width: 800px) {
         height: 100%;
+        width: 100%;
+        margin-top: 200px;
     }
-
 
     &-top-side {
         display: flex;
@@ -114,9 +109,11 @@ export default {
     &-main-side {
         flex: 1;
         height: 100%;
-        background: #F9F9FC;
         padding: 12px;
+        padding-right: 0px;
         border-radius: 8px;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -158,9 +155,33 @@ export default {
 }
 .main-side-title {
     font-weight: 700;
-    font-size: 17px;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 36px;
     color: #262541;
+    max-width: 100%;
+    word-break: break-word;
+    background: #fff;
+    padding: 12px 8px 0px 0px;
+    border-radius: 0px 12px 0px 0px;
+    padding-right: 20px;
+    max-width: 500px;
+
+    @media (min-width: 600px) {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+    }
+
+    @media (max-width: 600px) {
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+
+    @media (max-width: 900px) {
+        font-size: 18px;
+        line-height: 28px;
+        max-width: 400px;
+    }
 }
 .main-side-subtitle {
     font-weight: 400;
@@ -169,5 +190,33 @@ export default {
     color: #262541;
     max-width: 100%;
     word-break: break-word;
+    columns: 1;
+
+    p {
+        margin-bottom: 10px;
+    }
+}
+.main-side-image {
+    float: left;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    object-fit: cover;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 600px) {
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+.modal-window-main-side-content {
+    position: relative;
 }
 </style>

@@ -14,15 +14,16 @@
         <div class="b-stories-list-of-stories">
             <NewsStory  
                 v-for="(n, i) in news" 
-                :active="activeStoryIndex === i" 
+                :active="i === activeStoryIndex"
                 :key="`news-story-${i}`"
+                @open-story="openStory(i)"
                 :data="n" />
         </div>
         <Spinner :active="isPromiseActive" />
         <div  v-if="countNewsOnNextPage > 0 && !isPromiseActive" 
              @click="getNewPage()" 
              class="b-stories-load-more">
-            {{ $t('listOfStories.show-more') }} {{ countNewsOnNextPage }} {{ $t('listOfStories.articles') }}
+            {{ $t('listOfStories.show-more' , {count: countNewsOnNextPage}) }}
         </div>
     </div>
 </template>
@@ -35,12 +36,21 @@ export default {
     setup() {
         const route = useRoute()
         let timeOut
-        let news = ref([])
-        let isPromiseActive = ref()
-        let countNewsOnNextPage = ref()
-        let params = {
+        const news = ref([])
+        const isPromiseActive = ref()
+        const countNewsOnNextPage = ref()
+        const params = {
             page: 1,
             ordering: 'id',
+        }
+        const activeStoryIndex = ref(null)
+
+        const openStory = (index) => {
+            if (activeStoryIndex.value === index) {
+                activeStoryIndex.value = null
+            }else {
+                activeStoryIndex.value = index
+            }
         }
 
         watch(route, (route, previous) => {
@@ -68,7 +78,7 @@ export default {
 
         function getNewPage() {
             params.page += 1
-            getNews(params = params)
+            getNews(params)
         }
         getNews({
             params: params
@@ -79,7 +89,9 @@ export default {
             countNewsOnNextPage, 
             isPromiseActive, 
             changeOrdering, 
-            params
+            params,
+            activeStoryIndex,
+            openStory,
         }
     }
 }

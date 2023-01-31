@@ -8,9 +8,8 @@
                 <div class="b-popular-new-title">
                     {{ data.title }}
                 </div>
-                <div class="b-popular-new-subtitle">
-                    {{ data.description }}
-                </div>
+                <p v-html="data.description" class="b-popular-new-subtitle">
+                </p>
             </section>
             <section class="b-popular-new-right">
                 <div></div>
@@ -39,6 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "assets/styles/base.scss";
 .b {
     &-popular-new {
         background: #FFFFFF;
@@ -48,6 +48,17 @@ export default {
         box-shadow: 2px 2px 10px rgba(56, 56, 251, 0.1);
         border-radius: 6px;
         margin: 20px 0px;
+        cursor: pointer;
+
+        @media(max-width: $md3) {
+            flex-basis: 48%;
+            margin: 10px 0px;
+        }
+
+        @media(max-width: 550px) {
+            flex-basis: 100%;
+        }
+
         &-content {
             padding: 16px 12px;
             display: flex;

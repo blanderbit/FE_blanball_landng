@@ -68,12 +68,24 @@ export default {
 
 .b {
     &-stories {
+        &-list-of-stories {
+                @media(max-width: $md3) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                @media (max-width: 550px) {
+                    justify-content: center;
+                }
+            }
+
         &-top-side {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
             padding-bottom: 8px;
 
+    
             @media(min-width: $md2) {
                 &:hover {
                     cursor: pointer;

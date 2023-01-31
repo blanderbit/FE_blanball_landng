@@ -15,13 +15,13 @@
                     <p class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
                         <img v-if="active && data.image" class="b-news-story-main-side-body-img" :src="data.image" />
-                        {{ data.description }}
+                        <span v-html="data.description"></span>
                     </p>
                 </div>
             </section>
             </div>
             <section class="b-news-story-bottom-side">
-                <div @click="active = !active" class="b-news-story-bottom-side-detail">
+                <div @click="$emit('open-story')" class="b-news-story-bottom-side-detail">
                     <span>{{ active ? $t('story.сollapse')  : $t('story.detailed')}}</span>
                 </div>
             </section>
