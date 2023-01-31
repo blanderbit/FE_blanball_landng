@@ -23,7 +23,7 @@
         <div  v-if="countNewsOnNextPage > 0 && !isPromiseActive" 
              @click="getNewPage()" 
              class="b-stories-load-more">
-            {{ $t('listOfStories.show-more' , {count: countNewsOnNextPage}) }}
+            {{ $t('listOfStories.show-more' , {count: countNewsOnNextPage, stories: storyText}) }}
         </div>
     </div>
 </template>
@@ -44,6 +44,7 @@ export default {
             ordering: 'id',
         }
         const activeStoryIndex = ref(null)
+        const storyText = ref('')
 
         const openStory = (index) => {
             if (activeStoryIndex.value === index) {
@@ -67,13 +68,24 @@ export default {
             getNews({page: 1, ordering: params.ordering})
         }
         function getNews(params = null) {
+            isPromiseActive.value = true
             HTTP.get('news/client/news/list', { params })
                 .then((response) => {
-                    isPromiseActive.value = true
                     news.value = news.value.concat(response.data.results)
                         countNewsOnNextPage.value = response.data.total_count - response.data.page_size * response.data.current_page
                     countNewsOnNextPage.value = countNewsOnNextPage.value > 10 ? 10 : countNewsOnNextPage.value
+                    declinationNumberOfArticles()
                 }).finally(() => {isPromiseActive.value = false})
+        }
+        
+        const declinationNumberOfArticles = () => {
+            if (countNewsOnNextPage.value === 1) {
+                storyText.value = 'статтю'
+            } else if (countNewsOnNextPage.value > 4) {
+                storyText.value = 'cтатей'
+            } else {
+                storyText.value = 'статті'
+            }
         }
 
         function getNewPage() {
@@ -83,8 +95,10 @@ export default {
         getNews({
             params: params
         })
+
         return { 
             news, 
+            storyText,
             getNewPage, 
             countNewsOnNextPage, 
             isPromiseActive, 

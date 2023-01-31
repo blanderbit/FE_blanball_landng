@@ -1,5 +1,10 @@
 <template>
     <div class="b-stories">
+        <PopularNewDetailModalWindow
+        :active="newDetailModalOpened"
+        :data="selectedNew"
+        @closeModal="closeNewDetailModal"/>
+        
         <section class="b-stories-top-side">
             <div class="b-stories-title" id="b-stories-title">
                 Популярне
@@ -14,10 +19,6 @@
         </div>
         <Spinner :active="isPromiseActive" />
     </div>
-    <PopularNewDetailModalWindow
-        :active="newDetailModalOpened"
-        :data="selectedNew"
-        @closeModal="closeNewDetailModal"/>
 </template>
 
 
