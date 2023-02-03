@@ -15,7 +15,9 @@
                 placeholder="Пошук" 
                 type="text" 
                 class="b-menu-top__side__input">
-            <RegisterButton 
+            <RegisterButton
+                height="35"
+                font-size="12"
                 class="b-menu-top__side-register-button" 
                 :text="$t('buttons.register')" />
         </div>
@@ -36,13 +38,14 @@
                     src="/images/news-header-menu-logo-small.svg"
                     alt="small-logo" />
                 <HeaderMenuRoute v-if="$route.name === 'news'"
-                    style="margin-left: 30px; border-right: 1px solid black; padding-right: 5px;" />
+                    style="margin-left: 30px; padding-right: 5px;" />
             </div>
             <Navigation data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" />
             <div class="b-menu__right-side">
                 <HeaderMenuRoute v-if="$route.name === 'index'"
-                    style="border-left: 1px solid black; padding-left: 5px;" />
-                <RegisterButton 
+                    style="padding-left: 5px;" />
+                <RegisterButton
+                    height="40"
                     :text="$t('buttons.register')" />
             </div>
         </ul>

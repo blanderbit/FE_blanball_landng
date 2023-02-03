@@ -11,7 +11,9 @@
                 : $t('listOfStories.un-filter') }}
             </div>
         </section>
-        <div class="b-stories-list-of-stories">
+        <div ref="listOfStories"
+            :style="listOfStoriesStyles" 
+            class="b-stories-list-of-stories">
             <NewsStory  
                 v-for="(n, i) in news" 
                 :active="i === activeStoryIndex"
@@ -19,7 +21,6 @@
                 @open-story="openStory(i)"
                 :data="n" />
         </div>
-        <Spinner :active="isPromiseActive" />
         <div  v-if="countNewsOnNextPage > 0 && !isPromiseActive" 
              @click="getNewPage()" 
              class="b-stories-load-more">
@@ -32,10 +33,19 @@
 <script>
 import { HTTP } from "../main";
 import { ref } from 'vue'
+import {
+  finishSpinner,
+  startSpinner
+} from "../packages/blanball-loading-worker";
+import { useElementSize } from '@vueuse/core'
+
+
 export default {
     setup() {
         const route = useRoute()
         let timeOut
+        const listOfStories = ref(null)
+        const { width, height } = useElementSize(listOfStories)
         const news = ref([])
         const isPromiseActive = ref()
         const countNewsOnNextPage = ref()
@@ -43,6 +53,13 @@ export default {
             page: 1,
             ordering: 'id',
         }
+        const listOfStoriesHeightValues = []
+        const listOfStoriesStyles = computed(() => {
+            listOfStoriesHeightValues.push(height.value)
+            return {
+                'min-height': listOfStoriesHeightValues[1] + 'px',
+            }
+        })
         const activeStoryIndex = ref(null)
         const storyText = ref('')
 
@@ -68,7 +85,7 @@ export default {
             getNews({page: 1, ordering: params.ordering})
         }
         function getNews(params = null) {
-            isPromiseActive.value = true
+            startSpinner()
             HTTP.get('news/client/news/list', { params })
                 .then((response) => {
                     news.value = news.value.concat(response.data.results)
@@ -77,7 +94,7 @@ export default {
                     declinationNumberOfArticles()
                 }).finally(() => {isPromiseActive.value = false})
         }
-        
+    
         const declinationNumberOfArticles = () => {
             if (countNewsOnNextPage.value === 1) {
                 storyText.value = 'статтю'
@@ -102,10 +119,12 @@ export default {
             getNewPage, 
             countNewsOnNextPage, 
             isPromiseActive, 
+            listOfStoriesStyles,
             changeOrdering, 
             params,
             activeStoryIndex,
             openStory,
+            listOfStories,
         }
     }
 }

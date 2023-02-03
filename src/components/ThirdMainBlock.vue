@@ -77,6 +77,8 @@
 
                 @media(max-width: $md2) {
                     padding-right: 0px;
+                    max-height: 290px;
+                    padding-bottom: 78px;
                 }
 
                 @media(max-width: $md3) {
@@ -178,6 +180,7 @@
                 }
 
                 &-create-account__section {
+                    display: flex;
                     @media(max-width: 850px) {
                         display: flex;
                         flex-direction: column;

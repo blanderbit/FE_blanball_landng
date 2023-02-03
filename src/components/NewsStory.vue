@@ -12,16 +12,20 @@
             </section>
             <section class="b-news-story-main-side">
                 <div class="b-news-story-main-side-body">
-                    <p class="b-news-story-main-side-body-text"
+                    <a :href="data.image" target="_blank" 
+                        v-if="active && data.image"
+                        class="b-main-side-show-full-image">Переглянути зображення</a>
+                    <div v-if="active && data.image" class="b-news-story-main-side-body-img">
+                        <img :src="data.image" />
+                    </div>
+                    <p v-html="data.description" class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
-                        <img v-if="active && data.image" class="b-news-story-main-side-body-img" :src="data.image" />
-                        <span v-html="data.description"></span>
                     </p>
                 </div>
             </section>
             </div>
             <section class="b-news-story-bottom-side">
-                <div @click="$emit('open-story')" class="b-news-story-bottom-side-detail">
+                <div @click="openStory()" class="b-news-story-bottom-side-detail">
                     <span>{{ active ? $t('story.сollapse')  : $t('story.detailed')}}</span>
                 </div>
             </section>
@@ -31,6 +35,10 @@
 
 <script>
 import dayjs from 'dayjs'
+import axios from "axios";
+
+import { HTTP } from "../main";
+
 export default {
     props: {
         data: {
@@ -43,9 +51,27 @@ export default {
             default: true,
         }
     },
-    setup(props) {
+    emits: ["open-story"],
+    setup(props, { emit }) {
+
+        const openStory = async () => {
+            try {
+                if (!props.active) {
+                    let request_data = await axios.get('http://www.geoplugin.net/json.gp')
+                    await HTTP.post(`news/client/news/see/new/${props.data.id}`,
+                        { ip: request_data.data.geoplugin_request })
+                }
+            }
+            finally {
+                emit('open-story')
+            }
+        }
+
         const formatedDate = dayjs(props.data.created_at).format('MM/DD/YYYY')
-        return { formatedDate }
+        return { 
+            formatedDate,
+            openStory 
+        }
     }
 }
 </script>
@@ -53,6 +79,21 @@ export default {
 @import "assets/styles/base.scss";
 
 .b {
+
+    &-main-side-show-full-image {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #0072DB;
+        padding: 4px 6px;
+        background: #fff;
+        border-radius: 4px;
+    }
+
     &-news-story {
         flex-basis: 45%;
         margin-top: 10px;
@@ -85,7 +126,7 @@ export default {
             border-radius: 8px;
             margin-bottom: 15px;
         }
-
+       
         &-top-side {
             display: flex;
             justify-content: space-between;
@@ -123,14 +164,18 @@ export default {
 
         &-main-side {
             &-body {
+                position: relative;
                 &-img {
-                    margin-bottom: 5px;
-                    margin-right: 20px;
-                    max-height: 300px;
-                    max-width: 300px;
-                    float: left;
-                    border-radius: 4px;
-                }
+                        width: 100%;
+                        height: 300px;
+                        margin-bottom: 20px;
+                
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
 
                 &-text {
                     font-weight: 400;

@@ -68,6 +68,7 @@ export default {
 
 
         const sendEmail = async (data) => {
+
             const { valid } = await data.validate();
             if (!valid) {
                 return false;
@@ -115,7 +116,7 @@ export default {
                 width: 100%;
             }
             &-right__side {
-                @media(max-width: 390px) {
+                @media(max-width: 410px) {
                     display: none;
                 }
             }

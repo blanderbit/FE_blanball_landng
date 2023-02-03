@@ -33,22 +33,24 @@
                                 alt="logo-ball"/>
                         </div>
                         <div class="b-header-title-second__line">
-                            <RegisterButton class="b-header-title-second__line-button" :text="$t('buttons.register')" />
+                            <RegisterButton 
+                            class="b-header-title-second__line-button" height="40" :text="$t('buttons.register')" />
                             <div data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="1100"
                                 data-aos-offset="0" class="b-header-title-second__line-first__word">{{ $t('header.rest')
                                 }}</div>
                         </div>
                     </section>
                 </section>
-                <section class="b-header-content-bottom-side">
+                <section ref="b_header_content_bottom_side" class="b-header-content-bottom-side">
                     <div class="b-header-content-bottom-side-user-raiting">
                         <img
                             src="/images/users-raiting.png" 
                             alt="user-raiting"/>
+                        <img class="b-white-triange" src="/images/ggg.svg" alt="">
                     </div>
-                    <div class="b-header-content-bottom-side-iphone">
+                    <div ref="b_header_content_bottom_side_iphone" class="b-header-content-bottom-side-iphone">
                         <img
-                            class="b-header-content-bottom-side-iphone" 
+                            class="b-header-content-bottom-side-iphone-img" 
                             src="/images/Iphone1.png" 
                             alt="header-main-image-tablet"/>
                     </div>
@@ -70,13 +72,21 @@
 </template>
 
 <script>
-
 </script>
 
 <style lang="scss">
 @import "assets/styles/base.scss";
 
+.b-white-triange {
+    position: absolute;
+    top: -18px;
+    right: -16px;
 
+    @media (max-width: $md2) {
+        top: -17px;
+        right: -15px;
+    }
+}
 .b {
     &-header {
         background: url("/images/header-background-lines.svg");
@@ -105,40 +115,47 @@
                     }
                 &-user-raiting {
                     margin-top: 17px;
+                    position: relative;
                     margin-right: 15px;
                 }
                 &-iphone {
-                    margin-top: -80px;
+                    position: relative;
+                    margin-top: -160px;
 
                     @media(max-width: 1150px) {
-                        margin-top: -70px;
+                        margin-top: -140px;
+                    }
+                    @media(max-width: 1100px) {
+                        margin-top: -120px;
                     }
                     @media(max-width: 1060px) {
-                        margin-top: -55px;
+                        margin-top: -110px;
                     }
                     @media(max-width: $md2) {
-                        margin-top: -40px;
+                        margin-top: -100px;
                     }
                     @media(max-width: 900px) {
-                        margin-top: -40px;
+                        margin-top: -90px;
                     }
                     @media(max-width: 850px) {
-                        margin-top: -30px;
+                        margin-top: -100px;
                     }
                     @media(max-width: 800px) {
-                        margin-top: -25px;
+                        margin-top: -90px;
                     }
-                    &::after {
-                        position: absolute;
-                        top: 0;
-                        right: 220;
-                        content: "fdddddddddddddddddddd";
-                    }
-                    
-                    img {
+
+                    &-img {
                         background: #fff;
                         border-radius: 30px;
                         padding: 0px 40px 30px 40px;
+
+                        @media (max-width: $md2) {
+                            padding: 0px 35px 30px 35px;
+                        }
+
+                        @media (max-width: 850px) {
+                            padding: 0px 30px 30px 30px;
+                        }
                     }
                 }
             }
@@ -339,7 +356,11 @@
                 &-button {
                     width: 190px;
                     font-weight: 700;
-                    height: 50px;
+                    height: 100%;
+
+                    @media (min-width: 920px) {
+                        margin-top: 10px;
+                    }
 
                     @media(max-width: $md2) {
                         width: 160px;

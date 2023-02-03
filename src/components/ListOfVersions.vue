@@ -17,7 +17,6 @@
                 @click="showNewDetailModal(n)"
                 :data="n" />
         </div>
-        <Spinner :active="isPromiseActive" />
     </div>
 </template>
 
@@ -25,11 +24,14 @@
 <script>
 import { HTTP } from "../main";
 import { ref } from 'vue'
+import {
+  finishSpinner,
+  startSpinner
+} from "../packages/blanball-loading-worker";
 
 export default {
     setup() {
         let news = ref([])
-        let isPromiseActive = ref()
         const selectedNew = ref({})
         const newDetailModalOpened = ref(false)
 
@@ -45,16 +47,15 @@ export default {
         }
 
         function getNews() {
-            HTTP.get('news/client/news/list')
+            HTTP.get('news/client/popular/news/list')
                 .then((response) => {
-                    isPromiseActive.value = true
+                    startSpinner()
                     news.value = response.data.results
-                }).finally(() => {isPromiseActive.value = false})
+                }).finally(() => {finishSpinner()})
         }
         getNews()
         return { 
             news, 
-            isPromiseActive, 
             selectedNew,
             showNewDetailModal,
             newDetailModalOpened,

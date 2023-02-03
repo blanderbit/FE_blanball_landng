@@ -1,7 +1,9 @@
 <template>
-    <nuxt-link :to="path">
+  <div>
+    <nuxt-link :style="textStyle" :to="path">
       <span>{{ text }}</span>
     </nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -11,7 +13,25 @@ export default {
     path: {
         type: String,
         default: 'http://178.151.201.167:49201/authentication/register'
+    },
+    fontSize: {
+      type: Number,
+      default: 15,
+    },
+    height: {
+      type: Number,
+    }
+  },
+  setup(props) {
+    const textStyle = computed(() => {
+      return {
+        'font-size': props.fontSize + 'px',
+        'height': props.height + 'px'
       }
+    })
+    return {
+      textStyle,
+    }
   }
 }
 
@@ -25,12 +45,12 @@ a {
   border-radius: 8px;
   font-weight: 600;
   padding: 10px 16px;
-  font-size: 15px;
   color: #FFFFFF;
   line-height: 160%;
   transition: background-color 0.4s ease 0s;
-  text-align: center;
-  text-justify: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
   @media(min-width: $md2) {
