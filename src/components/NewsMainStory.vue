@@ -3,19 +3,23 @@
         <Loading :isLoading="loading"/>
         <div v-if="!loading" class="b-news-main-story-content">
             <div class="b-news-main-story-content-left__side">
-                <div class="b-news-main-story-content-title" 
-                    :class="{'b-news-main-story-content-title-active': active}">
+                <div class="b-news-main-story-content-title">
                     {{ lastNews.title }}
-                    <img 
-                    :src="lastNews.image" 
-                    alt="" />
                 </div>
-                <div v-html="lastNews.description" 
-                class="b-news-main-story-content-subtitle" :class="{'b-news-main-story-content-subtitle-active': active}">
+                <div
+                    v-html="lastNews.description" 
+                    class="b-news-main-story-content-subtitle" 
+                    :class="{'b-news-main-story-content-subtitle-active': active}">
                 </div>
                 <div @click="active=!active" class="b-news-main-story-content-detail">
                     {{ active ? $t('story.сollapse')  : $t('story.detailed')}}
                 </div>
+            </div>
+            <div class="b-news-main-story-content-right__side">
+                <img class="b-news-main-image" 
+                    :class="{'b-news-main-image-active': active}"
+                    :src="lastNews.image" 
+                    alt="" />
             </div>
         </div>
     </div>
@@ -58,14 +62,31 @@ export default {
 <style lang="scss">
 @import "assets/styles/variables.scss";
 .b {
+    &-news-main-image {
+        object-fit: cover;
+        object-position: top;
+        border-left: 4px solid #FFFFFF;
+        border-top: 4px solid #FFFFFF;
+        border-radius: 156px 8px 8px 0px;
+
+        &-active {
+            border-radius: 0px 0px 0px 156px;
+            border-top: none;
+            border-bottom: 4px solid #FFFFFF;
+        }
+
+        @media(max-width: $md4) {
+            display: none;
+        }
+    }
     &-news-main-story {
         max-width: 800px;
         min-width: 600px;
         position: relative;
         width: 100%;
         background: url('/images/main-story-background.svg') #262541;
-        max-height: 243px;
-        min-height: 243px;
+        max-height: 238px;
+        min-height: 238px;
         border-radius: 8px;
         background-repeat: no-repeat;
         @media(max-width: $md2) {
@@ -86,7 +107,8 @@ export default {
         }
         &-content {
             display: flex;
-            height: 100%;
+            justify-content: space-between;
+
             @media(max-width: $md4) {
                 flex-direction: column;
             }
@@ -100,26 +122,12 @@ export default {
             }
             &-right__side {
                 display: flex;
-                max-width: 350px;
+
+                width: 350px;
                 max-height: 350px;
-                
+
                 @media(max-width: 850px) and (min-width: $md3) {
                     display: none;
-                }
-                @media(max-width: $md4) {
-                    justify-content: right;
-                }
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                    object-position: top;
-                    border-left: 4px solid #FFFFFF;
-                    border-top: 4px solid #FFFFFF;
-                    border-radius: 156px 8px 8px 0px;
-                    @media(max-width: $md4) {
-                        display: none;
-                    }
                 }
             }
             &-title {
