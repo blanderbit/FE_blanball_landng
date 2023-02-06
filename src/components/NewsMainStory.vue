@@ -1,81 +1,71 @@
 <template>
     <div class="b-news-main-story" :class="{'b-news-main-story-active': active}">
-        <div class="b-news-main-story-content">
+        <Loading :isLoading="loading"/>
+        <div v-if="!loading" class="b-news-main-story-content">
             <div class="b-news-main-story-content-left__side">
-                <div class="b-news-main-story-content-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Laboriosam quasi labore odit dicta asperiores dolorem repudiandae, minima suscipit nihil quo quaerat
-                    amet, rerum, possimus non quisquam facilis quod eum sint?
+                <div class="b-news-main-story-content-title" 
+                    :class="{'b-news-main-story-content-title-active': active}">
+                    {{ lastNews.title }}
+                    <img 
+                    :src="lastNews.image" 
+                    alt="" />
                 </div>
-                <div class="b-news-main-story-content-subtitle" :class="{'b-news-main-story-content-subtitle-active': active}">
-                    Тут ключові тези з майбутнього оновлення.
-                    Що саме можна буде зробити, що покращиться,
-                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
-                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
-                    doloremque hic ab.
-                    Тут ключові тези з майбутнього оновлення.
-                    Що саме можна буде зробити, що покращиться,
-                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
-                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
-                    doloremque hic ab.
-                    Тут ключові тези з майбутнього оновлення.
-                    Що саме можна буде зробити, що покращиться,
-                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
-                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
-                    doloremque hic ab.
-                    Тут ключові тези з майбутнього оновлення.
-                    Що саме можна буде зробити, що покращиться,
-                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
-                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
-                    doloremque hic ab.
-                    Тут ключові тези з майбутнього оновлення.
-                    Що саме можна буде зробити, що покращиться,
-                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
-                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
-                    doloremque hic ab.
-                    Тут ключові тези з майбутнього оновлення.
-                    Що саме можна буде зробити, що покращиться,
-                    що прибереться і так далі. fdfdfdfdfddffdfdfddf
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error impedit non unde eos tempora aliquid
-                    sapiente dolorum sit culpa accusantium blanditiis eligendi expedita, eum voluptatum corrupti illo
-                    doloremque hic ab.
+                <div v-html="lastNews.description" 
+                class="b-news-main-story-content-subtitle" :class="{'b-news-main-story-content-subtitle-active': active}">
                 </div>
                 <div @click="active=!active" class="b-news-main-story-content-detail">
                     {{ active ? $t('story.сollapse')  : $t('story.detailed')}}
                 </div>
-            </div>
-            <div class="b-news-main-story-content-right__side">
-                <img class="b-news-main-story-content-right__side-desk" 
-                    src="/images/news-main.svg" 
-                    alt="" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { HTTP } from "../main";
+import Loading from '../packages/blanball-loading-worker/Loading.vue'
+
 export default {
+    components: {
+        Loading
+    },
     props: {
         active: {
             type: Boolean,
             default: false,
         }
+    },
+    setup() {
+        const lastNews = ref([])
+        const loading = ref(false)
+
+    
+        function getLastNews() {
+            loading.value = true
+            HTTP.get('news/client/news/list')
+                .then((response) => {
+                    lastNews.value = response.data.results[0]
+                }).finally(() => {loading.value = false})
+        }
+        getLastNews()
+        return { 
+            lastNews,
+            loading,
+        }
     }
 }
 </script>
-<style lang="scss" scoped>
-@import "assets/styles/base.scss";
+<style lang="scss">
+@import "assets/styles/variables.scss";
 .b {
     &-news-main-story {
         max-width: 800px;
         min-width: 600px;
+        position: relative;
         width: 100%;
         background: url('/images/main-story-background.svg') #262541;
         max-height: 243px;
+        min-height: 243px;
         border-radius: 8px;
         background-repeat: no-repeat;
         @media(max-width: $md2) {
@@ -91,15 +81,12 @@ export default {
             min-width: 200px;
         }
         &-active {
-            background: url('/images/main-story-active-background.svg') #262541;
-            background-repeat: no-repeat;
-            background-size: cover;
-            max-height: none;
+            max-height:  none;
+            height: inherit;
         }
         &-content {
             display: flex;
             height: 100%;
-            justify-content: space-between;
             @media(max-width: $md4) {
                 flex-direction: column;
             }
@@ -113,27 +100,26 @@ export default {
             }
             &-right__side {
                 display: flex;
-
+                max-width: 350px;
+                max-height: 350px;
+                
                 @media(max-width: 850px) and (min-width: $md3) {
                     display: none;
                 }
                 @media(max-width: $md4) {
                     justify-content: right;
                 }
-                &-desk {
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                    border-left: 4px solid #FFFFFF;
+                    border-top: 4px solid #FFFFFF;
+                    border-radius: 156px 8px 8px 0px;
                     @media(max-width: $md4) {
                         display: none;
                     }
-                }
-                &-mobile {
-                    display: none;
-                    @media(max-width: $md4) {
-                        margin-top: -23px;
-                        display: flex;
-                    }
-                }
-                img {
-                    border-radius: 8px;
                 }
             }
             &-title {
@@ -146,9 +132,14 @@ export default {
                 color: #FFFFFF;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                word-break: break-word;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
+
+                &-active {
+                    -webkit-line-clamp: inherit;
+                }
                 @media(max-width: $md4) {
                     max-width: none;
                 }
@@ -158,13 +149,20 @@ export default {
                 font-size: 14px;
                 line-height: 150%;
                 max-width: 320px;
-                color: #E2E2E9;
                 margin-bottom: 10px;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                word-break: break-word;
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
+
+                p {
+                    span {
+                        color: #E2E2E9 !important;
+                    }
+                }
+
                 &-active {
                     -webkit-line-clamp: inherit;
                 }

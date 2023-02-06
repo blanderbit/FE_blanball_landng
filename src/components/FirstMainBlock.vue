@@ -33,7 +33,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
+@import "assets/styles/variables.scss";
 
 .b {
     &-first-block {

@@ -7,6 +7,7 @@ import App from "./app.vue";
 import { createLoader } from "./packages/blanball-loading-worker";
 
 import "vue-toastification/dist/index.css";
+import "./assets/styles/base.scss";
 
 const app = createApp(App);
 

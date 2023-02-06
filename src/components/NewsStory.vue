@@ -1,32 +1,32 @@
 <template>
     <div class="b-news-story" :class="{ 'b-news-story-active': active }">
         <div class="b-news-story-content">
-            <div>
-                <section class="b-news-story-top-side">
-                <div class="b-news-story-top-side-title" :class="{ 'b-news-story-top-side-title-active': active }">
+            <section class="b-news-story-top-side">
+                <div v-if="!active" class="b-news-story-top-side-title" :class="{ 'b-news-story-top-side-title-active': active }">
                     {{ data.title }}
                 </div>
-                <div class="b-news-story-top-side-date">
+                <div v-if="!active" class="b-news-story-top-side-date">
                     {{ formatedDate }}
                 </div>
             </section>
             <section class="b-news-story-main-side">
                 <div class="b-news-story-main-side-body">
-                    <a :href="data.image" target="_blank" 
-                        v-if="active && data.image"
+                    <a :href="data.image" target="_blank" v-if="active && data.image"
                         class="b-main-side-show-full-image">Переглянути зображення</a>
                     <div v-if="active && data.image" class="b-news-story-main-side-body-img">
                         <img :src="data.image" />
+                    </div>
+                    <div v-if="active" class="b-title-active">
+                        <span>{{ data.title }}</span>
                     </div>
                     <p v-html="data.description" class="b-news-story-main-side-body-text"
                         :class="{ 'b-news-story-main-side-body-text-active': active }">
                     </p>
                 </div>
             </section>
-            </div>
             <section class="b-news-story-bottom-side">
                 <div @click="openStory()" class="b-news-story-bottom-side-detail">
-                    <span>{{ active ? $t('story.сollapse')  : $t('story.detailed')}}</span>
+                    <span>{{ active? $t('story.сollapse'): $t('story.detailed') }}</span>
                 </div>
             </section>
         </div>
@@ -76,10 +76,21 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
-
+@import "assets/styles/variables.scss";
 .b {
+    &-title-active {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        color: #262541;
+        word-break: break-word;
+        max-width: 100%;
+        margin-bottom: 15px;
 
+        @media (max-width: 940px) {
+            font-size: 18px;
+        }
+    }
     &-main-side-show-full-image {
         position: absolute;
         right: 10px;
@@ -95,10 +106,11 @@ export default {
     }
 
     &-news-story {
-        flex-basis: 45%;
+        flex-basis: 47%;
         margin-top: 10px;
         width: 100%;
         max-width: 750px;
+        max-height: 170px;
         border-bottom: 1.5px solid #DFDEED;
 
         @media(max-width: 900px) {
@@ -106,10 +118,10 @@ export default {
         }
 
         @media(max-width: $md3) {
-            flex-basis: 45%;
+            flex-basis: 48%;
         }
 
-        @media(max-width: $md4) {
+        @media(max-width: 600px) {
             flex-basis: 100%;
         }
         &-content {
@@ -124,6 +136,7 @@ export default {
             background: #F9F9FC;
             padding: 15px 10px;
             border-radius: 8px;
+            max-height: none;
             margin-bottom: 15px;
         }
        

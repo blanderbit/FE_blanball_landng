@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "assets/styles/base.scss";
+@import "assets/styles/variables.scss";
 
 .fade-enter-active,
 .fade-leave-active {

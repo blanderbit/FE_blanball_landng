@@ -9,7 +9,8 @@
                 <div class="b-modal-window-info">
                     <div class="b-main-info">
                         <p>Розділ: <span>«Популярне»</span></p>
-                        <p>Переглядів: <span>{{ data.count_viewers }}</span> <span class="date">{{ formatedDate }}</span></p>
+                        <p>Переглядів: <span>{{ data.count_viewers }}</span> 
+                        <span class="b-main-info-date">{{ formatedDate }}</span></p>
                     </div>
                 </div>
                 <div class="b-close-modal-window">
@@ -64,8 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
-
+@import "assets/styles/variables.scss";
 .b {
     &-modal-wrapper {
         position: fixed;
@@ -140,18 +140,16 @@ export default {
             line-height: 20px;
             color: #262541;
         }
-    }
-
-    &-date {
-        padding: 2px 0px 2px 12px;
-
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 20px;
-        color: #262541;
-        padding: 2px 0px 2px 12px;
-        border-left: 1px solid black;
-        margin-left: 15px;
+        &-date {
+            padding: 2px 0px 2px 12px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 20px;
+            color: #262541;
+            padding: 2px 0px 2px 12px;
+            border-left: 1px solid rgb(187, 185, 185);
+            margin-left: 15px;
+        }
     }
 
     &-close-modal-window {
@@ -200,7 +198,6 @@ export default {
         color: #262541;
         max-width: 100%;
         word-break: break-word;
-        columns: 1;
 
         p {
             margin-bottom: 10px;

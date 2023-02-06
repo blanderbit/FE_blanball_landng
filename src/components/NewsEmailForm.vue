@@ -15,6 +15,7 @@
                     style="margin-right: 10px;"
                     v-model="inputData"
                     :height="36"
+                    :backgroundColor="'#fff'"
                     :width="208"
                     placeholder="E-mail"
                     name="email"/>
@@ -98,7 +99,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
+@import "assets/styles/variables.scss";
 .b {
     &-email-form {
         &-card {

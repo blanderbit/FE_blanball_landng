@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 @import './quil';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-$maxWidthContainer: 1200px;
-$md1: $maxWidthContainer + 12;
-$md2: 991.98px;
-$md3: 767.98px;
-$md4: 479.98px;
-$font-color: #262541;
-
 .Vue-Toastification__toast {
   background: #262541;
   width: 320px;
@@ -117,7 +107,7 @@ select {
 }
 
 ._container {
-  max-width: $maxWidthContainer;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

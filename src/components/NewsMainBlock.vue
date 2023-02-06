@@ -14,8 +14,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
-
+@import "assets/styles/variables.scss";
 .b {
     &-news-main-block {
         padding: 0px 20px;
@@ -29,9 +28,6 @@
 
             @media(max-width: $md3) {
                 display: block;
-            }
-
-            @media(max-width: $md3) {
                 margin-top: -20px;
             }
 

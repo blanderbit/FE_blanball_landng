@@ -11,6 +11,7 @@
                 : $t('listOfStories.un-filter') }}
             </div>
         </section>
+        <Loading :is-loading="loading"/>
         <div ref="listOfStories"
             :style="listOfStoriesStyles" 
             class="b-stories-list-of-stories">
@@ -21,7 +22,7 @@
                 @open-story="openStory(i)"
                 :data="n" />
         </div>
-        <div  v-if="countNewsOnNextPage > 0 && !isPromiseActive" 
+        <div  v-if="countNewsOnNextPage > 0 && !loading" 
              @click="getNewPage()" 
              class="b-stories-load-more">
             {{ $t('listOfStories.show-more' , {count: countNewsOnNextPage, stories: storyText}) }}
@@ -33,21 +34,21 @@
 <script>
 import { HTTP } from "../main";
 import { ref } from 'vue'
-import {
-  finishSpinner,
-  startSpinner
-} from "../packages/blanball-loading-worker";
 import { useElementSize } from '@vueuse/core'
+import Loading from '../packages/blanball-loading-worker/Loading.vue'
 
 
 export default {
+    components: {
+        Loading
+    },
     setup() {
         const route = useRoute()
         let timeOut
         const listOfStories = ref(null)
         const { width, height } = useElementSize(listOfStories)
         const news = ref([])
-        const isPromiseActive = ref()
+        const loading = ref(false)
         const countNewsOnNextPage = ref()
         const params = {
             page: 1,
@@ -80,19 +81,20 @@ export default {
             timeOut = setTimeout(searhNews, 500);
         })
         function changeOrdering() {
+            activeStoryIndex.value = null
             news.value = []
             params.ordering === 'id' ? params.ordering = '-id' : params.ordering = 'id'
             getNews({page: 1, ordering: params.ordering})
         }
         function getNews(params = null) {
-            startSpinner()
+            loading.value = true
             HTTP.get('news/client/news/list', { params })
                 .then((response) => {
                     news.value = news.value.concat(response.data.results)
                         countNewsOnNextPage.value = response.data.total_count - response.data.page_size * response.data.current_page
                     countNewsOnNextPage.value = countNewsOnNextPage.value > 10 ? 10 : countNewsOnNextPage.value
                     declinationNumberOfArticles()
-                }).finally(() => {isPromiseActive.value = false})
+                }).finally(() => {loading.value = false})
         }
     
         const declinationNumberOfArticles = () => {
@@ -118,7 +120,7 @@ export default {
             storyText,
             getNewPage, 
             countNewsOnNextPage, 
-            isPromiseActive, 
+            loading, 
             listOfStoriesStyles,
             changeOrdering, 
             params,
@@ -131,7 +133,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
+@import "assets/styles/variables.scss";
 
 .b {
     &-stories {

@@ -10,6 +10,7 @@
                 Популярне
             </div>
         </section>
+        <Loading :is-loading="loading"/>
         <div class="b-stories-list-of-stories">
             <PopularNew  
                 v-for="(n, i) in news" 
@@ -24,16 +25,17 @@
 <script>
 import { HTTP } from "../main";
 import { ref } from 'vue'
-import {
-  finishSpinner,
-  startSpinner
-} from "../packages/blanball-loading-worker";
+import Loading from '../packages/blanball-loading-worker/Loading.vue'
 
 export default {
+    components: {
+        Loading
+    },
     setup() {
-        let news = ref([])
+        const news = ref([])
         const selectedNew = ref({})
         const newDetailModalOpened = ref(false)
+        const loading = ref(false)
 
 
         const showNewDetailModal = (data) => {
@@ -47,11 +49,11 @@ export default {
         }
 
         function getNews() {
+            loading.value = true
             HTTP.get('news/client/popular/news/list')
                 .then((response) => {
-                    startSpinner()
                     news.value = response.data.results
-                }).finally(() => {finishSpinner()})
+                }).finally(() => {loading.value = false})
         }
         getNews()
         return { 
@@ -59,6 +61,7 @@ export default {
             selectedNew,
             showNewDetailModal,
             newDetailModalOpened,
+            loading,
             closeNewDetailModal,
         }
     }
@@ -66,7 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/styles/base.scss";
+@import "assets/styles/variables.scss";
 
 .b {
     &-stories {

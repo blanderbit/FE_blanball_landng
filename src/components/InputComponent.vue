@@ -125,6 +125,9 @@ export default {
       type: String,
       default: 'aggressive',
     },
+    backgroundColor: {
+      type: String,
+    }
   },
   emits: [
     'iconClick', 
@@ -160,6 +163,7 @@ export default {
       return {
         'padding-left': 10 + 'px',
         'padding-right': rightIcon.value?.length ? '50px' : '10px',
+        'background': props.backgroundColor ? props.backgroundColor : 'transparent'
       }
     })
     const inputWrapper = computed(() => {
