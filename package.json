@@ -19,6 +19,7 @@
     "vue-i18n": "^9.2.2"
   },
   "dependencies": {
+    "@chenfengyuan/vue-countdown": "^2.1.0",
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
     "@nuxtjs/robots": "^3.0.0",
     "@system.it.flumx.com/vee-validate": "^0.0.1",
@@ -27,11 +28,13 @@
     "autoprefixer": "^10.4.13",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
     "html-minifier": "^4.0.0",
     "ipx": "^1.0.0-2",
     "save": "^2.9.0",
     "validator": "^13.7.0",
     "vee-validate": "^4.7.3",
+    "vue": "^3.2.47",
     "vue-toastification": "^2.0.0-rc.5",
     "vue3-perfect-scrollbar": "^1.6.1",
     "yup": "^0.32.11"

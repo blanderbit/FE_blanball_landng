@@ -2,8 +2,15 @@
     <div class="b-news-main-story" :class="{'b-news-main-story-active': active}">
         <Loading :isLoading="loading"/>
         <div v-if="!loading" class="b-news-main-story-content">
-            <div class="b-news-main-story-content-left__side">
-                <div class="b-news-main-story-content-title">
+            <div class="b-news-main-story-content-left__side"
+                :class="{'b-news-main-story-content-left__side-active': active}">
+                <div v-if="active" class="b-main-image-container">
+                    <img
+                    :src="lastNews.image" 
+                    alt="" />
+                </div>
+                <div class="b-news-main-story-content-title"
+                    :class="{'b-news-main-story-content-title-active': active}">
                     {{ lastNews.title }}
                 </div>
                 <div
@@ -15,7 +22,7 @@
                     {{ active ? $t('story.сollapse')  : $t('story.detailed')}}
                 </div>
             </div>
-            <div class="b-news-main-story-content-right__side">
+            <div v-if="!active" class="b-news-main-story-content-right__side">
                 <img class="b-news-main-image" 
                     :class="{'b-news-main-image-active': active}"
                     :src="lastNews.image" 
@@ -79,6 +86,19 @@ export default {
             display: none;
         }
     }
+    &-main-image-container {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            object-position: center;
+        }
+    }
     &-news-main-story {
         max-width: 800px;
         min-width: 600px;
@@ -116,6 +136,11 @@ export default {
                 padding: 24px 0px 24px 24px;
                 display: flex;
                 flex-direction: column;
+                
+                &-active {
+                    padding: 24px;
+                    width: 100%;
+                }
                 @media(max-width: $md4) {
                     padding: 24px
                 }
@@ -146,6 +171,7 @@ export default {
                 -webkit-box-orient: vertical;
 
                 &-active {
+                    max-width: none;
                     -webkit-line-clamp: inherit;
                 }
                 @media(max-width: $md4) {
@@ -172,6 +198,7 @@ export default {
                 }
 
                 &-active {
+                    max-width: none;
                     -webkit-line-clamp: inherit;
                 }
                 @media(max-width: $md4) {
