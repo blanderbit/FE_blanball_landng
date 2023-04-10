@@ -1,21 +1,21 @@
 version: "3.8"
 
 services:
- blanball-fe-landing:
-  container_name: blanball-fe-landing
-  image: registry.it-flumx.com/landing_blanball_fe:latest
-  command: 'bash build.sh'
-  labels:
+  blanball-fe-landing:
+    container_name: blanball-fe-landing
+    image: registry.it-flumx.com/landing_blanball_fe:latest
+    command: "bash build.sh"
+    expose:
+      - "3000"
+    labels:
       - "traefik.enable=true"
-      ## HTTP
-      - "traefik.http.routers.blanball-fe-landing-web.entrypoints=web"
-      - "traefik.http.routers.blanball-fe-landing-web.rule=Host(`blanball.com`) && PathPrefix(`/`)"
-      - "traefik.http.services.blanball-fe-landing.loadbalancer.server.port=4172"
-      ## Redirect  
-      - "traefik.http.middlewares.blanball-fe-landing-redirect-web-secure.redirectscheme.scheme=https"
-      - "traefik.http.routers.blanball-fe-landing-web.middlewares=blanball-fe-landing-redirect-web-secure"
-      ## HTTPS
-      - "traefik.http.routers.blanball-fe-landing-web-secure.entrypoints=web-secure"
-      - "traefik.http.routers.blanball-fe-landing-secure.rule=Host(`blanball.com`) && PathPrefix(`/`)"
-      - "traefik.http.routers.blanball-fe-landing-web-secure.tls=true"
-      - "traefik.http.routers.blanball-fe-landing-web-secure.tls.certResolver=sample"
+      - "traefik.http.routers.blanball-fe-landing.rule=Host(`blanball.com) && PathPrefix(`/`)"
+      - "traefik.http.routers.blanball-fe-landing.entrypoints=websecure"
+      - "traefik.http.routers.blanball-fe-landing.tls.certresolver=myresolver"
+      - "traefik.http.routers.blanball-fe-landing.service=blanball-fe-landing"
+      - "traefik.http.services.blanball-fe-landing.loadbalancer.server.port=3000"
+    networks:
+      - registry_default
+networks:
+  registry_default:
+    external: true
