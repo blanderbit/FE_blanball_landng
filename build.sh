@@ -1,6 +1,5 @@
 npm install;
 npm run generate;
-cp ./deploy/.htaccess dist/.htaccess
-cp ./deploy/nginx/default.conf /etc/nginx/conf.d/default.conf
 cp -a dist/* /usr/share/nginx/html;
+# cp -a dist/* /var/www/html;
 nginx -g 'daemon off;'
