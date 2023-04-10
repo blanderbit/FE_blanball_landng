@@ -1,15 +1,15 @@
 version: "3.8"
 
 services:
-  blanball-fe-landing:
-    container_name: blanball-fe-landing
-    image: registry.it-flumx.com/landing_blanball_fe:latest
+ blanball-fe-landing:
+  container_name: blanball-fe-landing
+  image: registry.it-flumx.com/landing_blanball_fe:latest
     command: "bash build.sh"
     expose:
       - "3000"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.blanball-fe-landing.rule=Host(`blanball.com) && PathPrefix(`/`)"
+      - "traefik.http.routers.blanball-fe-landing.rule=Host(`blanball.com`) && PathPrefix(`/`)"
       - "traefik.http.routers.blanball-fe-landing.entrypoints=websecure"
       - "traefik.http.routers.blanball-fe-landing.tls.certresolver=myresolver"
       - "traefik.http.routers.blanball-fe-landing.service=blanball-fe-landing"
