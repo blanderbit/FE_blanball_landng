@@ -8,7 +8,25 @@
 
 export default {
   name: "App",
-  created() {}
+  created() {},
+  setup() {
+    const route = useRoute()
+    const { code } = route.query
+
+    if (code) {
+      const type = "text/plain";
+      const blob = new Blob([code], { type });
+      const data = [new ClipboardItem({ [type]: blob })];
+
+      navigator.clipboard.write(data).then(
+        () => {
+          window.close()
+        }
+      );
+    }
+
+    return {}
+  }
 }
 </script>
 
