@@ -4,7 +4,6 @@ services:
  blanball-fe-landing:
   container_name: blanball-fe-landing
   image: registry.it-flumx.com/landing_blanball_fe:latest
-  command: "bash build.sh"
   expose:
     - "80"
   labels:
