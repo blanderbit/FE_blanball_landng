@@ -4,9 +4,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm i
 COPY ./ ./
-RUN npm run build
+RUN npm run generate
 FROM nginx:latest
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=BUILD_IMAGE /app/.output /usr/share/nginx/html
+COPY --from=BUILD_IMAGE /app/dist /usr/share/nginx/html
 COPY --from=BUILD_IMAGE /app/deploy/nginx/default.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
