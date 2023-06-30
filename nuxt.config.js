@@ -35,7 +35,6 @@ export default defineNuxtConfig({
 			meta: Meta,
 		},
 	},
-	ssr: false,
 	srcDir: 'src/',
 	preset: 'node-server',
 	router: {
