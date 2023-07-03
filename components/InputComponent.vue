@@ -63,7 +63,6 @@
 <script>
 import { computed, ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { CustomModelWorker } from "../workers/custom.model.worker";
-import { useI18n } from 'vue-i18n'
 
 // TODO vue 3 fully, validate message
 export default {
@@ -193,8 +192,6 @@ export default {
       window.removeEventListener('resize', resizeFunction)
     })
 
-
-    const { t } = useI18n();
     return {
       iconClickAction,
       staticModelValue,
@@ -204,8 +201,7 @@ export default {
       rightIcon,
       inputStyle,
       inputWrapper,
-      input,
-      t
+      input
     }
   }
 }

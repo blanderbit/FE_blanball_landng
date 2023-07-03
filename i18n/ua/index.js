@@ -12,7 +12,7 @@ import Page404 from './404'
 import Page502 from './502'
 import Errors from './errors'
 
-export const UA_LANGUAGE = {
+export default {
     navigation: Navigation,
     header: Header,
     firstBlock: FirstBlock,

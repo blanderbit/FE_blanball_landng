@@ -37,7 +37,7 @@
 import dayjs from 'dayjs'
 import axios from "axios";
 
-import { HTTP } from "../main";
+import { HTTP } from "../utils/axios";
 
 export default {
     props: {
@@ -57,7 +57,7 @@ export default {
         const openStory = async () => {
             try {
                 if (!props.active) {
-                    let request_data = await axios.get('http://www.geoplugin.net/json.gp')
+                    let request_data = await axios.get('HTTP://www.geoplugin.net/json.gp')
                     await HTTP.post(`news/client/news/see/new/${props.data.id}`,
                         { ip: request_data.data.geoplugin_request })
                 }
