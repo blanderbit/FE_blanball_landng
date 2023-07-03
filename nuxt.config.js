@@ -57,7 +57,7 @@ export default defineNuxtConfig({
 
   sitemap: {
     cacheTime: 1,
-    hostname: "https://blanball.com",
+    hostname: process.env.HOST_NAME,
     defaults: {
       changefreq: "daily",
       priority: 1,
