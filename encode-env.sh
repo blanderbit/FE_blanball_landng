@@ -1,0 +1,1 @@
+cat stack.env | base64 -w 0 > stack-env.txt
