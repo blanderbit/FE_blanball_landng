@@ -32,7 +32,7 @@
           data-aos-easing="ease-in-back"
           data-aos-delay="800"
           data-aos-offset="0"
-          >{{ $t("footer.blanball") }}</span
+          >{{ $t("footer.blanball", { year: new Date().getFullYear() }) }}</span
         >
         <NuxtLink :to="{ hash: '#b-menu' }" :style="getStyle">
           <img
@@ -109,7 +109,7 @@
       </div>
       <div class="b-footer-tablet-bottom__side">
         <div class="b-footer-tablet-bottom__side-title">
-          {{ $t("footer.blanball") }}
+          {{ $t("footer.blanball", { year: new Date().getFullYear() }) }}
         </div>
       </div>
     </div>
@@ -123,20 +123,20 @@ export default {
       navigationItemStyles: {
         color: "#fff",
         "font-size": "14px",
-        "line-height": "250%",
+        "line-height": "250%"
       },
       navigationItemStylesMobile: {
         color: "#fff",
         "font-size": "12px",
-        "line-height": "130%",
+        "line-height": "130%"
       },
       navigationBodyStyles: {
         "flex-direction": "column",
         "margin-right": "50px",
-        "max-width": "150px",
-      },
+        "max-width": "150px"
+      }
     };
-  },
+  }
 };
 </script>
 

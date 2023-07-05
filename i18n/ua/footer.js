@@ -1,4 +1,4 @@
 export default {
-    'blanball': 'Blanball — 2022',
+    'blanball': 'Blanball — {year}',
     'subscribe_newsletter': 'Підписатись на розсилку',
 }
